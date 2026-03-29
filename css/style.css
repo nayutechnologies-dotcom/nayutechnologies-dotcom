@@ -45,6 +45,15 @@ a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
 
+a:focus-visible,
+button:focus-visible,
+.nav-hamburger:focus-visible,
+.mobile-close:focus-visible,
+.sector-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 /* ============================
    GRID NOISE BACKGROUND
 ============================ */
@@ -686,6 +695,9 @@ section { position: relative; z-index: 1; }
   border-radius: var(--radius);
   cursor: pointer;
   transition: var(--transition);
+  width: 100%;
+  text-align: left;
+  appearance: none;
 }
 
 .sector-item:hover, .sector-item.active {
@@ -966,4 +978,14 @@ section { position: relative; z-index: 1; }
   .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
   .cta-band-inner { flex-direction: column; text-align: center; }
   .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .clients-track { animation: none !important; }
 }

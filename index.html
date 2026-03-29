@@ -25,14 +25,14 @@
     <li><a href="pages/contact.html" class="nav-cta btn">Get Started →</a></li>
   </ul>
 
-  <div class="nav-hamburger" id="hamburger">
+  <div class="nav-hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </div>
 </nav>
 
 <!-- Mobile Menu -->
-<div class="mobile-menu" id="mobile-menu">
-  <span class="mobile-close" id="mobile-close">✕</span>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <span class="mobile-close" id="mobile-close" role="button" tabindex="0" aria-label="Close menu">✕</span>
   <a href="#services">Services</a>
   <a href="#training">AI Training</a>
   <a href="#sectors">Sectors</a>
@@ -395,41 +395,41 @@
 
     <div class="sectors-wrapper">
       <div class="sector-list reveal reveal-delay-1">
-        <div class="sector-item active" data-sector="banking">
+        <button class="sector-item active" data-sector="banking" type="button" aria-controls="sector-banking">
           <div class="sector-icon card-icon-blue">🏦</div>
           <div class="sector-info">
             <h4>Banking &amp; Retail Finance</h4>
             <p>Fraud detection, credit decisioning, personalization</p>
           </div>
-        </div>
-        <div class="sector-item" data-sector="insurance">
+        </button>
+        <button class="sector-item" data-sector="insurance" type="button" aria-controls="sector-insurance">
           <div class="sector-icon card-icon-purple">🛡️</div>
           <div class="sector-info">
             <h4>Insurance</h4>
             <p>Underwriting AI, claims automation, risk modeling</p>
           </div>
-        </div>
-        <div class="sector-item" data-sector="payments">
+        </button>
+        <button class="sector-item" data-sector="payments" type="button" aria-controls="sector-payments">
           <div class="sector-icon card-icon-teal">💳</div>
           <div class="sector-info">
             <h4>Payments &amp; Fintech</h4>
             <p>Real-time fraud, reconciliation, AML compliance</p>
           </div>
-        </div>
-        <div class="sector-item" data-sector="wealth">
+        </button>
+        <button class="sector-item" data-sector="wealth" type="button" aria-controls="sector-wealth">
           <div class="sector-icon card-icon-gold">📈</div>
           <div class="sector-info">
             <h4>Wealth &amp; Capital Markets</h4>
             <p>Portfolio AI, trade surveillance, client insights</p>
           </div>
-        </div>
-        <div class="sector-item" data-sector="pension">
+        </button>
+        <button class="sector-item" data-sector="pension" type="button" aria-controls="sector-pension">
           <div class="sector-icon card-icon-red">💼</div>
           <div class="sector-info">
             <h4>Pensions &amp; Benefits</h4>
             <p>Member engagement, actuarial AI, process automation</p>
           </div>
-        </div>
+        </button>
       </div>
 
       <div class="sector-detail reveal reveal-delay-2">
@@ -525,9 +525,8 @@
         </a>
         <p>Nayu Technologies Inc. is an AI &amp; automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
         <div class="footer-social">
-          <a href="#" class="social-btn" title="LinkedIn">in</a>
-          <a href="#" class="social-btn" title="Twitter/X">𝕏</a>
-          <a href="#" class="social-btn" title="Email">@</a>
+          <a href="https://www.linkedin.com/company/nayutech" class="social-btn" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+          <a href="mailto:info@nayutechnologies.com" class="social-btn" title="Email" aria-label="Email">@</a>
         </div>
       </div>
 
@@ -556,9 +555,9 @@
       <div class="footer-col">
         <h5>Company</h5>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="pages/contact.html">About Us</a></li>
+          <li><a href="pages/contact.html">Careers</a></li>
+          <li><a href="pages/training.html">Blog</a></li>
           <li><a href="pages/contact.html">Contact</a></li>
         </ul>
         <div style="margin-top:2rem">
@@ -574,8 +573,8 @@
     <div class="footer-bottom">
       <span>© 2025 Nayu Technologies Inc. All rights reserved.</span>
       <div style="display:flex; gap:1.5rem;">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
+        <a href="pages/contact.html">Privacy Policy</a>
+        <a href="pages/contact.html">Terms of Service</a>
       </div>
       <div class="footer-badge">⬡ AI-Powered Company</div>
     </div>

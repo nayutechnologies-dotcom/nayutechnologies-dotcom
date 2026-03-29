@@ -13,9 +13,27 @@ const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 const mobileClose = document.getElementById('mobile-close');
 
-hamburger?.addEventListener('click', () => mobileMenu.classList.add('open'));
-mobileClose?.addEventListener('click', () => mobileMenu.classList.remove('open'));
-mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+function setMenuState(isOpen) {
+  if (!mobileMenu) return;
+  mobileMenu.classList.toggle('open', isOpen);
+  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+  hamburger?.setAttribute('aria-expanded', String(isOpen));
+}
+
+function activateOnEnterOrSpace(el, handler) {
+  el?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handler();
+    }
+  });
+}
+
+hamburger?.addEventListener('click', () => setMenuState(true));
+mobileClose?.addEventListener('click', () => setMenuState(false));
+activateOnEnterOrSpace(hamburger, () => setMenuState(true));
+activateOnEnterOrSpace(mobileClose, () => setMenuState(false));
+mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenuState(false)));
 
 // ── Scroll reveal ──
 const revealObserver = new IntersectionObserver((entries) => {
@@ -33,6 +51,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 function initParticles(canvasId) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const ctx = canvas.getContext('2d');
   let W, H, particles = [], nodes = [];
 
@@ -181,7 +200,14 @@ document.querySelectorAll('.sector-item').forEach(item => {
 // ── Smooth anchor scroll ──
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
+    const href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    let target = null;
+    try {
+      target = document.querySelector(href);
+    } catch {
+      return;
+    }
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });

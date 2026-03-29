@@ -64,7 +64,10 @@
     }
     .contact-info-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 0.3rem; }
     .contact-info-value { font-size: 0.9rem; color: var(--text-primary); }
-    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 2rem; } }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .name-grid { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
@@ -80,11 +83,11 @@
     <li><a href="../index.html#sectors">Sectors</a></li>
     <li><a href="contact.html" class="nav-cta btn">Get Started →</a></li>
   </ul>
-  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <div class="nav-hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span><span></span><span></span></div>
 </nav>
 
-<div class="mobile-menu" id="mobile-menu">
-  <span class="mobile-close" id="mobile-close">✕</span>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <span class="mobile-close" id="mobile-close" role="button" tabindex="0" aria-label="Close menu">✕</span>
   <a href="../index.html">Home</a>
   <a href="../index.html#services">Services</a>
   <a href="training.html">AI Training</a>
@@ -122,7 +125,7 @@
           <div class="contact-info-icon">💼</div>
           <div>
             <div class="contact-info-label">LinkedIn</div>
-            <div class="contact-info-value"><a href="#" style="color:var(--accent)">linkedin.com/company/nayutech</a></div>
+            <div class="contact-info-value"><a href="https://www.linkedin.com/company/nayutech" style="color:var(--accent)" target="_blank" rel="noopener noreferrer">linkedin.com/company/nayutech</a></div>
           </div>
         </div>
 
@@ -140,7 +143,7 @@
       <!-- Right: Form -->
       <div class="card reveal reveal-delay-1">
         <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div class="name-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
             <div class="form-group">
               <label class="form-label" for="fname">First Name *</label>
               <input class="form-input" type="text" id="fname" name="first_name" placeholder="Jane" required />
@@ -206,6 +209,10 @@
   const form = document.getElementById('contact-form');
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (form.action.includes('YOUR_FORM_ID')) {
+      alert('Please configure a valid Formspree form ID in contact.html before going live.');
+      return;
+    }
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
