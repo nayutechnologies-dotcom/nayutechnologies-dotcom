@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nayu Technologies Inc. — AI &amp; Automation Consulting</title>
+  <meta name="description" content="Nayu Technologies Inc. — Accelerating businesses with AI, automation, and digital transformation across finance, insurance, and enterprise." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300d4ff'/><text y='.9em' font-size='70' x='10'>N</text></svg>" />
+</head>
+<body>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">⬡</div>
+    Nayu<span>Tech</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#training">AI Training</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="pages/contact.html" class="nav-cta btn">Get Started →</a></li>
+  </ul>
+
+  <div class="nav-hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <span class="mobile-close" id="mobile-close">✕</span>
+  <a href="#services">Services</a>
+  <a href="#training">AI Training</a>
+  <a href="#sectors">Sectors</a>
+  <a href="#clients">Clients</a>
+  <a href="pages/contact.html" style="color: var(--accent)">Get Started →</a>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero" id="home">
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Trusted by leading enterprises globally
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line">The Future of</span>
+        <span class="line gradient-text" id="typed-text">Artificial Intelligence</span>
+        <span class="line">Starts Here.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Nayu Technologies empowers enterprises with cutting-edge AI, intelligent automation, and end-to-end digital transformation — delivering measurable outcomes at unprecedented speed.
+      </p>
+
+      <div class="hero-actions">
+        <a href="pages/contact.html" class="btn btn-primary">Start Your AI Journey →</a>
+        <a href="#services" class="btn btn-outline">Explore Services</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-value" data-count="200+">0</div>
+          <div class="hero-stat-label">AI Projects Delivered</div>
+        </div>
+        <div>
+          <div class="hero-stat-value" data-count="98%">0</div>
+          <div class="hero-stat-label">Client Satisfaction</div>
+        </div>
+        <div>
+          <div class="hero-stat-value" data-count="40+">0</div>
+          <div class="hero-stat-label">Enterprise Clients</div>
+        </div>
+        <div>
+          <div class="hero-stat-value" data-count="12+">0</div>
+          <div class="hero-stat-label">Years of Expertise</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CLIENTS MARQUEE ═══════════════ -->
+<section class="clients-section" id="clients">
+  <div class="container">
+    <p class="clients-label">Trusted by industry leaders</p>
+    <div class="clients-track-wrapper">
+      <div class="clients-track">
+        <div class="client-pill">🏦 Big 5 Banks</div>
+        <div class="client-pill">🏢 Fortune 500</div>
+        <div class="client-pill">🛡️ Leading Insurers</div>
+        <div class="client-pill">💰 Pension Funds</div>
+        <div class="client-pill">💳 Payments Leaders</div>
+        <div class="client-pill">📱 Digital Banks</div>
+        <div class="client-pill">📈 Capital Markets</div>
+        <div class="client-pill">🌐 Wealth Managers</div>
+        <!-- Duplicate for infinite loop -->
+        <div class="client-pill">🏦 Big 5 Banks</div>
+        <div class="client-pill">🏢 Fortune 500</div>
+        <div class="client-pill">🛡️ Leading Insurers</div>
+        <div class="client-pill">💰 Pension Funds</div>
+        <div class="client-pill">💳 Payments Leaders</div>
+        <div class="client-pill">📱 Digital Banks</div>
+        <div class="client-pill">📈 Capital Markets</div>
+        <div class="client-pill">🌐 Wealth Managers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section class="section-pad" id="services">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">AI-First Services for the<br><em>Modern Enterprise</em></h2>
+      <p class="section-sub">From strategy to deployment — we build intelligent systems that create lasting competitive advantage.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Generative AI — wide -->
+      <div class="card service-card-wide reveal reveal-delay-1">
+        <div class="card-icon card-icon-blue">🤖</div>
+        <div class="card-content">
+          <h3>Generative AI &amp; Agentic Workflows</h3>
+          <p>Build autonomous AI agents, conversational systems, and LLM-powered applications that transform how your teams operate. From RAG pipelines to multi-agent orchestration, we engineer production-grade GenAI.</p>
+          <div class="service-features">
+            <div class="service-feature">Agentic AI &amp; multi-agent orchestration</div>
+            <div class="service-feature">RAG &amp; enterprise knowledge systems</div>
+            <div class="service-feature">Custom LLM fine-tuning &amp; deployment</div>
+            <div class="service-feature">Conversational bots &amp; copilots</div>
+            <div class="service-feature">SDLC accelerators &amp; code generation</div>
+          </div>
+          <div class="card-tags" style="margin-top:1.5rem">
+            <span class="tag">GPT-4o</span>
+            <span class="tag">Claude</span>
+            <span class="tag">Gemini</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">LlamaIndex</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Digital Transformation -->
+      <div class="card service-card-main reveal reveal-delay-2">
+        <div class="card-icon card-icon-teal">⚡</div>
+        <h3>Digital Transformation</h3>
+        <p>Re-wire your digital footprint. We modernize legacy infrastructure, deploy technology at scale, and create AI-driven customer engagement channels that convert.</p>
+        <div class="service-features" style="margin-top:1rem">
+          <div class="service-feature">Legacy system modernization</div>
+          <div class="service-feature">API-first architecture</div>
+          <div class="service-feature">Omnichannel experience design</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-purple">Microservices</span>
+          <span class="tag tag-purple">API</span>
+          <span class="tag tag-purple">DevOps</span>
+        </div>
+      </div>
+
+      <!-- Cloud & Cybersecurity -->
+      <div class="card service-card-main reveal reveal-delay-1">
+        <div class="card-icon card-icon-purple">☁️</div>
+        <h3>Cloud, Data &amp; Cybersecurity</h3>
+        <p>Accelerate cloud adoption with zero-trust security. We build robust data platforms and AI-ready architectures on AWS, Azure, and GCP with enterprise-grade governance.</p>
+        <div class="service-features" style="margin-top:1rem">
+          <div class="service-feature">Cloud migration &amp; FinOps</div>
+          <div class="service-feature">Zero-trust security frameworks</div>
+          <div class="service-feature">MLOps &amp; data lakehouse</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-purple">AWS</span>
+          <span class="tag tag-purple">Azure</span>
+          <span class="tag tag-purple">GCP</span>
+        </div>
+      </div>
+
+      <!-- Intelligent Automation -->
+      <div class="card service-card-main reveal reveal-delay-2">
+        <div class="card-icon card-icon-gold">⚙️</div>
+        <h3>Intelligent Automation &amp; RPA</h3>
+        <p>Eliminate repetitive work with AI-powered automation. We combine RPA, computer vision, and decision intelligence to build self-healing, autonomous processes.</p>
+        <div class="service-features" style="margin-top:1rem">
+          <div class="service-feature">Intelligent document processing</div>
+          <div class="service-feature">Process mining &amp; optimization</div>
+          <div class="service-feature">AI decision engines</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag">UiPath</span>
+          <span class="tag">Power Automate</span>
+        </div>
+      </div>
+
+      <!-- Contact Center -->
+      <div class="card service-card-main reveal reveal-delay-3">
+        <div class="card-icon card-icon-red">🎙️</div>
+        <h3>Contact Center Modernization</h3>
+        <p>Transform customer service with AI-powered agents, real-time agent assist, and voice AI that delivers personalized, empathetic experiences at scale.</p>
+        <div class="service-features" style="margin-top:1rem">
+          <div class="service-feature">Voice AI &amp; conversational IVR</div>
+          <div class="service-feature">Real-time agent assist &amp; coaching</div>
+          <div class="service-feature">Sentiment analysis &amp; QA automation</div>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Genesys</span>
+          <span class="tag">NICE CX</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ HOW WE WORK ═══════════════ -->
+<section class="section-pad" style="background: linear-gradient(180deg, transparent, rgba(0,212,255,0.03), transparent);">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto;">
+      <div class="section-label">Our Approach</div>
+      <h2 class="section-title">From Vision to <em>Production</em></h2>
+      <p class="section-sub" style="margin:0 auto">A battle-tested methodology that accelerates delivery without sacrificing quality.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-num">01</div>
+        <h4>Discover &amp; Diagnose</h4>
+        <p>Deep-dive into your data, workflows, and goals to identify the highest-value AI opportunities.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-num">02</div>
+        <h4>Design &amp; Architect</h4>
+        <p>Build the technical blueprint — models, pipelines, infrastructure, and integration points.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-num">03</div>
+        <h4>Build &amp; Iterate</h4>
+        <p>Agile delivery with weekly milestones, continuous testing, and stakeholder feedback loops.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="process-num">04</div>
+        <h4>Deploy &amp; Scale</h4>
+        <p>Production launch with MLOps monitoring, model drift detection, and 24/7 support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ AI TRAINING ═══════════════ -->
+<section class="section-pad" id="training">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">AI Training &amp; Enablement</div>
+      <h2 class="section-title">Build an <em>AI-Fluent</em> Organization</h2>
+      <p class="section-sub">Equip your teams with the AI skills needed to lead in an automated world — from executive workshops to hands-on engineering bootcamps.</p>
+    </div>
+
+    <div class="training-hero reveal" style="margin-top:2.5rem">
+      <div>
+        <div class="training-tag">🎓 Industry-Recognized Programs</div>
+        <h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 1rem;">
+          Practical AI Training<br>Built for Business Impact
+        </h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8;">
+          Our training programs are designed by practitioners — not academics. Every course includes real case studies, hands-on labs, and direct application to your industry's challenges.
+        </p>
+        <div style="margin-top:1.5rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a href="pages/contact.html" class="btn btn-primary">Enroll Your Team →</a>
+          <a href="pages/training.html" class="btn btn-outline">View Curriculum</a>
+        </div>
+      </div>
+      <div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <div style="background:rgba(0,212,255,0.06); border:1px solid var(--border); border-radius:12px; padding:1.2rem; text-align:center;">
+            <div style="font-size:1.8rem; font-family:var(--font-display); font-weight:800; color:var(--accent);">500+</div>
+            <div style="font-size:0.78rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-top:0.3rem;">Professionals Trained</div>
+          </div>
+          <div style="background:rgba(123,97,255,0.06); border:1px solid rgba(123,97,255,0.15); border-radius:12px; padding:1.2rem; text-align:center;">
+            <div style="font-size:1.8rem; font-family:var(--font-display); font-weight:800; color:var(--accent-2);">12+</div>
+            <div style="font-size:0.78rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-top:0.3rem;">Training Modules</div>
+          </div>
+          <div style="background:rgba(0,255,200,0.04); border:1px solid rgba(0,255,200,0.1); border-radius:12px; padding:1.2rem; text-align:center;">
+            <div style="font-size:1.8rem; font-family:var(--font-display); font-weight:800; color:#00ffc8;">4.9★</div>
+            <div style="font-size:0.78rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-top:0.3rem;">Avg. Rating</div>
+          </div>
+          <div style="background:rgba(255,190,0,0.04); border:1px solid rgba(255,190,0,0.1); border-radius:12px; padding:1.2rem; text-align:center;">
+            <div style="font-size:1.8rem; font-family:var(--font-display); font-weight:800; color:#ffbe00;">100%</div>
+            <div style="font-size:0.78rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-top:0.3rem;">Online &amp; In-Person</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="training-grid">
+
+      <div class="card training-card reveal reveal-delay-1">
+        <div class="card-icon card-icon-teal">🌱</div>
+        <div class="training-level level-beginner">Beginner · All Teams</div>
+        <h3>AI Literacy &amp; Foundations</h3>
+        <p>Demystify AI for non-technical stakeholders. Covers AI concepts, use cases, ethics, and how to identify automation opportunities.</p>
+        <div class="training-duration">⏱ 1-Day Workshop · Live or Virtual</div>
+        <div class="card-tags">
+          <span class="tag">Executive</span>
+          <span class="tag">Operations</span>
+          <span class="tag">HR</span>
+        </div>
+      </div>
+
+      <div class="card training-card reveal reveal-delay-2">
+        <div class="card-icon card-icon-blue">🤖</div>
+        <div class="training-level level-intermediate">Intermediate · Business Analysts</div>
+        <h3>Generative AI for Business</h3>
+        <p>Hands-on mastery of ChatGPT, Claude, Copilot, and prompt engineering to 10x productivity in daily work and analysis tasks.</p>
+        <div class="training-duration">⏱ 3-Day Bootcamp · Cohort-Based</div>
+        <div class="card-tags">
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">Copilot</span>
+        </div>
+      </div>
+
+      <div class="card training-card reveal reveal-delay-3">
+        <div class="card-icon card-icon-purple">⚙️</div>
+        <div class="training-level level-intermediate">Intermediate · Developers</div>
+        <h3>AI Automation &amp; RPA</h3>
+        <p>Build intelligent bots that handle document processing, data extraction, and workflow automation using modern AI + RPA stacks.</p>
+        <div class="training-duration">⏱ 5-Day Intensive · Hands-On Labs</div>
+        <div class="card-tags">
+          <span class="tag tag-purple">UiPath</span>
+          <span class="tag tag-purple">Power Automate</span>
+        </div>
+      </div>
+
+      <div class="card training-card reveal reveal-delay-1">
+        <div class="card-icon card-icon-gold">🔬</div>
+        <div class="training-level level-advanced">Advanced · Data Scientists</div>
+        <h3>LLM Engineering &amp; RAG</h3>
+        <p>Architect and build enterprise RAG systems, fine-tune LLMs, and deploy scalable AI pipelines using LangChain, LlamaIndex, and vector databases.</p>
+        <div class="training-duration">⏱ 2-Week Program · Project-Based</div>
+        <div class="card-tags">
+          <span class="tag">LangChain</span>
+          <span class="tag">Pinecone</span>
+          <span class="tag">OpenAI</span>
+        </div>
+      </div>
+
+      <div class="card training-card reveal reveal-delay-2">
+        <div class="card-icon card-icon-blue">🎯</div>
+        <div class="training-level level-advanced">Advanced · ML Engineers</div>
+        <h3>Agentic AI Systems</h3>
+        <p>Design and orchestrate multi-agent AI systems. Build autonomous pipelines with tool use, memory, and planning for enterprise workflows.</p>
+        <div class="training-duration">⏱ 2-Week Program · Live Labs</div>
+        <div class="card-tags">
+          <span class="tag">AutoGen</span>
+          <span class="tag">CrewAI</span>
+          <span class="tag">LangGraph</span>
+        </div>
+      </div>
+
+      <div class="card training-card reveal reveal-delay-3">
+        <div class="card-icon card-icon-red">🏛️</div>
+        <div class="training-level level-beginner">All Levels · Leadership</div>
+        <h3>AI Strategy for Executives</h3>
+        <p>Equip C-suite and VPs to define AI roadmaps, govern AI adoption, manage risks, and build data-driven cultures that deliver ROI.</p>
+        <div class="training-duration">⏱ 2-Day Executive Retreat</div>
+        <div class="card-tags">
+          <span class="tag">Strategy</span>
+          <span class="tag">Governance</span>
+          <span class="tag">ROI</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTORS ═══════════════ -->
+<section class="section-pad" id="sectors">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Sector Portfolio</div>
+      <h2 class="section-title">Deep Expertise in <em>High-Stakes</em> Industries</h2>
+      <p class="section-sub">We combine AI expertise with domain knowledge to solve the complex problems unique to each sector.</p>
+    </div>
+
+    <div class="sectors-wrapper">
+      <div class="sector-list reveal reveal-delay-1">
+        <div class="sector-item active" data-sector="banking">
+          <div class="sector-icon card-icon-blue">🏦</div>
+          <div class="sector-info">
+            <h4>Banking &amp; Retail Finance</h4>
+            <p>Fraud detection, credit decisioning, personalization</p>
+          </div>
+        </div>
+        <div class="sector-item" data-sector="insurance">
+          <div class="sector-icon card-icon-purple">🛡️</div>
+          <div class="sector-info">
+            <h4>Insurance</h4>
+            <p>Underwriting AI, claims automation, risk modeling</p>
+          </div>
+        </div>
+        <div class="sector-item" data-sector="payments">
+          <div class="sector-icon card-icon-teal">💳</div>
+          <div class="sector-info">
+            <h4>Payments &amp; Fintech</h4>
+            <p>Real-time fraud, reconciliation, AML compliance</p>
+          </div>
+        </div>
+        <div class="sector-item" data-sector="wealth">
+          <div class="sector-icon card-icon-gold">📈</div>
+          <div class="sector-info">
+            <h4>Wealth &amp; Capital Markets</h4>
+            <p>Portfolio AI, trade surveillance, client insights</p>
+          </div>
+        </div>
+        <div class="sector-item" data-sector="pension">
+          <div class="sector-icon card-icon-red">💼</div>
+          <div class="sector-info">
+            <h4>Pensions &amp; Benefits</h4>
+            <p>Member engagement, actuarial AI, process automation</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sector-detail reveal reveal-delay-2">
+        <div class="sector-detail-content active" id="sector-banking">
+          <div class="section-label">Banking &amp; Retail Finance</div>
+          <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin:0.8rem 0;">AI-Powered Banking at Scale</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">We help banks and credit unions accelerate every part of the customer and operations lifecycle — from intelligent onboarding to real-time fraud detection.</p>
+          <div class="service-features" style="margin-top:1.2rem">
+            <div class="service-feature">Real-time fraud &amp; AML detection models</div>
+            <div class="service-feature">AI-powered credit scoring &amp; decisioning</div>
+            <div class="service-feature">Hyper-personalized next best action</div>
+            <div class="service-feature">Regulatory reporting automation (IFRS9, Basel)</div>
+            <div class="service-feature">AI contact center for retail banking</div>
+          </div>
+        </div>
+        <div class="sector-detail-content" id="sector-insurance">
+          <div class="section-label">Insurance</div>
+          <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin:0.8rem 0;">Smarter Underwriting &amp; Claims</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">Transform the insurance value chain with AI that accelerates underwriting decisions, automates claims processing, and reduces loss ratios.</p>
+          <div class="service-features" style="margin-top:1.2rem">
+            <div class="service-feature">AI underwriting &amp; risk scoring engines</div>
+            <div class="service-feature">Intelligent claims triage &amp; STP</div>
+            <div class="service-feature">Document AI for policy &amp; claims docs</div>
+            <div class="service-feature">Fraud detection &amp; anomaly models</div>
+            <div class="service-feature">Customer self-service AI portals</div>
+          </div>
+        </div>
+        <div class="sector-detail-content" id="sector-payments">
+          <div class="section-label">Payments &amp; Fintech</div>
+          <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin:0.8rem 0;">Intelligent Payments Infrastructure</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">From real-time payments to embedded finance — we help payment companies build the AI layer that powers next-gen financial experiences.</p>
+          <div class="service-features" style="margin-top:1.2rem">
+            <div class="service-feature">Real-time transaction fraud ML models</div>
+            <div class="service-feature">Automated reconciliation &amp; exception mgmt</div>
+            <div class="service-feature">AML transaction monitoring AI</div>
+            <div class="service-feature">Smart routing optimization</div>
+            <div class="service-feature">Open banking API &amp; embedded finance</div>
+          </div>
+        </div>
+        <div class="sector-detail-content" id="sector-wealth">
+          <div class="section-label">Wealth &amp; Capital Markets</div>
+          <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin:0.8rem 0;">AI-Driven Investment Intelligence</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">Unlock alpha and operational efficiency with AI across the investment lifecycle — from research to reporting.</p>
+          <div class="service-features" style="margin-top:1.2rem">
+            <div class="service-feature">Portfolio analytics &amp; AI advisors</div>
+            <div class="service-feature">Trade surveillance &amp; market abuse detection</div>
+            <div class="service-feature">AI-generated investment research</div>
+            <div class="service-feature">Client segmentation &amp; CLV models</div>
+            <div class="service-feature">Regulatory &amp; compliance AI</div>
+          </div>
+        </div>
+        <div class="sector-detail-content" id="sector-pension">
+          <div class="section-label">Pensions &amp; Benefits</div>
+          <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin:0.8rem 0;">Modernizing Pension Administration</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">Help pension funds and benefit administrators deliver better member outcomes with AI-powered engagement and process automation.</p>
+          <div class="service-features" style="margin-top:1.2rem">
+            <div class="service-feature">Member chatbots &amp; self-service AI</div>
+            <div class="service-feature">Actuarial data &amp; AI modeling</div>
+            <div class="service-feature">Benefits administration automation</div>
+            <div class="service-feature">Document digitization &amp; processing</div>
+            <div class="service-feature">Regulatory reporting automation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA BAND ═══════════════ -->
+<section class="cta-band section-pad">
+  <div class="container">
+    <div class="cta-band-inner reveal">
+      <div>
+        <div class="section-label">Ready to Transform?</div>
+        <h2 class="cta-band-title">Let's Build Your<br><em>AI Advantage</em> Together</h2>
+      </div>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="pages/contact.html" class="btn btn-primary">Book a Free Consultation →</a>
+        <a href="pages/training.html" class="btn btn-outline">View Training Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:0.5rem; display:inline-flex">
+          <div class="nav-logo-icon">⬡</div>
+          Nayu<span>Tech</span>
+        </a>
+        <p>Nayu Technologies Inc. is an AI &amp; automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" title="LinkedIn">in</a>
+          <a href="#" class="social-btn" title="Twitter/X">𝕏</a>
+          <a href="#" class="social-btn" title="Email">@</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Generative AI</a></li>
+          <li><a href="#services">Intelligent Automation</a></li>
+          <li><a href="#services">Digital Transformation</a></li>
+          <li><a href="#services">Cloud &amp; Security</a></li>
+          <li><a href="#services">Contact Center AI</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>AI Training</h5>
+        <ul>
+          <li><a href="pages/training.html">AI Literacy</a></li>
+          <li><a href="pages/training.html">GenAI for Business</a></li>
+          <li><a href="pages/training.html">LLM Engineering</a></li>
+          <li><a href="pages/training.html">Agentic AI</a></li>
+          <li><a href="pages/training.html">Executive Strategy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+        <div style="margin-top:2rem">
+          <h5>Office</h5>
+          <p style="font-size:0.82rem; color:var(--text-secondary); line-height:1.8; margin-top:0.5rem">
+            Toronto, Ontario, Canada<br>
+            <a href="mailto:info@nayutechnologies.com" style="color:var(--accent)">info@nayutechnologies.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Nayu Technologies Inc. All rights reserved.</span>
+      <div style="display:flex; gap:1.5rem;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <div class="footer-badge">⬡ AI-Powered Company</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

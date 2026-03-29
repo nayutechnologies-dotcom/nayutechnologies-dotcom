@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Nayu Technologies Inc.</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300d4ff'/><text y='.9em' font-size='70' x='10'>N</text></svg>" />
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .form-input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 0.85rem 1.1rem;
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: var(--border-hover);
+      background: var(--bg-card-hover);
+      box-shadow: 0 0 0 3px rgba(0,212,255,0.08);
+    }
+    textarea.form-input { resize: vertical; min-height: 130px; }
+    select.form-input option { background: var(--bg-card); }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      transition: var(--transition);
+    }
+    .contact-info-item:hover { border-color: var(--border-hover); }
+    .contact-info-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(0,212,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .contact-info-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 0.3rem; }
+    .contact-info-value { font-size: 0.9rem; color: var(--text-primary); }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 2rem; } }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="../index.html" class="nav-logo">
+    <div class="nav-logo-icon">⬡</div>
+    Nayu<span>Tech</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="training.html">AI Training</a></li>
+    <li><a href="../index.html#sectors">Sectors</a></li>
+    <li><a href="contact.html" class="nav-cta btn">Get Started →</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <span class="mobile-close" id="mobile-close">✕</span>
+  <a href="../index.html">Home</a>
+  <a href="../index.html#services">Services</a>
+  <a href="training.html">AI Training</a>
+</div>
+
+<section style="padding: 10rem 0 6rem; position:relative; overflow:hidden;">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="container" style="position:relative;z-index:2">
+    <div class="reveal" style="text-align:center; max-width:560px; margin:0 auto 0;">
+      <div class="section-label">Let's Connect</div>
+      <h1 class="section-title">Start Your <em>AI Journey</em></h1>
+      <p class="section-sub" style="margin:0 auto">Tell us about your project or training needs. We'll get back to you within one business day.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Left: Contact Info -->
+      <div class="reveal">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div>
+            <div class="contact-info-label">Head Office</div>
+            <div class="contact-info-value">Toronto, Ontario, Canada</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">✉️</div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value"><a href="mailto:info@nayutechnologies.com" style="color:var(--accent)">info@nayutechnologies.com</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">💼</div>
+          <div>
+            <div class="contact-info-label">LinkedIn</div>
+            <div class="contact-info-value"><a href="#" style="color:var(--accent)">linkedin.com/company/nayutech</a></div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem; padding:1.5rem; background:linear-gradient(135deg,rgba(0,212,255,0.06),rgba(123,97,255,0.06)); border:1px solid var(--border); border-radius:var(--radius-lg);">
+          <h4 style="font-family:var(--font-display);font-weight:700;margin-bottom:0.5rem;">What to expect:</h4>
+          <div class="service-features">
+            <div class="service-feature">Response within 1 business day</div>
+            <div class="service-feature">Free 30-minute discovery call</div>
+            <div class="service-feature">Custom proposal within 5 days</div>
+            <div class="service-feature">No commitment required</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="card reveal reveal-delay-1">
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div class="form-group">
+              <label class="form-label" for="fname">First Name *</label>
+              <input class="form-input" type="text" id="fname" name="first_name" placeholder="Jane" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lname">Last Name *</label>
+              <input class="form-input" type="text" id="lname" name="last_name" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Work Email *</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="jane@company.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="company">Company</label>
+            <input class="form-input" type="text" id="company" name="company" placeholder="Your Company Inc." />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="service">I'm interested in</label>
+            <select class="form-input" id="service" name="service">
+              <option value="">Select a service...</option>
+              <option>Generative AI &amp; Agentic Workflows</option>
+              <option>Digital Transformation</option>
+              <option>Intelligent Automation &amp; RPA</option>
+              <option>Cloud, Data &amp; Cybersecurity</option>
+              <option>Contact Center Modernization</option>
+              <option>AI Training Programs</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Tell us about your project *</label>
+            <textarea class="form-input" id="message" name="message" placeholder="Describe your challenge, project goals, or training needs..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">
+            Send Message →
+          </button>
+          <p style="text-align:center;font-size:0.75rem;color:var(--text-dim);margin-top:1rem;">
+            By submitting you agree to our Privacy Policy. We never spam.
+          </p>
+        </form>
+        <div id="form-success" style="display:none;text-align:center;padding:2rem;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;">✅</div>
+          <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:800;margin-bottom:0.5rem;">Message Received!</h3>
+          <p style="color:var(--text-secondary)">We'll be in touch within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:2rem;">
+      <span>© 2025 Nayu Technologies Inc.</span>
+      <a href="../index.html" style="color:var(--accent)">← Back to Home</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  const form = document.getElementById('contact-form');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.textContent = 'Error — Try Again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Error — Try Again';
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
