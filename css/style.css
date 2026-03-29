@@ -509,6 +509,9 @@ section { position: relative; z-index: 1; }
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 3.5rem;
+  /* Keep cards at natural content height to avoid awkward stretching
+     beside the wide feature card. */
+  align-items: start;
 }
 
 .service-card-main {
