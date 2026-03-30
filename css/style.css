@@ -327,11 +327,29 @@ section { position: relative; z-index: 1; }
 
 .hero-title .line { display: block; }
 
+/* Reserve space for rotating hero phrase so layout does not jump */
+.hero-typed-line { min-height: 1.12em; }
+
+.hero-typed-slot {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: top;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
 .hero-title .gradient-text {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+@media (max-width: 540px) {
+  .hero-typed-slot {
+    white-space: normal;
+    min-height: 2.35em;
+  }
 }
 
 .hero-subtitle {

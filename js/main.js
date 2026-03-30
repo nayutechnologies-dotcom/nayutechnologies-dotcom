@@ -121,7 +121,56 @@ function initParticles(canvasId) {
 
 initParticles('particles-canvas');
 
-// ── Typed text animation ──
+// ── Typed text animation (slot width = longest phrase → no page shift) ──
+const HERO_TYPED_PHRASES = [
+  'Artificial Intelligence',
+  'Automation at Scale',
+  'Generative AI',
+  'Digital Transformation',
+  'Agentic Workflows'
+];
+
+function debounce(fn, ms) {
+  let t;
+  return () => {
+    clearTimeout(t);
+    t = setTimeout(fn, ms);
+  };
+}
+
+function applyHeroTypedSlotWidth() {
+  const inner = document.getElementById('typed-text');
+  const slot = inner?.closest('.hero-typed-slot');
+  if (!inner || !slot) return;
+
+  const measure = document.createElement('span');
+  const cs = window.getComputedStyle(inner);
+  measure.style.cssText = [
+    'position:absolute',
+    'left:-99999px',
+    'top:0',
+    'visibility:hidden',
+    'white-space:nowrap',
+    `font-family:${cs.fontFamily}`,
+    `font-size:${cs.fontSize}`,
+    `font-weight:${cs.fontWeight}`,
+    `letter-spacing:${cs.letterSpacing}`,
+    `font-style:${cs.fontStyle}`
+  ].join(';');
+  document.body.appendChild(measure);
+
+  let maxW = 0;
+  HERO_TYPED_PHRASES.forEach((phrase) => {
+    measure.textContent = phrase;
+    maxW = Math.max(maxW, measure.getBoundingClientRect().width);
+  });
+  document.body.removeChild(measure);
+
+  const line = slot.closest('.hero-typed-line');
+  const cap = line ? line.getBoundingClientRect().width : Infinity;
+  slot.style.minWidth = `${Math.min(Math.ceil(maxW) + 2, Math.floor(cap))}px`;
+}
+
 function typeWriter(element, texts, speed = 80) {
   if (!element) return;
   let textIndex = 0, charIndex = 0, deleting = false;
@@ -149,13 +198,12 @@ function typeWriter(element, texts, speed = 80) {
   type();
 }
 
-typeWriter(document.getElementById('typed-text'), [
-  'Artificial Intelligence',
-  'Automation at Scale',
-  'Generative AI',
-  'Digital Transformation',
-  'Agentic Workflows'
-]);
+applyHeroTypedSlotWidth();
+window.addEventListener('resize', debounce(applyHeroTypedSlotWidth, 120));
+window.addEventListener('load', applyHeroTypedSlotWidth);
+document.fonts?.ready?.then(applyHeroTypedSlotWidth);
+
+typeWriter(document.getElementById('typed-text'), HERO_TYPED_PHRASES);
 
 // ── Counter animation ──
 function animateCounter(el, target, duration = 1800) {
