@@ -238,11 +238,18 @@ section { position: relative; z-index: 1; }
    HERO
 ============================ */
 .hero {
-  min-height: 100vh;
+  position: relative;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   padding-top: 5rem;
+  padding-bottom: 2.5rem;
   overflow: hidden;
+  /* Fixed viewport height: svh stays stable when mobile chrome shows/hides */
+  min-height: 100vh;
+  min-height: 100svh;
+  height: 100vh;
+  height: 100svh;
 }
 
 .hero-orb {
@@ -978,9 +985,28 @@ section { position: relative; z-index: 1; }
   .training-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    min-height: 100vh;
+    padding-top: 4.5rem;
+    padding-bottom: 3rem;
+  }
   .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
   .cta-band-inner { flex-direction: column; text-align: center; }
   .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+@media (max-height: 700px) {
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    min-height: 100vh;
+    padding-top: 4.25rem;
+    padding-bottom: 2rem;
+  }
+  .hero-stats { margin-top: 2.5rem; }
+  .hero-subtitle { margin: 1.25rem 0 2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
