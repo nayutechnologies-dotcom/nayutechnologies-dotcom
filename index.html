@@ -1,564 +1,1326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nayu Technologies Inc. — AI &amp; Automation Consulting</title>
-<meta name="description" content="Nayu Technologies Inc. — Accelerating businesses with AI, automation, and digital transformation across finance, insurance, and enterprise." />
-<meta property="og:title" content="Nayu Technologies Inc. — AI &amp; Automation Consulting" />
-<meta property="og:description" content="Empowering enterprises with cutting-edge AI, intelligent automation, and end-to-end digital transformation." />
-<meta property="og:type" content="website" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&amp;display=optional" />
-<link rel="stylesheet" href="css/style.css" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300d4ff'/><text y='.9em' font-size='70' x='10'>N</text></svg>" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO: Title & Description ── -->
+  <title>Nayu Technologies Inc. — AI & Automation Consulting</title>
+  <meta name="description" content="Nayu Technologies empowers enterprises with AI, intelligent automation, and digital transformation. Serving Big 5 Banks, Fortune 500, and financial services leaders from Toronto, Canada." />
+  <link rel="canonical" href="https://www.nayutechnologies.com/" />
+
+  <!-- ── SEO: Open Graph (LinkedIn / Facebook) ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://www.nayutechnologies.com/" />
+  <meta property="og:title"       content="Nayu Technologies — AI & Automation Consulting" />
+  <meta property="og:description" content="Enterprise AI, intelligent automation, and digital transformation for financial services and beyond. Based in Toronto." />
+  <meta property="og:image"       content="https://www.nayutechnologies.com/assets/og-image.png" />
+
+  <!-- ── SEO: Twitter Card ── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Nayu Technologies — AI & Automation Consulting" />
+  <meta name="twitter:description" content="Enterprise AI, intelligent automation, and digital transformation for financial services and beyond." />
+  <meta name="twitter:image"       content="https://www.nayutechnologies.com/assets/og-image.png" />
+
+  <!-- ── Favicon (inline SVG hex mark) ── -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpolygon points='16,2 28,9 28,23 16,30 4,23 4,9' fill='%237c5cfc22' stroke='%237c5cfc' stroke-width='2'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%237c5cfc' font-size='13' font-weight='700' font-family='sans-serif'%3EN%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0f'/%3E%3Cpolygon points='16,2 28,9 28,23 16,30 4,23 4,9' fill='%237c5cfc33' stroke='%237c5cfc' stroke-width='2'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%237c5cfc' font-size='13' font-weight='700' font-family='sans-serif'%3EN%3C/text%3E%3C/svg%3E" />
+
+  <!-- ── SEO: JSON-LD Structured Data ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Nayu Technologies Inc.",
+    "url": "https://www.nayutechnologies.com",
+    "logo": "https://www.nayutechnologies.com/assets/logo.png",
+    "description": "AI and automation consulting for enterprises in financial services and beyond.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "Ontario",
+      "addressCountry": "CA"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "url": "https://www.nayutechnologies.com/pages/contact.html"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/nayutech"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════
+       DESIGN SYSTEM  (unchanged from original)
+    ═══════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0a0a0f;
+      --bg2:      #11111a;
+      --bg3:      #17171f;
+      --card:     #13131c;
+      --border:   rgba(255,255,255,0.08);
+      --border-h: rgba(255,255,255,0.16);
+      --accent:   #7c5cfc;
+      --accent2:  #a78bfa;
+      --cyan:     #22d3ee;
+      --text:     #f0eeff;
+      --muted:    #8b8aac;
+      --muted2:   #5e5d7a;
+      --tag-bg:   rgba(124,92,252,0.12);
+      --tag-text: #a78bfa;
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius: 14px;
+      --section-gap: 120px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    .page-bg-grid {
+      position: fixed; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Layout ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    section { position: relative; z-index: 1; }
+
+    /* ═══════════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════════ */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,10,15,0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+      font-family: var(--font-head); font-weight: 700; font-size: 18px;
+      color: var(--text); letter-spacing: -0.02em;
+    }
+    .hex-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 14px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent) !important; color: #fff !important;
+      padding: 8px 18px; border-radius: 8px; font-weight: 500 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent2) !important; }
+
+    /* Mobile nav */
+    .nav-hamburger {
+      display: none; background: none; border: 1px solid var(--border);
+      border-radius: 8px; padding: 6px 10px; cursor: pointer; color: var(--muted);
+      font-size: 18px;
+    }
+    .mobile-menu {
+      display: none; position: fixed; inset: 64px 0 0 0;
+      background: rgba(10,10,15,0.97); backdrop-filter: blur(20px);
+      z-index: 99; flex-direction: column; gap: 0;
+      padding: 24px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      display: block; padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none; color: var(--text);
+      font-size: 18px; font-family: var(--font-head);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    .hero {
+      padding: 100px 24px 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 500px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(124,92,252,0.2) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-trust-bar {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--tag-bg); border: 1px solid rgba(124,92,252,0.2);
+      border-radius: 100px; padding: 6px 16px;
+      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent2); margin-bottom: 32px;
+    }
+    .hero-trust-bar::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.7)} }
+
+    .hero h1 {
+      font-family: var(--font-head); font-size: clamp(38px,5.5vw,72px);
+      font-weight: 800; letter-spacing: -0.03em; line-height: 1.06;
+      max-width: 820px; margin: 0 auto 24px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent2) 0%, var(--cyan) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-sub {
+      color: var(--muted); font-size: 18px; font-weight: 300;
+      max-width: 560px; margin: 0 auto 40px; line-height: 1.65;
+    }
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: #fff;
+      padding: 14px 28px; border-radius: 10px;
+      text-decoration: none; font-weight: 500; font-size: 15px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--border-h); color: var(--text);
+      padding: 14px 28px; border-radius: 10px;
+      text-decoration: none; font-size: 15px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(124,92,252,0.4); background: var(--tag-bg); }
+
+    /* ── Stats ── */
+    .stats-row {
+      display: flex; gap: 0; justify-content: center;
+      margin: 64px auto 0; max-width: 800px;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; background: var(--card);
+    }
+    .stat {
+      flex: 1; padding: 28px 20px; text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--font-head); font-size: 36px; font-weight: 800;
+      letter-spacing: -0.03em; color: var(--text); display: block;
+    }
+    .stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+    /* ── Ticker ── */
+    .ticker-wrap {
+      margin: 48px 0 0; overflow: hidden;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 14px 0; background: var(--bg2);
+    }
+    .ticker-inner {
+      display: flex; gap: 48px; width: max-content;
+      animation: ticker 28s linear infinite;
+    }
+    .ticker-inner:hover { animation-play-state: paused; }
+    @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .ticker-item { font-size: 14px; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 10px; }
+    .ticker-item span { font-size: 16px; }
+
+    /* ═══════════════════════════════════════════
+       SECTION HEADER (reusable)
+    ═══════════════════════════════════════════ */
+    .section-eyebrow {
+      display: inline-block;
+      background: var(--tag-bg); border: 1px solid rgba(124,92,252,0.2);
+      border-radius: 100px; padding: 5px 14px;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent2); margin-bottom: 20px;
+    }
+    .section-title {
+      font-family: var(--font-head); font-size: clamp(28px,3.5vw,44px);
+      font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .section-title em { font-style: normal; background: linear-gradient(135deg,var(--accent2),var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .section-sub { color: var(--muted); font-size: 16px; max-width: 520px; }
+
+    /* ═══════════════════════════════════════════
+       SERVICES
+    ═══════════════════════════════════════════ */
+    #services { padding: var(--section-gap) 0; }
+    .services-header { text-align: center; margin-bottom: 60px; }
+    .services-header .section-sub { margin: 0 auto; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .service-card:hover {
+      border-color: rgba(124,92,252,0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+    .service-icon { font-size: 28px; }
+    .service-card h3 {
+      font-family: var(--font-head); font-size: 18px; font-weight: 700;
+      letter-spacing: -0.02em; line-height: 1.25;
+    }
+    .service-card p { color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .service-bullets { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+    .service-bullet {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: var(--muted);
+    }
+    .service-bullet::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+    .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); }
+    .stag {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 6px; padding: 3px 10px;
+      font-size: 11px; color: var(--muted2); font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════════
+       APPROACH  (timeline)
+    ═══════════════════════════════════════════ */
+    #approach { padding: var(--section-gap) 0; background: var(--bg2); }
+    .approach-grid {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 60px;
+    }
+    .approach-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px; position: relative;
+    }
+    .approach-num {
+      font-family: var(--font-head); font-size: 48px; font-weight: 800;
+      color: rgba(124,92,252,0.12); line-height: 1; margin-bottom: 12px;
+    }
+    .approach-card h4 { font-family: var(--font-head); font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .approach-card p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+
+    /* ═══════════════════════════════════════════
+       TRAINING
+    ═══════════════════════════════════════════ */
+    #training { padding: var(--section-gap) 0; }
+    .training-header { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; margin-bottom: 48px; }
+    .training-stats { display: flex; gap: 32px; flex-shrink: 0; }
+    .tstat { text-align: center; }
+    .tstat-num { font-family: var(--font-head); font-size: 28px; font-weight: 800; color: var(--accent2); display: block; }
+    .tstat-label { font-size: 12px; color: var(--muted); }
+    .training-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .training-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .training-card:hover { border-color: rgba(124,92,252,0.35); transform: translateY(-2px); }
+    .training-level {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted2);
+    }
+    .training-icon { font-size: 24px; }
+    .training-card h3 { font-family: var(--font-head); font-size: 16px; font-weight: 700; line-height: 1.3; }
+    .training-card p { color: var(--muted); font-size: 13px; line-height: 1.6; flex: 1; }
+    .training-meta {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; color: var(--muted2);
+      padding-top: 12px; border-top: 1px solid var(--border);
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTORS
+    ═══════════════════════════════════════════ */
+    #sectors { padding: var(--section-gap) 0; background: var(--bg2); }
+    .sector-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 40px 0 32px; }
+    .sector-tab {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 100px; padding: 8px 18px;
+      font-size: 14px; color: var(--muted); cursor: pointer;
+      transition: all 0.18s; font-family: var(--font-body);
+    }
+    .sector-tab:hover, .sector-tab.active {
+      background: var(--tag-bg); border-color: rgba(124,92,252,0.4); color: var(--accent2);
+    }
+    .sector-panel { display: none; }
+    .sector-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    .sector-list { display: flex; flex-direction: column; gap: 10px; }
+    .sector-item {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 16px; font-size: 14px; color: var(--muted);
+    }
+    .sector-item::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+    .sector-info { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
+    .sector-info h3 { font-family: var(--font-head); font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+    .sector-info p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+    /* ═══════════════════════════════════════════
+       TESTIMONIALS  ← NEW
+    ═══════════════════════════════════════════ */
+    #testimonials { padding: var(--section-gap) 0; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 56px; }
+    .testimonial-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px;
+      display: flex; flex-direction: column; gap: 20px;
+      transition: border-color 0.2s;
+    }
+    .testimonial-card:hover { border-color: rgba(124,92,252,0.3); }
+    .testimonial-stars { color: #f59e0b; font-size: 14px; letter-spacing: 2px; }
+    .testimonial-quote { color: var(--muted); font-size: 15px; line-height: 1.7; font-style: italic; flex: 1; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .author-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .author-info .name { font-size: 14px; font-weight: 500; color: var(--text); }
+    .author-info .role { font-size: 12px; color: var(--muted2); }
+
+    /* ═══════════════════════════════════════════
+       BLOG PREVIEW  ← NEW
+    ═══════════════════════════════════════════ */
+    #blog-preview { padding: var(--section-gap) 0; background: var(--bg2); }
+    .blog-preview-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 16px; }
+    .blog-preview-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .blog-preview-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      text-decoration: none; color: inherit;
+      transition: border-color 0.25s, transform 0.25s;
+      display: flex; flex-direction: column;
+    }
+    .blog-preview-card:hover { border-color: rgba(124,92,252,0.4); transform: translateY(-3px); }
+    .blog-preview-visual {
+      height: 160px; position: relative; overflow: hidden;
+      background: var(--bg3);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .blog-preview-visual svg { opacity: 0.15; }
+    .blog-preview-content { padding: 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .blog-preview-tag {
+      display: inline-block;
+      background: var(--tag-bg); border: 1px solid rgba(124,92,252,0.2);
+      border-radius: 100px; padding: 3px 12px;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--accent2);
+    }
+    .blog-preview-title { font-family: var(--font-head); font-size: 17px; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; }
+    .blog-preview-excerpt { color: var(--muted); font-size: 13px; line-height: 1.65; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .blog-preview-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted2); }
+    .blog-read-link { color: var(--accent2); font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 4px; }
+
+    /* ═══════════════════════════════════════════
+       ABOUT / TEAM  ← NEW
+    ═══════════════════════════════════════════ */
+    #about { padding: var(--section-gap) 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 56px; }
+    .about-text h2 { font-family: var(--font-head); font-size: clamp(24px,3vw,36px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
+    .about-text p { color: var(--muted); font-size: 15px; line-height: 1.8; margin-bottom: 14px; }
+    .about-values { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+    .about-value {
+      display: flex; gap: 14px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px 18px;
+    }
+    .about-value-icon { font-size: 20px; flex-shrink: 0; }
+    .about-value h4 { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+    .about-value p { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0; }
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .team-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: border-color 0.2s;
+    }
+    .team-card:hover { border-color: rgba(124,92,252,0.3); }
+    .team-avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 700; color: #fff;
+    }
+    .team-card h4 { font-family: var(--font-head); font-size: 16px; font-weight: 700; }
+    .team-card .role { font-size: 13px; color: var(--accent2); }
+    .team-card p { color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+    /* ═══════════════════════════════════════════
+       FINAL CTA
+    ═══════════════════════════════════════════ */
+    #cta { padding: var(--section-gap) 0; background: var(--bg2); }
+    .cta-box {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 24px; padding: 72px 48px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-box::before {
+      content: '';
+      position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 350px;
+      background: radial-gradient(ellipse, rgba(124,92,252,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-box h2 {
+      font-family: var(--font-head); font-size: clamp(28px,3.5vw,48px);
+      font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px;
+    }
+    .cta-box p { color: var(--muted); font-size: 16px; max-width: 480px; margin: 0 auto 36px; }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    footer {
+      border-top: 1px solid var(--border); background: var(--bg2);
+      padding: 56px 24px 32px; position: relative; z-index: 1;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p { color: var(--muted); font-size: 14px; margin: 12px 0 20px; max-width: 280px; line-height: 1.6; }
+    .footer-socials { display: flex; gap: 12px; }
+    .social-btn {
+      width: 36px; height: 36px;
+      border: 1px solid var(--border); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); text-decoration: none; font-size: 13px;
+      transition: all 0.2s;
+    }
+    .social-btn:hover { border-color: var(--accent); color: var(--accent2); }
+    .footer-col h4 {
+      font-family: var(--font-head); font-size: 13px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text); margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--text); }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { color: var(--muted2); font-size: 13px; }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-links a { color: var(--muted2); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: var(--text); }
+    .footer-ai-badge { color: var(--muted2); font-size: 12px; display: flex; align-items: center; gap: 6px; }
+
+    /* ── Scroll-to-top button ── */
+    #scrollTop {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+      width: 44px; height: 44px;
+      background: var(--accent); border: none; border-radius: 50%;
+      color: #fff; font-size: 18px; cursor: pointer;
+      display: none; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(124,92,252,0.4);
+      transition: background 0.2s, transform 0.15s;
+    }
+    #scrollTop.visible { display: flex; }
+    #scrollTop:hover { background: var(--accent2); transform: translateY(-2px); }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 960px) {
+      .approach-grid { grid-template-columns: repeat(2,1fr); }
+      .training-grid { grid-template-columns: repeat(2,1fr); }
+      .testimonials-grid { grid-template-columns: repeat(2,1fr); }
+      .blog-preview-grid { grid-template-columns: repeat(2,1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .training-header { grid-template-columns: 1fr; }
+      .training-stats { justify-content: flex-start; }
+    }
+    @media (max-width: 640px) {
+      :root { --section-gap: 72px; }
+      .stats-row { flex-direction: column; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat:last-child { border-bottom: none; }
+      .approach-grid { grid-template-columns: 1fr; }
+      .training-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .blog-preview-grid { grid-template-columns: 1fr; }
+      .sector-panel.active { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .cta-box { padding: 48px 24px; }
+    }
+  </style>
 </head>
 <body>
+<div class="page-bg-grid"></div>
 
-<!-- ═══════════════ NAVBAR ═══════════════ -->
-<nav class="navbar" id="navbar">
-  <a href="index.html" class="nav-logo">
-    <div class="nav-logo-icon">⬡</div>
-    Nayu<span>Tech</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="pages/services.html">Services</a></li>
-    <li><a href="pages/training.html">AI Training</a></li>
-    <li><a href="pages/sectors.html">Sectors</a></li>
-    <li><a href="pages/clients.html">Clients</a></li>
-    <li><a href="pages/contact.html" class="nav-cta btn">Get Started →</a></li>
-  </ul>
-  <div class="nav-hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-    <span></span><span></span><span></span>
+<!-- ═══════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="hex-icon">
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+          <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" fill="rgba(124,92,252,0.15)" stroke="#7c5cfc" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#7c5cfc" font-size="13" font-weight="700" font-family="sans-serif">N</text>
+        </svg>
+      </div>
+      NayuTech
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#training">AI Training</a></li>
+      <li><a href="#sectors">Sectors</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="pages/blog.html">Blog</a></li>
+      <li><a href="pages/contact.html" class="nav-cta">Get Started →</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-  <span class="mobile-close" id="mobile-close" role="button" tabindex="0" aria-label="Close menu">✕</span>
-  <a href="pages/services.html">Services</a>
-  <a href="pages/training.html">AI Training</a>
-  <a href="pages/sectors.html">Sectors</a>
-  <a href="pages/clients.html">Clients</a>
-  <a href="pages/contact.html" style="color: var(--accent)">Get Started →</a>
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services"       onclick="closeMobileMenu()">Services</a>
+  <a href="#training"       onclick="closeMobileMenu()">AI Training</a>
+  <a href="#sectors"        onclick="closeMobileMenu()">Sectors</a>
+  <a href="#about"          onclick="closeMobileMenu()">About</a>
+  <a href="pages/blog.html" onclick="closeMobileMenu()">Blog</a>
+  <a href="pages/contact.html" onclick="closeMobileMenu()" style="color:var(--accent2)">Get Started →</a>
 </div>
 
-<!-- ═══════════════ HERO ═══════════════ -->
-<section class="hero" id="home">
-<canvas id="particles-canvas"></canvas>
-<div class="hero-orb hero-orb-1"></div>
-<div class="hero-orb hero-orb-2"></div>
-<div class="hero-orb hero-orb-3"></div>
-<div class="container">
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span class="hero-badge-dot"></span>
-      Trusted by leading enterprises globally
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-trust-bar">Trusted by leading enterprises globally</div>
+    <h1>The Future of Artificial<br>Intelligence <em>Starts Here.</em></h1>
+    <p class="hero-sub">Nayu Technologies empowers enterprises with cutting-edge AI, intelligent automation, and end-to-end digital transformation — delivering measurable outcomes at unprecedented speed.</p>
+    <div class="hero-ctas">
+      <a href="pages/contact.html" class="btn-primary">Start Your AI Journey →</a>
+      <a href="#services" class="btn-ghost">Explore Services</a>
     </div>
-    <h1 class="hero-title">
-      <span class="line">The Future of</span>
-      <span class="line hero-typed-line">
-        <span class="hero-typed-slot">
-          <span class="gradient-text" id="typed-text">Artificial Intelligence</span>
-        </span>
-      </span>
-      <span class="line">Starts Here.</span>
-    </h1>
-    <p class="hero-subtitle">
-      Nayu Technologies empowers enterprises with cutting-edge AI, intelligent automation, and end-to-end digital transformation — delivering measurable outcomes at unprecedented speed.
-    </p>
-    <div class="hero-actions">
-      <a href="pages/contact.html" class="btn btn-primary">Start Your AI Journey →</a>
-      <a href="pages/services.html" class="btn btn-outline">Explore Services</a>
-    </div>
-    <div class="hero-stats">
-      <div>
-        <div class="hero-stat-value" data-count="200+">200+</div>
-        <div class="hero-stat-label">AI Projects Delivered</div>
+
+    <!-- Stats with hard-coded fallbacks, animated on scroll -->
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-num" data-target="50" data-suffix="+">50+</span>
+        <div class="stat-label">AI Projects Delivered</div>
       </div>
-      <div>
-        <div class="hero-stat-value" data-count="98%">98%</div>
-        <div class="hero-stat-label">Client Satisfaction</div>
+      <div class="stat">
+        <span class="stat-num" data-target="98" data-suffix="%">98%</span>
+        <div class="stat-label">Client Satisfaction</div>
       </div>
-      <div>
-        <div class="hero-stat-value" data-count="40+">40+</div>
-        <div class="hero-stat-label">Enterprise Clients</div>
+      <div class="stat">
+        <span class="stat-num" data-target="30" data-suffix="+">30+</span>
+        <div class="stat-label">Enterprise Clients</div>
       </div>
-      <div>
-        <div class="hero-stat-value" data-count="12+">12+</div>
-        <div class="hero-stat-label">Years of Expertise</div>
+      <div class="stat">
+        <span class="stat-num" data-target="6" data-suffix="+">6+</span>
+        <div class="stat-label">Years of Expertise</div>
       </div>
     </div>
   </div>
-</div>
 </section>
 
-<!-- ═══════════════ CLIENTS MARQUEE ═══════════════ -->
-<section class="clients-section" id="clients">
-<div class="container">
-  <p class="clients-label">Trusted by industry leaders</p>
-  <div class="clients-track-wrapper">
-    <div class="clients-track">
-      <div class="client-pill">🏦 Big 5 Banks</div>
-      <div class="client-pill">🏢 Fortune 500</div>
-      <div class="client-pill">🛡️ Leading Insurers</div>
-      <div class="client-pill">💰 Pension Funds</div>
-      <div class="client-pill">💳 Payments Leaders</div>
-      <div class="client-pill">📱 Digital Banks</div>
-      <div class="client-pill">📈 Capital Markets</div>
-      <div class="client-pill">🌐 Wealth Managers</div>
-      <!-- Duplicate for infinite loop -->
-      <div class="client-pill">🏦 Big 5 Banks</div>
-      <div class="client-pill">🏢 Fortune 500</div>
-      <div class="client-pill">🛡️ Leading Insurers</div>
-      <div class="client-pill">💰 Pension Funds</div>
-      <div class="client-pill">💳 Payments Leaders</div>
-      <div class="client-pill">📱 Digital Banks</div>
-      <div class="client-pill">📈 Capital Markets</div>
-      <div class="client-pill">🌐 Wealth Managers</div>
-    </div>
+<!-- Ticker -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span>🏦</span> Big 5 Banks</span>
+    <span class="ticker-item"><span>🏢</span> Fortune 500</span>
+    <span class="ticker-item"><span>🛡️</span> Leading Insurers</span>
+    <span class="ticker-item"><span>💰</span> Pension Funds</span>
+    <span class="ticker-item"><span>💳</span> Payments Leaders</span>
+    <span class="ticker-item"><span>📱</span> Digital Banks</span>
+    <span class="ticker-item"><span>📈</span> Capital Markets</span>
+    <span class="ticker-item"><span>🌐</span> Wealth Managers</span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item"><span>🏦</span> Big 5 Banks</span>
+    <span class="ticker-item"><span>🏢</span> Fortune 500</span>
+    <span class="ticker-item"><span>🛡️</span> Leading Insurers</span>
+    <span class="ticker-item"><span>💰</span> Pension Funds</span>
+    <span class="ticker-item"><span>💳</span> Payments Leaders</span>
+    <span class="ticker-item"><span>📱</span> Digital Banks</span>
+    <span class="ticker-item"><span>📈</span> Capital Markets</span>
+    <span class="ticker-item"><span>🌐</span> Wealth Managers</span>
   </div>
 </div>
-</section>
 
-<!-- ═══════════════ SERVICES PREVIEW ═══════════════ -->
-<section class="section-pad" id="services">
-<div class="container">
-  <div class="reveal">
-    <div class="section-label">What We Do</div>
-    <h2 class="section-title">AI-First Services for the<br><em>Modern Enterprise</em></h2>
-    <p class="section-sub">From strategy to deployment — we build intelligent systems that create lasting competitive advantage.</p>
-  </div>
+<!-- ═══════════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-title">AI-First Services for the <em>Modern Enterprise</em></h2>
+      <p class="section-sub">From strategy to deployment — we build intelligent systems that create lasting competitive advantage.</p>
+    </div>
+    <div class="services-grid">
 
-  <div class="services-grid">
-    <!-- Generative AI — wide -->
-    <div class="card service-card-wide reveal reveal-delay-1">
-      <div class="card-icon card-icon-blue">🤖</div>
-      <div class="card-content">
-        <h3>Generative AI &amp; Agentic Workflows</h3>
-        <p>Build autonomous AI agents, conversational systems, and LLM-powered applications that transform how your teams operate. From RAG pipelines to multi-agent orchestration, we engineer production-grade GenAI.</p>
-        <div class="service-features">
-          <div class="service-feature">Agentic AI &amp; multi-agent orchestration</div>
-          <div class="service-feature">RAG &amp; enterprise knowledge systems</div>
-          <div class="service-feature">Custom LLM fine-tuning &amp; deployment</div>
-          <div class="service-feature">Conversational bots &amp; copilots</div>
-          <div class="service-feature">SDLC accelerators &amp; code generation</div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>Generative AI & Agentic Workflows</h3>
+        <p>Build autonomous AI agents, conversational systems, and LLM-powered applications that transform how your teams operate.</p>
+        <div class="service-bullets">
+          <div class="service-bullet">Agentic AI & multi-agent orchestration</div>
+          <div class="service-bullet">RAG & enterprise knowledge systems</div>
+          <div class="service-bullet">Custom LLM fine-tuning & deployment</div>
+          <div class="service-bullet">Conversational bots & copilots</div>
+          <div class="service-bullet">SDLC accelerators & code generation</div>
         </div>
-        <div class="card-tags" style="margin-top:1.5rem">
-          <span class="tag">GPT-4o</span>
-          <span class="tag">Claude</span>
-          <span class="tag">Gemini</span>
-          <span class="tag">LangChain</span>
-          <span class="tag">LlamaIndex</span>
+        <div class="service-tags">
+          <span class="stag">GPT-4o</span><span class="stag">Claude</span><span class="stag">Gemini</span><span class="stag">LangChain</span><span class="stag">LlamaIndex</span>
         </div>
       </div>
-    </div>
 
-    <!-- Digital Transformation -->
-    <div class="card service-card-main reveal reveal-delay-2">
-      <div class="card-icon card-icon-teal">⚡</div>
-      <h3>Digital Transformation</h3>
-      <p>Re-wire your digital footprint. We modernize legacy infrastructure, deploy technology at scale, and create AI-driven customer engagement channels that convert.</p>
-      <div class="service-features" style="margin-top:1rem">
-        <div class="service-feature">Legacy system modernization</div>
-        <div class="service-feature">API-first architecture</div>
-        <div class="service-feature">Omnichannel experience design</div>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Digital Transformation</h3>
+        <p>Re-wire your digital footprint. We modernize legacy infrastructure and create AI-driven customer engagement channels that convert.</p>
+        <div class="service-bullets">
+          <div class="service-bullet">Legacy system modernization</div>
+          <div class="service-bullet">API-first architecture</div>
+          <div class="service-bullet">Omnichannel experience design</div>
+        </div>
+        <div class="service-tags">
+          <span class="stag">Microservices</span><span class="stag">API</span><span class="stag">DevOps</span>
+        </div>
       </div>
-      <div class="card-tags">
-        <span class="tag tag-purple">Microservices</span>
-        <span class="tag tag-purple">API</span>
-        <span class="tag tag-purple">DevOps</span>
-      </div>
-    </div>
 
-    <!-- Cloud & Cybersecurity -->
-    <div class="card service-card-main reveal reveal-delay-1">
-      <div class="card-icon card-icon-purple">☁️</div>
-      <h3>Cloud, Data &amp; Cybersecurity</h3>
-      <p>Accelerate cloud adoption with zero-trust security. We build robust data platforms and AI-ready architectures on AWS, Azure, and GCP with enterprise-grade governance.</p>
-      <div class="service-features" style="margin-top:1rem">
-        <div class="service-feature">Cloud migration &amp; FinOps</div>
-        <div class="service-feature">Zero-trust security frameworks</div>
-        <div class="service-feature">MLOps &amp; data lakehouse</div>
+      <div class="service-card">
+        <div class="service-icon">☁️</div>
+        <h3>Cloud, Data & Cybersecurity</h3>
+        <p>Accelerate cloud adoption with zero-trust security. We build robust data platforms and AI-ready architectures on AWS, Azure, and GCP.</p>
+        <div class="service-bullets">
+          <div class="service-bullet">Cloud migration & FinOps</div>
+          <div class="service-bullet">Zero-trust security frameworks</div>
+          <div class="service-bullet">MLOps & data lakehouse</div>
+        </div>
+        <div class="service-tags">
+          <span class="stag">AWS</span><span class="stag">Azure</span><span class="stag">GCP</span>
+        </div>
       </div>
-      <div class="card-tags">
-        <span class="tag tag-purple">AWS</span>
-        <span class="tag tag-purple">Azure</span>
-        <span class="tag tag-purple">GCP</span>
-      </div>
-    </div>
 
-    <!-- Intelligent Automation -->
-    <div class="card service-card-main reveal reveal-delay-2">
-      <div class="card-icon card-icon-gold">⚙️</div>
-      <h3>Intelligent Automation &amp; RPA</h3>
-      <p>Eliminate repetitive work with AI-powered automation. We combine RPA, computer vision, and decision intelligence to build self-healing, autonomous processes.</p>
-      <div class="service-features" style="margin-top:1rem">
-        <div class="service-feature">Intelligent document processing</div>
-        <div class="service-feature">Process mining &amp; optimization</div>
-        <div class="service-feature">AI decision engines</div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Intelligent Automation & RPA</h3>
+        <p>Eliminate repetitive work with AI-powered automation combining RPA, computer vision, and decision intelligence.</p>
+        <div class="service-bullets">
+          <div class="service-bullet">Intelligent document processing</div>
+          <div class="service-bullet">Process mining & optimization</div>
+          <div class="service-bullet">AI decision engines</div>
+        </div>
+        <div class="service-tags">
+          <span class="stag">UiPath</span><span class="stag">Power Automate</span>
+        </div>
       </div>
-      <div class="card-tags">
-        <span class="tag">UiPath</span>
-        <span class="tag">Power Automate</span>
-      </div>
-    </div>
 
-    <!-- Contact Center -->
-    <div class="card service-card-main reveal reveal-delay-3">
-      <div class="card-icon card-icon-red">🎙️</div>
-      <h3>Contact Center Modernization</h3>
-      <p>Transform customer service with AI-powered agents, real-time agent assist, and voice AI that delivers personalized, empathetic experiences at scale.</p>
-      <div class="service-features" style="margin-top:1rem">
-        <div class="service-feature">Voice AI &amp; conversational IVR</div>
-        <div class="service-feature">Real-time agent assist &amp; coaching</div>
-        <div class="service-feature">Sentiment analysis &amp; QA automation</div>
+      <div class="service-card">
+        <div class="service-icon">🎙️</div>
+        <h3>Contact Center Modernization</h3>
+        <p>Transform customer service with AI-powered agents, real-time agent assist, and voice AI that delivers personalized experiences at scale.</p>
+        <div class="service-bullets">
+          <div class="service-bullet">Voice AI & conversational IVR</div>
+          <div class="service-bullet">Real-time agent assist & coaching</div>
+          <div class="service-bullet">Sentiment analysis & QA automation</div>
+        </div>
+        <div class="service-tags">
+          <span class="stag">Genesys</span><span class="stag">NICE CX</span>
+        </div>
       </div>
-      <div class="card-tags">
-        <span class="tag">Genesys</span>
-        <span class="tag">NICE CX</span>
-      </div>
+
     </div>
   </div>
-
-  <div style="text-align:center; margin-top:2.5rem;">
-    <a href="pages/services.html" class="btn btn-outline">View All Services →</a>
-  </div>
-</div>
 </section>
 
-<!-- ═══════════════ HOW WE WORK ═══════════════ -->
-<section class="section-pad" style="background: linear-gradient(180deg, transparent, rgba(0,212,255,0.03), transparent);">
-<div class="container">
-  <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto;">
-    <div class="section-label">Our Approach</div>
+<!-- ═══════════════════════════════════════════
+     APPROACH
+═══════════════════════════════════════════ -->
+<section id="approach">
+  <div class="container">
+    <div class="section-eyebrow">Our Approach</div>
     <h2 class="section-title">From Vision to <em>Production</em></h2>
-    <p class="section-sub" style="margin:0 auto">A battle-tested methodology that accelerates delivery without sacrificing quality.</p>
-  </div>
-  <div class="process-steps">
-    <div class="process-step reveal reveal-delay-1">
-      <div class="process-num">01</div>
-      <h4>Discover &amp; Diagnose</h4>
-      <p>Deep-dive into your data, workflows, and goals to identify the highest-value AI opportunities.</p>
-    </div>
-    <div class="process-step reveal reveal-delay-2">
-      <div class="process-num">02</div>
-      <h4>Design &amp; Architect</h4>
-      <p>Build the technical blueprint — models, pipelines, infrastructure, and integration points.</p>
-    </div>
-    <div class="process-step reveal reveal-delay-3">
-      <div class="process-num">03</div>
-      <h4>Build &amp; Iterate</h4>
-      <p>Agile delivery with weekly milestones, continuous testing, and stakeholder feedback loops.</p>
-    </div>
-    <div class="process-step reveal reveal-delay-4">
-      <div class="process-num">04</div>
-      <h4>Deploy &amp; Scale</h4>
-      <p>Production launch with MLOps monitoring, model drift detection, and 24/7 support.</p>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ═══════════════ AI TRAINING PREVIEW ═══════════════ -->
-<section class="section-pad" id="training">
-<div class="container">
-  <div class="reveal">
-    <div class="section-label">AI Training &amp; Enablement</div>
-    <h2 class="section-title">Build an <em>AI-Fluent</em> Organization</h2>
-    <p class="section-sub">Equip your teams with the AI skills needed to lead in an automated world — from executive workshops to hands-on engineering bootcamps.</p>
-  </div>
-
-  <div class="training-hero reveal" style="margin-top:2.5rem">
-    <div>
-      <div class="training-tag">🎓 Industry-Recognized Programs</div>
-      <h3 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; line-height: 1.2; letter-spacing: -0.03em; margin-bottom: 1rem;">
-        Practical AI Training<br>Built for Business Impact
-      </h3>
-      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8;">
-        Our training programs are designed by practitioners — not academics. Every course includes real case studies, hands-on labs, and direct application to your industry's challenges.
-      </p>
-      <div style="margin-top:1.5rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
-        <a href="pages/contact.html" class="btn btn-primary">Enroll Your Team →</a>
-        <a href="pages/training.html" class="btn btn-outline">View Curriculum</a>
+    <p class="section-sub">A battle-tested methodology that accelerates delivery without sacrificing quality.</p>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="approach-num">01</div>
+        <h4>Discover & Diagnose</h4>
+        <p>Deep-dive into your data, workflows, and goals to identify the highest-value AI opportunities.</p>
       </div>
-    </div>
-    <div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-        <div style="background:rgba(0,212,255,0.06); border:1px solid var(--border); border-radius:12px; padding:1.2rem; text-align:center;">
-          <div style="font-size:1.8rem; font-family:var(--font-display); font-weight:800; color:var(--accent);">500+</div>
-          <div style="font-size:0.78rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-top:0.3rem;">Professionals Trained</div>
-        </div>
-        <div style="background:rgba(123,97,255,0.06); border:1px solid rgba(123,97,255,0.15); border-radius:12px; padding:1.2rem; text-align:center;">
-          <div style="font-size:1.8rem; font-family:var(--font-display); font-weight:800; color:var(--accent-2);">12+</div>
-          <div style="font-size:0.78rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-top:0.3rem;">Training Modules</div>
-        </div>
-        <div style="background:rgba(0,255,200,0.04); border:1px solid rgba(0,255,200,0.1); border-radius:12px; padding:1.2rem; text-align:center;">
-          <div style="font-size:1.8rem; font-family:var(--font-display); font-weight:800; color:#00ffc8;">4.9★</div>
-          <div style="font-size:0.78rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-top:0.3rem;">Avg. Rating</div>
-        </div>
-        <div style="background:rgba(255,190,0,0.04); border:1px solid rgba(255,190,0,0.1); border-radius:12px; padding:1.2rem; text-align:center;">
-          <div style="font-size:1.8rem; font-family:var(--font-display); font-weight:800; color:#ffbe00;">100%</div>
-          <div style="font-size:0.78rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.08em; margin-top:0.3rem;">Online &amp; In-Person</div>
-        </div>
+      <div class="approach-card">
+        <div class="approach-num">02</div>
+        <h4>Design & Architect</h4>
+        <p>Build the technical blueprint — models, pipelines, infrastructure, and integration points.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">03</div>
+        <h4>Build & Iterate</h4>
+        <p>Agile delivery with weekly milestones, continuous testing, and stakeholder feedback loops.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-num">04</div>
+        <h4>Deploy & Scale</h4>
+        <p>Production launch with MLOps monitoring, model drift detection, and 24/7 support.</p>
       </div>
     </div>
   </div>
-
-  <div class="training-grid">
-    <div class="card training-card reveal reveal-delay-1">
-      <div class="card-icon card-icon-teal">🌱</div>
-      <div class="training-level level-beginner">Beginner · All Teams</div>
-      <h3>AI Literacy &amp; Foundations</h3>
-      <p>Demystify AI for non-technical stakeholders. Covers AI concepts, use cases, ethics, and how to identify automation opportunities.</p>
-      <div class="training-duration">⏱ 1-Day Workshop · Live or Virtual</div>
-      <div class="card-tags"><span class="tag">Executive</span><span class="tag">Operations</span><span class="tag">HR</span></div>
-    </div>
-    <div class="card training-card reveal reveal-delay-2">
-      <div class="card-icon card-icon-blue">🤖</div>
-      <div class="training-level level-intermediate">Intermediate · Business Analysts</div>
-      <h3>Generative AI for Business</h3>
-      <p>Hands-on mastery of ChatGPT, Claude, Copilot, and prompt engineering to 10x productivity in daily work and analysis tasks.</p>
-      <div class="training-duration">⏱ 3-Day Bootcamp · Cohort-Based</div>
-      <div class="card-tags"><span class="tag">Prompt Engineering</span><span class="tag">Copilot</span></div>
-    </div>
-    <div class="card training-card reveal reveal-delay-3">
-      <div class="card-icon card-icon-purple">⚙️</div>
-      <div class="training-level level-intermediate">Intermediate · Developers</div>
-      <h3>AI Automation &amp; RPA</h3>
-      <p>Build intelligent bots that handle document processing, data extraction, and workflow automation using modern AI + RPA stacks.</p>
-      <div class="training-duration">⏱ 5-Day Intensive · Hands-On Labs</div>
-      <div class="card-tags"><span class="tag tag-purple">UiPath</span><span class="tag tag-purple">Power Automate</span></div>
-    </div>
-    <div class="card training-card reveal reveal-delay-1">
-      <div class="card-icon card-icon-gold">🔬</div>
-      <div class="training-level level-advanced">Advanced · Data Scientists</div>
-      <h3>LLM Engineering &amp; RAG</h3>
-      <p>Architect and build enterprise RAG systems, fine-tune LLMs, and deploy scalable AI pipelines using LangChain, LlamaIndex, and vector databases.</p>
-      <div class="training-duration">⏱ 2-Week Program · Project-Based</div>
-      <div class="card-tags"><span class="tag">LangChain</span><span class="tag">Pinecone</span><span class="tag">OpenAI</span></div>
-    </div>
-    <div class="card training-card reveal reveal-delay-2">
-      <div class="card-icon card-icon-blue">🎯</div>
-      <div class="training-level level-advanced">Advanced · ML Engineers</div>
-      <h3>Agentic AI Systems</h3>
-      <p>Design and orchestrate multi-agent AI systems. Build autonomous pipelines with tool use, memory, and planning for enterprise workflows.</p>
-      <div class="training-duration">⏱ 2-Week Program · Live Labs</div>
-      <div class="card-tags"><span class="tag">AutoGen</span><span class="tag">CrewAI</span><span class="tag">LangGraph</span></div>
-    </div>
-    <div class="card training-card reveal reveal-delay-3">
-      <div class="card-icon card-icon-red">🏛️</div>
-      <div class="training-level level-beginner">All Levels · Leadership</div>
-      <h3>AI Strategy for Executives</h3>
-      <p>Equip C-suite and VPs to define AI roadmaps, govern AI adoption, manage risks, and build data-driven cultures that deliver ROI.</p>
-      <div class="training-duration">⏱ 2-Day Executive Retreat</div>
-      <div class="card-tags"><span class="tag">Strategy</span><span class="tag">Governance</span><span class="tag">ROI</span></div>
-    </div>
-  </div>
-
-  <div style="text-align:center; margin-top:2.5rem;">
-    <a href="pages/training.html" class="btn btn-outline">View All Training Programs →</a>
-  </div>
-</div>
 </section>
 
-<!-- ═══════════════ SECTORS PREVIEW ═══════════════ -->
-<section class="section-pad" id="sectors">
-<div class="container">
-  <div class="reveal">
-    <div class="section-label">Sector Portfolio</div>
+<!-- ═══════════════════════════════════════════
+     TRAINING
+═══════════════════════════════════════════ -->
+<section id="training">
+  <div class="container">
+    <div class="training-header">
+      <div>
+        <div class="section-eyebrow">AI Training & Enablement</div>
+        <h2 class="section-title">Build an <em>AI-Fluent</em> Organization</h2>
+        <p class="section-sub">Equip your teams with the AI skills needed to lead in an automated world.</p>
+      </div>
+      <div class="training-stats">
+        <div class="tstat"><span class="tstat-num">500+</span><div class="tstat-label">Professionals Trained</div></div>
+        <div class="tstat"><span class="tstat-num">4.9★</span><div class="tstat-label">Avg. Rating</div></div>
+        <div class="tstat"><span class="tstat-num">12+</span><div class="tstat-label">Modules</div></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;margin-bottom:32px;flex-wrap:wrap;">
+      <a href="pages/contact.html" class="btn-primary">Enroll Your Team →</a>
+      <a href="pages/training.html" class="btn-ghost">View Curriculum</a>
+    </div>
+    <div class="training-grid">
+      <div class="training-card">
+        <div class="training-level">Beginner · All Teams</div>
+        <div class="training-icon">🌱</div>
+        <h3>AI Literacy & Foundations</h3>
+        <p>Demystify AI for non-technical stakeholders. Covers AI concepts, use cases, ethics, and how to identify automation opportunities.</p>
+        <div class="training-meta">⏱ 1-Day Workshop · Live or Virtual</div>
+      </div>
+      <div class="training-card">
+        <div class="training-level">Intermediate · Business Analysts</div>
+        <div class="training-icon">🤖</div>
+        <h3>Generative AI for Business</h3>
+        <p>Hands-on mastery of ChatGPT, Claude, Copilot, and prompt engineering to 10x productivity in daily work.</p>
+        <div class="training-meta">⏱ 3-Day Bootcamp · Cohort-Based</div>
+      </div>
+      <div class="training-card">
+        <div class="training-level">Intermediate · Developers</div>
+        <div class="training-icon">⚙️</div>
+        <h3>AI Automation & RPA</h3>
+        <p>Build intelligent bots that handle document processing, data extraction, and workflow automation.</p>
+        <div class="training-meta">⏱ 5-Day Intensive · Hands-On Labs</div>
+      </div>
+      <div class="training-card">
+        <div class="training-level">Advanced · Data Scientists</div>
+        <div class="training-icon">🔬</div>
+        <h3>LLM Engineering & RAG</h3>
+        <p>Architect and build enterprise RAG systems, fine-tune LLMs, and deploy scalable AI pipelines.</p>
+        <div class="training-meta">⏱ 2-Week Program · Project-Based</div>
+      </div>
+      <div class="training-card">
+        <div class="training-level">Advanced · ML Engineers</div>
+        <div class="training-icon">🎯</div>
+        <h3>Agentic AI Systems</h3>
+        <p>Design and orchestrate multi-agent AI systems with tool use, memory, and planning for enterprise workflows.</p>
+        <div class="training-meta">⏱ 2-Week Program · Live Labs</div>
+      </div>
+      <div class="training-card">
+        <div class="training-level">All Levels · Leadership</div>
+        <div class="training-icon">🏛️</div>
+        <h3>AI Strategy for Executives</h3>
+        <p>Equip C-suite and VPs to define AI roadmaps, govern AI adoption, manage risks, and build data-driven cultures.</p>
+        <div class="training-meta">⏱ 2-Day Executive Retreat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTORS
+═══════════════════════════════════════════ -->
+<section id="sectors">
+  <div class="container">
+    <div class="section-eyebrow">Sector Portfolio</div>
     <h2 class="section-title">Deep Expertise in <em>High-Stakes</em> Industries</h2>
-    <p class="section-sub">We combine AI expertise with domain knowledge to solve the complex problems unique to each sector.</p>
-  </div>
-
-  <div class="sectors-wrapper">
-    <div class="sector-list reveal reveal-delay-1">
-      <button class="sector-item active" data-sector="banking" type="button" aria-controls="sector-banking">
-        <div class="sector-icon card-icon-blue">🏦</div>
-        <div class="sector-info">
-          <h4>Banking &amp; Retail Finance</h4>
-          <p>Fraud detection, credit decisioning, personalization</p>
-        </div>
-      </button>
-      <button class="sector-item" data-sector="insurance" type="button" aria-controls="sector-insurance">
-        <div class="sector-icon card-icon-purple">🛡️</div>
-        <div class="sector-info">
-          <h4>Insurance</h4>
-          <p>Underwriting AI, claims automation, risk modeling</p>
-        </div>
-      </button>
-      <button class="sector-item" data-sector="payments" type="button" aria-controls="sector-payments">
-        <div class="sector-icon card-icon-teal">💳</div>
-        <div class="sector-info">
-          <h4>Payments &amp; Fintech</h4>
-          <p>Real-time fraud, reconciliation, AML compliance</p>
-        </div>
-      </button>
-      <button class="sector-item" data-sector="wealth" type="button" aria-controls="sector-wealth">
-        <div class="sector-icon card-icon-gold">📈</div>
-        <div class="sector-info">
-          <h4>Wealth &amp; Capital Markets</h4>
-          <p>Portfolio AI, trade surveillance, client insights</p>
-        </div>
-      </button>
-      <button class="sector-item" data-sector="pension" type="button" aria-controls="sector-pension">
-        <div class="sector-icon card-icon-red">💼</div>
-        <div class="sector-info">
-          <h4>Pensions &amp; Benefits</h4>
-          <p>Member engagement, actuarial AI, process automation</p>
-        </div>
-      </button>
+    <p class="section-sub">We combine AI expertise with domain knowledge to solve complex problems unique to each sector.</p>
+    <div class="sector-tabs">
+      <button class="sector-tab active" onclick="showSector(this,'banking')">🏦 Banking & Finance</button>
+      <button class="sector-tab" onclick="showSector(this,'insurance')">🛡️ Insurance</button>
+      <button class="sector-tab" onclick="showSector(this,'payments')">💳 Payments & Fintech</button>
+      <button class="sector-tab" onclick="showSector(this,'wealth')">📈 Wealth & Capital Markets</button>
+      <button class="sector-tab" onclick="showSector(this,'pensions')">💼 Pensions & Benefits</button>
     </div>
 
-    <div class="sector-detail reveal reveal-delay-2">
-      <div class="sector-detail-content active" id="sector-banking">
-        <div class="section-label">Banking &amp; Retail Finance</div>
-        <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin:0.8rem 0;">AI-Powered Banking at Scale</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">We help banks and credit unions accelerate every part of the customer and operations lifecycle — from intelligent onboarding to real-time fraud detection.</p>
-        <div class="service-features" style="margin-top:1.2rem">
-          <div class="service-feature">Real-time fraud &amp; AML detection models</div>
-          <div class="service-feature">AI-powered credit scoring &amp; decisioning</div>
-          <div class="service-feature">Hyper-personalized next best action</div>
-          <div class="service-feature">Regulatory reporting automation (IFRS9, Basel)</div>
-          <div class="service-feature">AI contact center for retail banking</div>
-        </div>
+    <div id="sector-banking" class="sector-panel active">
+      <div class="sector-list">
+        <div class="sector-item">Real-time fraud & AML detection models</div>
+        <div class="sector-item">AI-powered credit scoring & decisioning</div>
+        <div class="sector-item">Hyper-personalized next best action</div>
+        <div class="sector-item">Regulatory reporting automation (IFRS9, Basel)</div>
+        <div class="sector-item">AI contact center for retail banking</div>
       </div>
-      <div class="sector-detail-content" id="sector-insurance">
-        <div class="section-label">Insurance</div>
-        <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin:0.8rem 0;">Smarter Underwriting &amp; Claims</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">Transform the insurance value chain with AI that accelerates underwriting decisions, automates claims processing, and reduces loss ratios.</p>
-        <div class="service-features" style="margin-top:1.2rem">
-          <div class="service-feature">AI underwriting &amp; risk scoring engines</div>
-          <div class="service-feature">Intelligent claims triage &amp; STP</div>
-          <div class="service-feature">Document AI for policy &amp; claims docs</div>
-          <div class="service-feature">Fraud detection &amp; anomaly models</div>
-          <div class="service-feature">Customer self-service AI portals</div>
-        </div>
+      <div class="sector-info">
+        <h3>AI-Powered Banking at Scale</h3>
+        <p>We help banks and credit unions accelerate every part of the customer and operations lifecycle — from intelligent onboarding to real-time fraud detection. Our AI systems serve Big 5 Banks and regional credit unions across Canada.</p>
       </div>
-      <div class="sector-detail-content" id="sector-payments">
-        <div class="section-label">Payments &amp; Fintech</div>
-        <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin:0.8rem 0;">Intelligent Payments Infrastructure</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">From real-time payments to embedded finance — we help payment companies build the AI layer that powers next-gen financial experiences.</p>
-        <div class="service-features" style="margin-top:1.2rem">
-          <div class="service-feature">Real-time transaction fraud ML models</div>
-          <div class="service-feature">Automated reconciliation &amp; exception mgmt</div>
-          <div class="service-feature">AML transaction monitoring AI</div>
-          <div class="service-feature">Smart routing optimization</div>
-          <div class="service-feature">Open banking API &amp; embedded finance</div>
-        </div>
+    </div>
+
+    <div id="sector-insurance" class="sector-panel">
+      <div class="sector-list">
+        <div class="sector-item">AI underwriting & risk scoring engines</div>
+        <div class="sector-item">Intelligent claims triage & STP</div>
+        <div class="sector-item">Document AI for policy & claims docs</div>
+        <div class="sector-item">Fraud detection & anomaly models</div>
+        <div class="sector-item">Customer self-service AI portals</div>
       </div>
-      <div class="sector-detail-content" id="sector-wealth">
-        <div class="section-label">Wealth &amp; Capital Markets</div>
-        <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin:0.8rem 0;">AI-Driven Investment Intelligence</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">Unlock alpha and operational efficiency with AI across the investment lifecycle — from research to reporting.</p>
-        <div class="service-features" style="margin-top:1.2rem">
-          <div class="service-feature">Portfolio analytics &amp; AI advisors</div>
-          <div class="service-feature">Trade surveillance &amp; market abuse detection</div>
-          <div class="service-feature">AI-generated investment research</div>
-          <div class="service-feature">Client segmentation &amp; CLV models</div>
-          <div class="service-feature">Regulatory &amp; compliance AI</div>
-        </div>
+      <div class="sector-info">
+        <h3>Smarter Underwriting & Claims</h3>
+        <p>Transform the insurance value chain with AI that accelerates underwriting decisions, automates claims processing, and reduces loss ratios for leading Canadian and global insurers.</p>
       </div>
-      <div class="sector-detail-content" id="sector-pension">
-        <div class="section-label">Pensions &amp; Benefits</div>
-        <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin:0.8rem 0;">Modernizing Pension Administration</h3>
-        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8;">Help pension funds and benefit administrators deliver better member outcomes with AI-powered engagement and process automation.</p>
-        <div class="service-features" style="margin-top:1.2rem">
-          <div class="service-feature">Member chatbots &amp; self-service AI</div>
-          <div class="service-feature">Actuarial data &amp; AI modeling</div>
-          <div class="service-feature">Benefits administration automation</div>
-          <div class="service-feature">Document digitization &amp; processing</div>
-          <div class="service-feature">Regulatory reporting automation</div>
-        </div>
+    </div>
+
+    <div id="sector-payments" class="sector-panel">
+      <div class="sector-list">
+        <div class="sector-item">Real-time transaction fraud ML models</div>
+        <div class="sector-item">Automated reconciliation & exception mgmt</div>
+        <div class="sector-item">AML transaction monitoring AI</div>
+        <div class="sector-item">Smart routing optimization</div>
+        <div class="sector-item">Open banking API & embedded finance</div>
+      </div>
+      <div class="sector-info">
+        <h3>Intelligent Payments Infrastructure</h3>
+        <p>From real-time payments to embedded finance — we help payment companies build the AI layer that powers next-gen financial experiences with enterprise-grade compliance.</p>
+      </div>
+    </div>
+
+    <div id="sector-wealth" class="sector-panel">
+      <div class="sector-list">
+        <div class="sector-item">Portfolio analytics & AI advisors</div>
+        <div class="sector-item">Trade surveillance & market abuse detection</div>
+        <div class="sector-item">AI-generated investment research</div>
+        <div class="sector-item">Client segmentation & CLV models</div>
+        <div class="sector-item">Regulatory & compliance AI</div>
+      </div>
+      <div class="sector-info">
+        <h3>AI-Driven Investment Intelligence</h3>
+        <p>Unlock alpha and operational efficiency with AI across the investment lifecycle — from research to reporting — for wealth managers and capital markets firms.</p>
+      </div>
+    </div>
+
+    <div id="sector-pensions" class="sector-panel">
+      <div class="sector-list">
+        <div class="sector-item">Member chatbots & self-service AI</div>
+        <div class="sector-item">Actuarial data & AI modeling</div>
+        <div class="sector-item">Benefits administration automation</div>
+        <div class="sector-item">Document digitization & processing</div>
+        <div class="sector-item">Regulatory reporting automation</div>
+      </div>
+      <div class="sector-info">
+        <h3>Modernizing Pension Administration</h3>
+        <p>Help pension funds and benefit administrators deliver better member outcomes with AI-powered engagement and process automation — reducing admin cost while improving compliance.</p>
       </div>
     </div>
   </div>
-
-  <div style="text-align:center; margin-top:2.5rem;">
-    <a href="pages/sectors.html" class="btn btn-outline">Explore All Sectors →</a>
-  </div>
-</div>
 </section>
 
-<!-- ═══════════════ CTA BAND ═══════════════ -->
-<section class="cta-band section-pad">
-<div class="container">
-  <div class="cta-band-inner reveal">
-    <div>
-      <div class="section-label">Ready to Transform?</div>
-      <h2 class="cta-band-title">Let's Build Your<br><em>AI Advantage</em> Together</h2>
-    </div>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="pages/contact.html" class="btn btn-primary">Book a Free Consultation →</a>
-      <a href="pages/training.html" class="btn btn-outline">View Training Programs</a>
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS  ← NEW SECTION
+═══════════════════════════════════════════ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-eyebrow">Client Voices</div>
+    <h2 class="section-title">What Our <em>Clients Say</em></h2>
+    <p class="section-sub">From Big 5 Banks to leading insurers — real outcomes, real impact.</p>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Nayu delivered a production-grade RAG system in 10 weeks that replaced a $2M vendor contract. Their team understood our compliance requirements from day one — no hand-holding needed."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">VP</div>
+          <div class="author-info">
+            <div class="name">VP of Digital Innovation</div>
+            <div class="role">Big 5 Canadian Bank</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"The AI underwriting model Nayu built cut our decisioning time from 3 days to 4 hours, with a measurable reduction in loss ratio in the first quarter. Exceptional technical depth."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">CTO</div>
+          <div class="author-info">
+            <div class="name">Chief Technology Officer</div>
+            <div class="role">Leading Canadian Insurer</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"We enrolled 200 employees in Nayu's GenAI for Business bootcamp. The practical, no-fluff approach meant teams were shipping AI-assisted workflows by week two. Remarkable ROI."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">HR</div>
+          <div class="author-info">
+            <div class="name">Chief People Officer</div>
+            <div class="role">Fortune 500 Financial Services</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
 </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer class="footer">
-<div class="container">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="index.html" class="nav-logo" style="margin-bottom:0.5rem; display:inline-flex">
-        <div class="nav-logo-icon">⬡</div>
-        Nayu<span>Tech</span>
+<!-- ═══════════════════════════════════════════
+     BLOG PREVIEW  ← NEW SECTION
+═══════════════════════════════════════════ -->
+<section id="blog-preview">
+  <div class="container">
+    <div class="blog-preview-header">
+      <div>
+        <div class="section-eyebrow">Nayu Insights</div>
+        <h2 class="section-title">Latest from the <em>Blog</em></h2>
+        <p class="section-sub">Technical depth on AI, automation, and enterprise transformation.</p>
+      </div>
+      <a href="pages/blog.html" class="btn-ghost">All Articles →</a>
+    </div>
+    <div class="blog-preview-grid">
+
+      <a href="pages/blog.html" class="blog-preview-card">
+        <div class="blog-preview-visual" style="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(34,211,238,0.08));">
+          <svg width="64" height="64" viewBox="0 0 32 32" fill="none">
+            <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#7c5cfc" stroke-width="1.5"/>
+            <polygon points="16,7 23,11 23,19 16,23 9,19 9,11" stroke="#22d3ee" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="blog-preview-content">
+          <span class="blog-preview-tag">Generative AI</span>
+          <div class="blog-preview-title">Building Production-Grade RAG Systems: From Prototype to Enterprise Scale</div>
+          <p class="blog-preview-excerpt">Why most RAG systems fail in production — and the architectural decisions that separate toy prototypes from enterprise-grade knowledge systems.</p>
+          <div class="blog-preview-footer">
+            <span>June 12, 2025 · 12 min</span>
+            <span class="blog-read-link">Read →</span>
+          </div>
+        </div>
       </a>
-      <p>Nayu Technologies Inc. is an AI &amp; automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/company/nayutech" class="social-btn" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
-        <a href="mailto:info@nayutechnologies.com" class="social-btn" title="Email" aria-label="Email">@</a>
+
+      <a href="pages/blog.html" class="blog-preview-card">
+        <div class="blog-preview-visual" style="background:linear-gradient(135deg,rgba(15,110,86,0.2),rgba(34,211,238,0.08));">
+          <svg width="64" height="64" viewBox="0 0 32 32" fill="none">
+            <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#0f6e56" stroke-width="1.5"/>
+            <circle cx="16" cy="16" r="5" stroke="#22d3ee" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="blog-preview-content">
+          <span class="blog-preview-tag">FinTech · PDF</span>
+          <div class="blog-preview-title">Agentic AI in Financial Services: Compliance-Safe Autonomous Workflows</div>
+          <p class="blog-preview-excerpt">How leading Canadian banks deploy multi-agent AI within regulatory guardrails — with real architecture patterns for AML, credit, and claims.</p>
+          <div class="blog-preview-footer">
+            <span>May 28, 2025 · 9 min</span>
+            <span class="blog-read-link">Read + PDF →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="pages/blog.html" class="blog-preview-card">
+        <div class="blog-preview-visual" style="background:linear-gradient(135deg,rgba(124,92,252,0.1),rgba(167,139,250,0.08));">
+          <svg width="64" height="64" viewBox="0 0 32 32" fill="none">
+            <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#a78bfa" stroke-width="1.5"/>
+            <line x1="10" y1="16" x2="22" y2="16" stroke="#7c5cfc" stroke-width="1"/>
+            <line x1="16" y1="10" x2="16" y2="22" stroke="#7c5cfc" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="blog-preview-content">
+          <span class="blog-preview-tag">Architecture</span>
+          <div class="blog-preview-title">More articles coming soon</div>
+          <p class="blog-preview-excerpt">We publish weekly deep-dives on AI engineering, automation patterns, and enterprise transformation. Subscribe to get notified.</p>
+          <div class="blog-preview-footer">
+            <span>Weekly · Technical depth</span>
+            <span class="blog-read-link">Subscribe →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT / TEAM  ← NEW SECTION
+═══════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="section-eyebrow">About Us</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>Practitioners, not<br><em>consultants.</em></h2>
+        <p>Nayu Technologies was founded by AI engineers and domain experts who've built and shipped production AI systems at scale — not managed PowerPoint decks. We embed with your team, understand your constraints, and deliver working systems.</p>
+        <p>Based in Toronto, we serve financial institutions, insurers, and enterprises across Canada and globally, bringing the same rigor to a 10-week proof-of-concept as a multi-year transformation engagement.</p>
+        <div class="about-values">
+          <div class="about-value">
+            <div class="about-value-icon">⚡</div>
+            <div>
+              <h4>Speed without shortcuts</h4>
+              <p>Weekly milestones, production-grade code from sprint one. No rework debt.</p>
+            </div>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon">🔒</div>
+            <div>
+              <h4>Compliance by design</h4>
+              <p>Every system we build treats regulatory requirements as architecture, not afterthoughts.</p>
+            </div>
+          </div>
+          <div class="about-value">
+            <div class="about-value-icon">🎓</div>
+            <div>
+              <h4>Knowledge transfer</h4>
+              <p>We leave your team smarter. Documentation, training, and handover are non-negotiable.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="footer-col">
-      <h5>Services</h5>
-      <ul>
-        <li><a href="pages/services.html">Generative AI</a></li>
-        <li><a href="pages/services.html">Intelligent Automation</a></li>
-        <li><a href="pages/services.html">Digital Transformation</a></li>
-        <li><a href="pages/services.html">Cloud &amp; Security</a></li>
-        <li><a href="pages/services.html">Contact Center AI</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>AI Training</h5>
-      <ul>
-        <li><a href="pages/training.html">AI Literacy</a></li>
-        <li><a href="pages/training.html">GenAI for Business</a></li>
-        <li><a href="pages/training.html">LLM Engineering</a></li>
-        <li><a href="pages/training.html">Agentic AI</a></li>
-        <li><a href="pages/training.html">Executive Strategy</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Company</h5>
-      <ul>
-        <li><a href="pages/sectors.html">Sectors</a></li>
-        <li><a href="pages/clients.html">Clients</a></li>
-        <li><a href="pages/contact.html">Contact</a></li>
-      </ul>
-      <div style="margin-top:2rem">
-        <h5>Office</h5>
-        <p style="font-size:0.82rem; color:var(--text-secondary); line-height:1.8; margin-top:0.5rem">
-          Toronto, Ontario, Canada<br>
-          <a href="mailto:info@nayutechnologies.com" style="color:var(--accent)">info@nayutechnologies.com</a>
-        </p>
+      <div>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">NT</div>
+            <h4>AI Engineering</h4>
+            <div class="role">LLMs · RAG · MLOps</div>
+            <p>Senior engineers with production experience in LangChain, LlamaIndex, and enterprise AI pipelines.</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">FS</div>
+            <h4>Financial Services</h4>
+            <div class="role">Compliance · Risk · FinTech</div>
+            <p>Domain experts who have built AI systems inside Big 5 Banks and leading insurers.</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">DA</div>
+            <h4>Data & Cloud</h4>
+            <div class="role">AWS · Azure · GCP</div>
+            <p>Cloud architects with deep experience in MLOps, data lakehouses, and zero-trust security.</p>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">TR</div>
+            <h4>Training & Enablement</h4>
+            <div class="role">Curriculum · Coaching</div>
+            <p>Practitioners who've trained 500+ professionals across executive and engineering audiences.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 Nayu Technologies Inc. All rights reserved.</span>
-    <div style="display:flex; gap:1.5rem;">
-      <a href="pages/contact.html">Privacy Policy</a>
-      <a href="pages/contact.html">Terms of Service</a>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════════════ -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-box">
+      <div class="section-eyebrow" style="margin-bottom:24px;">Ready to Transform?</div>
+      <h2>Let's Build Your <em>AI Advantage</em> Together</h2>
+      <p>Book a free 30-minute consultation with our team. No sales pitch — just an honest assessment of where AI can move the needle for your organization.</p>
+      <div class="cta-buttons">
+        <a href="pages/contact.html" class="btn-primary">Book a Free Consultation →</a>
+        <a href="pages/training.html" class="btn-ghost">View Training Programs</a>
+      </div>
     </div>
-    <div class="footer-badge">⬡ AI-Powered Company</div>
   </div>
-</div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="display:inline-flex;">
+          <div class="hex-icon">
+            <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+              <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" fill="rgba(124,92,252,0.15)" stroke="#7c5cfc" stroke-width="1.5"/>
+              <text x="16" y="21" text-anchor="middle" fill="#7c5cfc" font-size="13" font-weight="700" font-family="sans-serif">N</text>
+            </svg>
+          </div>
+          NayuTech
+        </a>
+        <p>Nayu Technologies Inc. is an AI & automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/nayutech" class="social-btn" target="_blank" rel="noopener">in</a>
+          <a href="pages/contact.html" class="social-btn" title="Contact us">@</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Generative AI</a></li>
+          <li><a href="#services">Intelligent Automation</a></li>
+          <li><a href="#services">Digital Transformation</a></li>
+          <li><a href="#services">Cloud & Security</a></li>
+          <li><a href="#services">Contact Center AI</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>AI Training</h4>
+        <ul>
+          <li><a href="pages/training.html">AI Literacy</a></li>
+          <li><a href="pages/training.html">GenAI for Business</a></li>
+          <li><a href="pages/training.html">LLM Engineering</a></li>
+          <li><a href="pages/training.html">Agentic AI</a></li>
+          <li><a href="pages/training.html">Executive Strategy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="pages/blog.html">Blog</a></li><!-- FIXED: was pointing to training.html -->
+          <li><a href="pages/contact.html">Careers</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+          <li><p style="color:var(--muted2);font-size:13px;margin-top:4px;">Toronto, Ontario, Canada</p></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Nayu Technologies Inc. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="pages/contact.html">Privacy Policy</a>
+        <a href="pages/contact.html">Terms of Service</a>
+      </div>
+      <div class="footer-ai-badge">
+        <svg width="12" height="12" viewBox="0 0 32 32" fill="none">
+          <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#7c5cfc" stroke-width="1.5"/>
+        </svg>
+        AI-Powered Company
+      </div>
+    </div>
+  </div>
 </footer>
 
-<script src="js/main.js"></script>
+<!-- Scroll to top -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+/* ── Mobile menu ── */
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+/* ── Sector tabs ── */
+function showSector(btn, id) {
+  document.querySelectorAll('.sector-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.sector-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('sector-' + id).classList.add('active');
+}
+
+/* ── Counter animation (IntersectionObserver — only fires when in view) ── */
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target, 10);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1600;
+  const start = performance.now();
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(target * ease) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+  counterObserver.observe(el);
+});
+
+/* ── Scroll-to-top button ── */
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scrollTop');
+  if (window.scrollY > 600) btn.classList.add('visible');
+  else btn.classList.remove('visible');
+}, { passive: true });
+
+/* ── Fade-in on scroll (subtle entrance animation) ── */
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.service-card, .training-card, .testimonial-card, .approach-card, .blog-preview-card, .team-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  fadeObserver.observe(el);
+});
+</script>
 </body>
 </html>
