@@ -4,7 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog | Nayu Technologies Inc.</title>
-  <meta name="description" content="Insights on AI, automation, and digital transformation from Nayu Technologies." />
+  <meta name="description" content="Insights on AI, automation, and digital transformation from Nayu Technologies — your partner for innovative IT services and enterprise AI." />
+  <link rel="canonical" href="https://www.nayutechnologies.com/pages/blog.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.nayutechnologies.com/pages/blog.html" />
+  <meta property="og:title" content="Blog | Nayu Technologies — AI consulting & digital innovation" />
+  <meta property="og:description" content="Insights on AI, automation, and digital transformation from Nayu Technologies — your partner for innovative IT services and enterprise AI." />
+  <meta property="og:image" content="https://www.nayutechnologies.com/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog | Nayu Technologies — AI consulting & digital innovation" />
+  <meta name="twitter:description" content="Insights on AI, automation, and digital transformation from Nayu Technologies — your partner for innovative IT services." />
+  <meta name="twitter:image" content="https://www.nayutechnologies.com/assets/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <style>
@@ -12,21 +22,21 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #0a0a0f;
-      --bg2:       #11111a;
-      --bg3:       #17171f;
-      --card:      #13131c;
-      --border:    rgba(255,255,255,0.08);
-      --border-h:  rgba(255,255,255,0.16);
-      --accent:    #7c5cfc;
-      --accent2:   #a78bfa;
+      --bg:        #020510;
+      --bg2:       #091528;
+      --bg3:       #0e1c34;
+      --card:      #091528;
+      --border:    rgba(255,255,255,0.16);
+      --border-h:  rgba(255,255,255,0.35);
+      --accent:    #ffb500;
+      --accent2:   #7b61ff;
       --cyan:      #22d3ee;
-      --text:      #f0eeff;
-      --muted:     #8b8aac;
-      --muted2:    #5e5d7a;
-      --tag-bg:    rgba(124,92,252,0.12);
-      --tag-text:  #a78bfa;
-      --hex:       #7c5cfc;
+      --text:      #eef2ff;
+      --muted:     #cbd6ff;
+      --muted2:    #7a8fb8;
+      --tag-bg:    rgba(255,181,0,0.12);
+      --tag-text:  #ffb500;
+      --hex:       #ffb500;
       --font-head: 'Syne', sans-serif;
       --font-body: 'DM Sans', sans-serif;
       --radius:    14px;
@@ -39,7 +49,7 @@
       color: var(--text);
       font-family: var(--font-body);
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.85;
       min-height: 100vh;
     }
 
@@ -116,14 +126,14 @@
     .nav-links a.active { color: var(--text); }
 
     .nav-cta {
-      background: var(--accent);
-      color: #fff !important;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: var(--bg) !important;
       padding: 8px 18px;
       border-radius: 8px;
       font-weight: 500 !important;
       transition: background 0.2s, opacity 0.2s !important;
     }
-    .nav-cta:hover { background: var(--accent2) !important; color: #fff !important; }
+    .nav-cta:hover { opacity: 0.95; }
 
     /* ── PAGE HERO ── */
     .hero {
@@ -860,7 +870,7 @@
 <section class="hero">
   <div class="hero-eyebrow">Nayu Insights</div>
   <h1>AI & Automation<br><em>Intelligence</em></h1>
-  <p class="hero-sub">Deep technical thinking on AI systems, enterprise automation, and the future of intelligent software — from the Nayu Technologies team.</p>
+  <p class="hero-sub">Deep technical thinking on AI systems, enterprise automation, and the future of intelligent software — from the Nayu Technologies team. Join our enterprise AI community for ideas, trends, and best practices.</p>
 </section>
 
 <!-- ══════════════════════════════════════
@@ -1103,7 +1113,7 @@ context      = assemble_context(reranked)</code></pre>
     date: "May 28, 2025",
     readTime: "9 min read",
     author: "Nayu Technologies",
-    hasPdf: true,
+    hasPdf: false,
     pdfName: "Nayu_Agentic_AI_FinServ_Whitepaper.pdf",
     pdfDesc: "Download the full whitepaper with architecture diagrams and implementation checklist.",
     gradientA: "#0f6e56", gradientB: "#22d3ee",

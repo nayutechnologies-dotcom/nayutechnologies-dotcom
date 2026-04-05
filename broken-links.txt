@@ -1,0 +1,17 @@
+﻿FILE:C:\NAYU-CODE\Github\nayu-technologies\nayutechnologies-dotcom\pages\blog.html
+HREF:./pdfs/${p.pdfName}
+RESOLVED:C:\NAYU-CODE\Github\nayu-technologies\nayutechnologies-dotcom\pages\.\pdfs\${p.pdfName}
+
+FILE:C:\NAYU-CODE\Github\nayu-technologies\nayutechnologies-dotcom\pages\contact.html
+HREF:../index.html#services
+RESOLVED:C:\NAYU-CODE\Github\nayu-technologies\nayutechnologies-dotcom\pages\..\index.html#services
+
+FILE:C:\NAYU-CODE\Github\nayu-technologies\nayutechnologies-dotcom\pages\contact.html
+HREF:../index.html#sectors
+RESOLVED:C:\NAYU-CODE\Github\nayu-technologies\nayutechnologies-dotcom\pages\..\index.html#sectors
+
+FILE:C:\NAYU-CODE\Github\nayu-technologies\nayutechnologies-dotcom\pages\contact.html
+HREF:../index.html#services
+RESOLVED:C:\NAYU-CODE\Github\nayu-technologies\nayutechnologies-dotcom\pages\..\index.html#services
+
+TOTAL ERRORS 4
