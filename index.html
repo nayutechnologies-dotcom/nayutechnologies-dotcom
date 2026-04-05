@@ -456,40 +456,6 @@
     .blog-read-link { color: var(--accent2); font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 4px; }
 
     /* ═══════════════════════════════════════════
-       ABOUT / TEAM  ← NEW
-    ═══════════════════════════════════════════ */
-    #about { padding: var(--section-gap) 0; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 56px; }
-    .about-text h2 { font-family: var(--font-head); font-size: clamp(24px,3vw,36px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
-    .about-text p { color: var(--muted); font-size: 15px; line-height: 1.8; margin-bottom: 14px; }
-    .about-values { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
-    .about-value {
-      display: flex; gap: 14px;
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 10px; padding: 16px 18px;
-    }
-    .about-value-icon { font-size: 20px; flex-shrink: 0; }
-    .about-value h4 { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
-    .about-value p { color: var(--muted); font-size: 13px; line-height: 1.5; margin: 0; }
-    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .team-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 24px;
-      display: flex; flex-direction: column; gap: 12px;
-      transition: border-color 0.2s;
-    }
-    .team-card:hover { border-color: rgba(124,92,252,0.3); }
-    .team-avatar {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--cyan));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; font-weight: 700; color: #fff;
-    }
-    .team-card h4 { font-family: var(--font-head); font-size: 16px; font-weight: 700; }
-    .team-card .role { font-size: 13px; color: var(--accent2); }
-    .team-card p { color: var(--muted); font-size: 13px; line-height: 1.6; }
-
-    /* ═══════════════════════════════════════════
        FINAL CTA
     ═══════════════════════════════════════════ */
     #cta { padding: var(--section-gap) 0; background: var(--bg2); }
@@ -601,7 +567,7 @@
 <!-- ═══════════════════════════════════════════
      NAV
 ═══════════════════════════════════════════ -->
-<nav>
+<nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
       <div class="hex-icon">
@@ -616,7 +582,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#training">AI Training</a></li>
       <li><a href="#sectors">Sectors</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="pages/about.html">About</a></li>
       <li><a href="pages/blog.html">Blog</a></li>
       <li><a href="pages/contact.html" class="nav-cta">Get Started →</a></li>
     </ul>
@@ -629,7 +595,7 @@
   <a href="#services"       onclick="closeMobileMenu()">Services</a>
   <a href="#training"       onclick="closeMobileMenu()">AI Training</a>
   <a href="#sectors"        onclick="closeMobileMenu()">Sectors</a>
-  <a href="#about"          onclick="closeMobileMenu()">About</a>
+  <a href="pages/about.html"          onclick="closeMobileMenu()">About</a>
   <a href="pages/blog.html" onclick="closeMobileMenu()">Blog</a>
   <a href="pages/contact.html" onclick="closeMobileMenu()" style="color:var(--accent2)">Get Started →</a>
 </div>
@@ -1094,73 +1060,6 @@
 </section>
 
 <!-- ═══════════════════════════════════════════
-     ABOUT / TEAM  ← NEW SECTION
-═══════════════════════════════════════════ -->
-<section id="about">
-  <div class="container">
-    <div class="section-eyebrow">About Us</div>
-    <div class="about-grid">
-      <div class="about-text">
-        <h2>Practitioners, not<br><em>consultants.</em></h2>
-        <p>Nayu Technologies was founded by AI engineers and domain experts who've built and shipped production AI systems at scale — not managed PowerPoint decks. We embed with your team, understand your constraints, and deliver working systems.</p>
-        <p>Based in Toronto, we serve financial institutions, insurers, and enterprises across Canada and globally, bringing the same rigor to a 10-week proof-of-concept as a multi-year transformation engagement.</p>
-        <div class="about-values">
-          <div class="about-value">
-            <div class="about-value-icon">⚡</div>
-            <div>
-              <h4>Speed without shortcuts</h4>
-              <p>Weekly milestones, production-grade code from sprint one. No rework debt.</p>
-            </div>
-          </div>
-          <div class="about-value">
-            <div class="about-value-icon">🔒</div>
-            <div>
-              <h4>Compliance by design</h4>
-              <p>Every system we build treats regulatory requirements as architecture, not afterthoughts.</p>
-            </div>
-          </div>
-          <div class="about-value">
-            <div class="about-value-icon">🎓</div>
-            <div>
-              <h4>Knowledge transfer</h4>
-              <p>We leave your team smarter. Documentation, training, and handover are non-negotiable.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="team-grid">
-          <div class="team-card">
-            <div class="team-avatar">NT</div>
-            <h4>AI Engineering</h4>
-            <div class="role">LLMs · RAG · MLOps</div>
-            <p>Senior engineers with production experience in LangChain, LlamaIndex, and enterprise AI pipelines.</p>
-          </div>
-          <div class="team-card">
-            <div class="team-avatar">FS</div>
-            <h4>Financial Services</h4>
-            <div class="role">Compliance · Risk · FinTech</div>
-            <p>Domain experts who have built AI systems inside Big 5 Banks and leading insurers.</p>
-          </div>
-          <div class="team-card">
-            <div class="team-avatar">DA</div>
-            <h4>Data & Cloud</h4>
-            <div class="role">AWS · Azure · GCP</div>
-            <p>Cloud architects with deep experience in MLOps, data lakehouses, and zero-trust security.</p>
-          </div>
-          <div class="team-card">
-            <div class="team-avatar">TR</div>
-            <h4>Training & Enablement</h4>
-            <div class="role">Curriculum · Coaching</div>
-            <p>Practitioners who've trained 500+ professionals across executive and engineering audiences.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
      FINAL CTA
 ═══════════════════════════════════════════ -->
 <section id="cta">
@@ -1222,7 +1121,7 @@
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="pages/about.html">About Us</a></li>
           <li><a href="pages/blog.html">Blog</a></li><!-- FIXED: was pointing to training.html -->
           <li><a href="pages/contact.html">Careers</a></li>
           <li><a href="pages/contact.html">Contact</a></li>
