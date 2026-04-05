@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clients &amp; Partners — Nayu Technologies Inc.</title>
+  <meta name="description" content="Nayu Technologies works with Big 5 Banks, Fortune 500 companies, leading insurers, pension funds, and fintech innovators across North America." />
+  <meta property="og:title" content="Clients &amp; Partners — Nayu Technologies Inc." />
+  <meta property="og:description" content="40+ enterprise clients. 200+ AI projects delivered. Trusted by industry leaders across financial services." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=optional" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300d4ff'/><text y='.9em' font-size='70' x='10'>N</text></svg>" />
+  <style>
+    .page-hero {
+      padding: 10rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,255,200,0.08) 0%, rgba(0,212,255,0.06) 40%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #00ffc8;
+      background: rgba(0,255,200,0.08);
+      border: 1px solid rgba(0,255,200,0.2);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+    .page-hero p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      line-height: 1.75;
+    }
+    /* Stats */
+    .big-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    .big-stat {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .big-stat .val {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .big-stat .lbl {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.4rem;
+    }
+    /* Client categories */
+    .client-category {
+      margin-bottom: 3.5rem;
+    }
+    .client-category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .client-category-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin: 0;
+    }
+    .client-category-header p {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin: 0;
+    }
+    .client-pills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .client-pill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      cursor: default;
+    }
+    .client-pill-card:hover {
+      border-color: rgba(0,212,255,0.25);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+    }
+    .client-pill-card .cp-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+    .client-pill-card h4 {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .client-pill-card p {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin: 0;
+    }
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    .testimonial-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .testimonial-card .quote-mark {
+      font-size: 3rem;
+      line-height: 1;
+      color: rgba(0,212,255,0.2);
+      font-family: Georgia, serif;
+      margin-bottom: -0.5rem;
+    }
+    .testimonial-card .quote-text {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      flex: 1;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #000;
+      flex-shrink: 0;
+    }
+    .author-info h5 {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin: 0 0 0.15rem;
+    }
+    .author-info p {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin: 0;
+    }
+    /* Case study band */
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    .case-study-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s;
+    }
+    .case-study-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+    .case-study-card:hover {
+      border-color: rgba(0,212,255,0.3);
+    }
+    .cs-sector-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 6px;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .case-study-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.02em;
+    }
+    .case-study-card p {
+      font-size: 0.87rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+    .cs-result {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      padding: 0.4rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .cs-result .metric {
+      font-family: var(--font-display);
+      font-weight: 800;
+      color: #00ffc8;
+      font-size: 1rem;
+    }
+    /* NDA notice */
+    .nda-notice {
+      background: rgba(255,190,0,0.04);
+      border: 1px solid rgba(255,190,0,0.15);
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+    /* CTA */
+    .page-cta {
+      text-align: center;
+      padding: 5rem 0 3rem;
+    }
+    .page-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+    .page-cta p { color: var(--text-secondary); margin-bottom: 2rem; }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 900px) {
+      .client-pills-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .case-study-grid { grid-template-columns: 1fr; }
+      .big-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 580px) {
+      .client-pills-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .big-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="../index.html" class="nav-logo">
+    <div class="nav-logo-icon">⬡</div>
+    Nayu<span>Tech</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="training.html">AI Training</a></li>
+    <li><a href="sectors.html">Sectors</a></li>
+    <li><a href="clients.html" class="active">Clients</a></li>
+    <li><a href="contact.html" class="nav-cta btn">Get Started →</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <span class="mobile-close" id="mobile-close" role="button" tabindex="0" aria-label="Close menu">✕</span>
+  <a href="services.html">Services</a>
+  <a href="training.html">AI Training</a>
+  <a href="sectors.html">Sectors</a>
+  <a href="clients.html">Clients</a>
+  <a href="contact.html" style="color: var(--accent)">Get Started →</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-label">🤝 Client Portfolio</div>
+    <h1>Trusted by <span class="gradient-text">Industry Leaders</span><br>Across North America</h1>
+    <p>From Big 5 banks to innovative fintechs, we partner with organizations that are serious about AI transformation — and serious about results.</p>
+  </div>
+</section>
+
+<section class="section-pad" style="padding-top: 1rem;">
+  <div class="container">
+
+    <!-- Big stats -->
+    <div class="big-stats reveal">
+      <div class="big-stat">
+        <div class="val">40+</div>
+        <div class="lbl">Enterprise Clients</div>
+      </div>
+      <div class="big-stat">
+        <div class="val">200+</div>
+        <div class="lbl">AI Projects Delivered</div>
+      </div>
+      <div class="big-stat">
+        <div class="val">98%</div>
+        <div class="lbl">Client Satisfaction</div>
+      </div>
+      <div class="big-stat">
+        <div class="val">12+</div>
+        <div class="lbl">Years of Expertise</div>
+      </div>
+    </div>
+
+    <!-- NDA notice -->
+    <div class="nda-notice">
+      <span>🔒</span>
+      <span>Due to NDAs and confidentiality agreements with our enterprise clients, we represent our portfolio by client type and sector. We're happy to provide references and case study details in a private discovery conversation.</span>
+    </div>
+
+    <!-- Client categories -->
+    <div class="reveal">
+      <div class="section-label">Who We Work With</div>
+      <h2 class="section-title">Our Client <em>Portfolio</em></h2>
+    </div>
+
+    <!-- Banking -->
+    <div class="client-category reveal">
+      <div class="client-category-header">
+        <div class="card-icon card-icon-blue" style="margin:0; width:42px; height:42px; border-radius:10px; font-size:1.2rem;">🏦</div>
+        <div>
+          <h3>Banking &amp; Retail Finance</h3>
+          <p>Canada's largest financial institutions and digital challengers</p>
+        </div>
+      </div>
+      <div class="client-pills-grid">
+        <div class="client-pill-card">
+          <div class="cp-icon">🏦</div>
+          <h4>Big 5 Banks</h4>
+          <p>Canada's largest chartered banks</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">🏢</div>
+          <h4>Regional Banks</h4>
+          <p>Challenger and community banks</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">📱</div>
+          <h4>Digital Banks</h4>
+          <p>Neo-banks and digital-first lenders</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">🤝</div>
+          <h4>Credit Unions</h4>
+          <p>Member-owned financial co-ops</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Insurance -->
+    <div class="client-category reveal">
+      <div class="client-category-header">
+        <div class="card-icon card-icon-purple" style="margin:0; width:42px; height:42px; border-radius:10px; font-size:1.2rem;">🛡️</div>
+        <div>
+          <h3>Insurance</h3>
+          <p>P&amp;C, life, group benefits, and specialty insurers</p>
+        </div>
+      </div>
+      <div class="client-pills-grid">
+        <div class="client-pill-card">
+          <div class="cp-icon">🏠</div>
+          <h4>P&amp;C Insurers</h4>
+          <p>Property &amp; casualty leaders</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">❤️</div>
+          <h4>Life &amp; Health</h4>
+          <p>Life insurance &amp; group benefits</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">🌐</div>
+          <h4>Global Carriers</h4>
+          <p>International insurance groups</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">🔬</div>
+          <h4>Specialty Insurers</h4>
+          <p>Specialty risk &amp; reinsurance</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payments & Fintech -->
+    <div class="client-category reveal">
+      <div class="client-category-header">
+        <div class="card-icon card-icon-teal" style="margin:0; width:42px; height:42px; border-radius:10px; font-size:1.2rem;">💳</div>
+        <div>
+          <h3>Payments &amp; Fintech</h3>
+          <p>Processors, networks, and financial technology innovators</p>
+        </div>
+      </div>
+      <div class="client-pills-grid">
+        <div class="client-pill-card">
+          <div class="cp-icon">💳</div>
+          <h4>Payment Processors</h4>
+          <p>High-volume transaction platforms</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">🌍</div>
+          <h4>Payments Networks</h4>
+          <p>Domestic &amp; cross-border networks</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">🚀</div>
+          <h4>Fintech Startups</h4>
+          <p>Venture-backed financial innovators</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">🏪</div>
+          <h4>Merchant Services</h4>
+          <p>Point-of-sale &amp; acquiring</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wealth & Pension -->
+    <div class="client-category reveal">
+      <div class="client-category-header">
+        <div class="card-icon card-icon-gold" style="margin:0; width:42px; height:42px; border-radius:10px; font-size:1.2rem;">📈</div>
+        <div>
+          <h3>Wealth, Capital Markets &amp; Pensions</h3>
+          <p>Asset managers, pension funds, and capital markets firms</p>
+        </div>
+      </div>
+      <div class="client-pills-grid">
+        <div class="client-pill-card">
+          <div class="cp-icon">💰</div>
+          <h4>Pension Funds</h4>
+          <p>DB &amp; DC pension administrators</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">📈</div>
+          <h4>Wealth Managers</h4>
+          <p>Private wealth &amp; family offices</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">🏛️</div>
+          <h4>Capital Markets</h4>
+          <p>Broker-dealers &amp; trading firms</p>
+        </div>
+        <div class="client-pill-card">
+          <div class="cp-icon">📊</div>
+          <h4>Asset Managers</h4>
+          <p>Fund managers &amp; ETF providers</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="reveal">
+      <div class="section-label">What Our Clients Say</div>
+      <h2 class="section-title">Client <em>Perspectives</em></h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">Nayu's team understood our regulatory environment from day one. They didn't just build the AI — they built it in a way that our compliance team could actually approve and our auditors could actually review.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">VP</div>
+          <div class="author-info">
+            <h5>VP, Enterprise Data &amp; AI</h5>
+            <p>Canadian Chartered Bank</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">We had tried two other vendors before Nayu. What set them apart was that they actually understood insurance — the claims process, the reserving implications, the regulatory reporting. It wasn't a learning curve; they hit the ground running.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">CTO</div>
+          <div class="author-info">
+            <h5>Chief Technology Officer</h5>
+            <p>Leading P&amp;C Insurer</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">The AI training program was unlike anything I've seen from a consulting firm. It was practical, fast, and immediately applicable. Our team went from AI skeptics to AI advocates in three days.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MD</div>
+          <div class="author-info">
+            <h5>Managing Director, Operations</h5>
+            <p>Global Asset Manager</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case studies -->
+    <div class="reveal">
+      <div class="section-label">Impact Stories</div>
+      <h2 class="section-title">Results We've <em>Delivered</em></h2>
+    </div>
+
+    <div class="case-study-grid">
+      <div class="case-study-card reveal reveal-delay-1">
+        <span class="cs-sector-tag">🏦 Banking</span>
+        <h3>Real-Time Fraud Prevention for a Big 5 Bank</h3>
+        <p>Deployed a real-time ML fraud scoring system processing 2M+ transactions per day, replacing a legacy rule-based system with an adaptive model that learns continuously from new fraud patterns.</p>
+        <div class="cs-result"><span class="metric">42%</span> reduction in fraud losses</div>
+        <div class="cs-result"><span class="metric">38%</span> fewer false positives</div>
+        <div class="cs-result"><span class="metric">&lt;50ms</span> average scoring latency</div>
+      </div>
+      <div class="case-study-card reveal reveal-delay-2">
+        <span class="cs-sector-tag">🛡️ Insurance</span>
+        <h3>Claims Automation for a National P&amp;C Insurer</h3>
+        <p>Built an intelligent claims triage and auto-adjudication system for low-complexity auto claims, integrating with the core claims management platform and achieving full auditability.</p>
+        <div class="cs-result"><span class="metric">68%</span> of claims auto-adjudicated</div>
+        <div class="cs-result"><span class="metric">4 days → 4 hours</span> average claim cycle time</div>
+        <div class="cs-result"><span class="metric">$3.2M</span> annual operational savings</div>
+      </div>
+      <div class="case-study-card reveal reveal-delay-1">
+        <span class="cs-sector-tag">💳 Payments</span>
+        <h3>AML Monitoring Engine for a Payment Network</h3>
+        <p>Replaced a legacy rules-based AML system with a graph analytics and ML platform that detects complex money laundering patterns across the entire transaction network in real time.</p>
+        <div class="cs-result"><span class="metric">3×</span> more suspicious activity detected</div>
+        <div class="cs-result"><span class="metric">55%</span> fewer false-positive alerts</div>
+        <div class="cs-result"><span class="metric">Real-time</span> vs. overnight batch previously</div>
+      </div>
+      <div class="case-study-card reveal reveal-delay-2">
+        <span class="cs-sector-tag">💰 Pension</span>
+        <h3>Member AI Assistant for a Major Pension Fund</h3>
+        <p>Designed and deployed a conversational AI that handles member queries, benefit calculations, and retirement planning questions — integrated with the pension administration system via secure APIs.</p>
+        <div class="cs-result"><span class="metric">63%</span> of member queries handled by AI</div>
+        <div class="cs-result"><span class="metric">24/7</span> availability vs. 9–5 previously</div>
+        <div class="cs-result"><span class="metric">4.8/5</span> member satisfaction score</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="page-cta">
+      <h2>Ready to Join Our <span class="gradient-text">Client Portfolio?</span></h2>
+      <p>Book a free 30-minute discovery call and let's talk about what's possible for your organization.</p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn-primary">Book a Free Consultation →</a>
+        <a href="sectors.html" class="btn btn-outline">View Our Sector Expertise</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo" style="margin-bottom:0.5rem; display:inline-flex">
+          <div class="nav-logo-icon">⬡</div>
+          Nayu<span>Tech</span>
+        </a>
+        <p>Nayu Technologies Inc. is an AI &amp; automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/nayutech" class="social-btn" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+          <a href="mailto:info@nayutechnologies.com" class="social-btn" title="Email" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Client Sectors</h5>
+        <ul>
+          <li><a href="sectors.html">Banking &amp; Finance</a></li>
+          <li><a href="sectors.html">Insurance</a></li>
+          <li><a href="sectors.html">Payments &amp; Fintech</a></li>
+          <li><a href="sectors.html">Wealth &amp; Capital Markets</a></li>
+          <li><a href="sectors.html">Pensions &amp; Benefits</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="training.html">AI Training</a></li>
+          <li><a href="clients.html">Clients</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Office</h5>
+        <p style="font-size:0.82rem; color:var(--text-secondary); line-height:1.8; margin-top:0.5rem">
+          Toronto, Ontario, Canada<br>
+          <a href="mailto:info@nayutechnologies.com" style="color:var(--accent)">info@nayutechnologies.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nayu Technologies Inc. All rights reserved.</span>
+      <div style="display:flex; gap:1.5rem;">
+        <a href="contact.html">Privacy Policy</a>
+        <a href="contact.html">Terms of Service</a>
+      </div>
+      <div class="footer-badge">⬡ AI-Powered Company</div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

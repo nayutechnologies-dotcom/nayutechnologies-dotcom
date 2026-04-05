@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Nayu Technologies Inc.</title>
+  <meta name="description" content="AI-first services for the modern enterprise — Generative AI, Intelligent Automation, Digital Transformation, Cloud & Cybersecurity, and Contact Center Modernization." />
+  <meta property="og:title" content="Services — Nayu Technologies Inc." />
+  <meta property="og:description" content="From strategy to deployment — we build intelligent systems that create lasting competitive advantage." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=optional" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300d4ff'/><text y='.9em' font-size='70' x='10'>N</text></svg>" />
+  <style>
+    /* ── Page-specific overrides ── */
+    .page-hero {
+      padding: 10rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,212,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+    .page-hero p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      line-height: 1.75;
+    }
+    /* Service detail cards */
+    .service-full-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .service-full-card:hover {
+      border-color: rgba(0,212,255,0.25);
+      box-shadow: 0 0 40px rgba(0,212,255,0.06);
+    }
+    .service-full-card.alt {
+      grid-template-columns: 1fr 1fr;
+    }
+    .service-full-card .sfc-left h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 1rem 0 0.75rem;
+    }
+    .service-full-card .sfc-left p {
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .tech-stack {
+      margin-top: 1.5rem;
+    }
+    .tech-stack h5 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+      margin-bottom: 0.6rem;
+    }
+    .sfc-right {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.8rem;
+    }
+    .sfc-right h4 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
+    }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .feature-item:last-child { border-bottom: none; }
+    .feature-item::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+    .process-band {
+      background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(123,97,255,0.05));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      margin: 4rem 0;
+    }
+    .process-band h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+    .process-band p {
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .process-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .process-card .num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: rgba(0,212,255,0.2);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .process-card h4 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .process-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0;
+    }
+    /* CTA section */
+    .page-cta {
+      text-align: center;
+      padding: 5rem 0;
+    }
+    .page-cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+    .page-cta p {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 768px) {
+      .service-full-card {
+        grid-template-columns: 1fr;
+      }
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 480px) {
+      .process-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="../index.html" class="nav-logo">
+    <div class="nav-logo-icon">⬡</div>
+    Nayu<span>Tech</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="training.html">AI Training</a></li>
+    <li><a href="sectors.html">Sectors</a></li>
+    <li><a href="clients.html">Clients</a></li>
+    <li><a href="contact.html" class="nav-cta btn">Get Started →</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <span class="mobile-close" id="mobile-close" role="button" tabindex="0" aria-label="Close menu">✕</span>
+  <a href="services.html">Services</a>
+  <a href="training.html">AI Training</a>
+  <a href="sectors.html">Sectors</a>
+  <a href="clients.html">Clients</a>
+  <a href="contact.html" style="color: var(--accent)">Get Started →</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-label">⚡ What We Do</div>
+    <h1>AI-First Services for the<br><span class="gradient-text">Modern Enterprise</span></h1>
+    <p>From strategy to deployment — we build intelligent systems that create lasting competitive advantage across every layer of your business.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section-pad" style="padding-top: 2rem;">
+  <div class="container">
+
+    <!-- 1. Generative AI -->
+    <div class="service-full-card reveal">
+      <div class="sfc-left">
+        <div class="card-icon card-icon-blue">🤖</div>
+        <h2>Generative AI &amp; Agentic Workflows</h2>
+        <p>Build autonomous AI agents, conversational systems, and LLM-powered applications that transform how your teams operate. From RAG pipelines to multi-agent orchestration, we engineer production-grade GenAI that delivers real business outcomes — not demos.</p>
+        <p>Our GenAI engagements span the full stack: model selection, fine-tuning, retrieval architecture, guardrails, observability, and MLOps for continuous improvement.</p>
+        <div class="tech-stack">
+          <h5>Technologies</h5>
+          <div class="card-tags">
+            <span class="tag">GPT-4o</span>
+            <span class="tag">Claude</span>
+            <span class="tag">Gemini</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">LlamaIndex</span>
+            <span class="tag">Pinecone</span>
+            <span class="tag">Weaviate</span>
+          </div>
+        </div>
+      </div>
+      <div class="sfc-right">
+        <h4>Capabilities</h4>
+        <div class="feature-item">Agentic AI &amp; multi-agent orchestration</div>
+        <div class="feature-item">RAG &amp; enterprise knowledge systems</div>
+        <div class="feature-item">Custom LLM fine-tuning &amp; deployment</div>
+        <div class="feature-item">Conversational bots &amp; internal copilots</div>
+        <div class="feature-item">SDLC accelerators &amp; code generation</div>
+        <div class="feature-item">Prompt engineering &amp; evaluation frameworks</div>
+        <div class="feature-item">AI guardrails, safety &amp; compliance layers</div>
+        <div class="feature-item">Model monitoring &amp; drift detection</div>
+      </div>
+    </div>
+
+    <!-- 2. Digital Transformation -->
+    <div class="service-full-card reveal">
+      <div class="sfc-left">
+        <div class="card-icon card-icon-teal">⚡</div>
+        <h2>Digital Transformation</h2>
+        <p>Re-wire your digital footprint for the AI era. We modernize legacy infrastructure, deploy technology at scale, and create AI-driven customer engagement channels that convert. Our approach is business-outcome-first — every technical decision maps back to measurable value.</p>
+        <p>We help financial institutions, insurers, and enterprise organizations move from monolithic systems to composable, API-first architectures — enabling speed, resilience, and continuous innovation.</p>
+        <div class="tech-stack">
+          <h5>Technologies</h5>
+          <div class="card-tags">
+            <span class="tag tag-purple">Microservices</span>
+            <span class="tag tag-purple">API Gateway</span>
+            <span class="tag tag-purple">Kafka</span>
+            <span class="tag tag-purple">DevOps</span>
+            <span class="tag tag-purple">CI/CD</span>
+          </div>
+        </div>
+      </div>
+      <div class="sfc-right">
+        <h4>Capabilities</h4>
+        <div class="feature-item">Legacy system modernization &amp; re-platforming</div>
+        <div class="feature-item">API-first architecture &amp; microservices design</div>
+        <div class="feature-item">Omnichannel digital experience design</div>
+        <div class="feature-item">Customer journey automation</div>
+        <div class="feature-item">Integration with core banking &amp; policy systems</div>
+        <div class="feature-item">Digital product strategy &amp; roadmapping</div>
+        <div class="feature-item">Change management &amp; adoption programs</div>
+      </div>
+    </div>
+
+    <!-- 3. Cloud & Cybersecurity -->
+    <div class="service-full-card reveal">
+      <div class="sfc-left">
+        <div class="card-icon card-icon-purple">☁️</div>
+        <h2>Cloud, Data &amp; Cybersecurity</h2>
+        <p>Accelerate cloud adoption with zero-trust security baked in from day one. We build robust, AI-ready data platforms and enterprise architectures on AWS, Azure, and GCP — with full governance, compliance, and FinOps discipline throughout.</p>
+        <p>Our data engineering teams build the modern data stack that powers AI: data lakehouses, feature stores, streaming pipelines, and unified analytics layers that give your models the data they need to perform.</p>
+        <div class="tech-stack">
+          <h5>Technologies</h5>
+          <div class="card-tags">
+            <span class="tag tag-purple">AWS</span>
+            <span class="tag tag-purple">Azure</span>
+            <span class="tag tag-purple">GCP</span>
+            <span class="tag tag-purple">Snowflake</span>
+            <span class="tag tag-purple">Databricks</span>
+            <span class="tag tag-purple">Terraform</span>
+          </div>
+        </div>
+      </div>
+      <div class="sfc-right">
+        <h4>Capabilities</h4>
+        <div class="feature-item">Cloud migration &amp; FinOps optimization</div>
+        <div class="feature-item">Zero-trust security architecture</div>
+        <div class="feature-item">Data lakehouse &amp; MLOps platform build</div>
+        <div class="feature-item">Real-time data pipelines &amp; streaming</div>
+        <div class="feature-item">Identity &amp; access management (IAM)</div>
+        <div class="feature-item">Regulatory compliance (SOC2, PCI-DSS, OSFI)</div>
+        <div class="feature-item">Cloud security posture management</div>
+        <div class="feature-item">Incident response &amp; threat modeling</div>
+      </div>
+    </div>
+
+    <!-- 4. Intelligent Automation -->
+    <div class="service-full-card reveal">
+      <div class="sfc-left">
+        <div class="card-icon card-icon-gold">⚙️</div>
+        <h2>Intelligent Automation &amp; RPA</h2>
+        <p>Eliminate repetitive, high-volume work with AI-powered automation. We combine RPA, computer vision, NLP, and decision intelligence to build self-healing, autonomous processes that scale without headcount.</p>
+        <p>Beyond traditional RPA, we layer in AI to handle exceptions, unstructured documents, and judgment-based decisions that rule-based bots can't manage — achieving true straight-through processing.</p>
+        <div class="tech-stack">
+          <h5>Technologies</h5>
+          <div class="card-tags">
+            <span class="tag">UiPath</span>
+            <span class="tag">Power Automate</span>
+            <span class="tag">Blue Prism</span>
+            <span class="tag">Automation Anywhere</span>
+          </div>
+        </div>
+      </div>
+      <div class="sfc-right">
+        <h4>Capabilities</h4>
+        <div class="feature-item">Intelligent document processing (IDP)</div>
+        <div class="feature-item">Process mining &amp; opportunity assessment</div>
+        <div class="feature-item">AI decision engines &amp; business rules</div>
+        <div class="feature-item">End-to-end STP (straight-through processing)</div>
+        <div class="feature-item">Computer vision for form &amp; image data</div>
+        <div class="feature-item">Bot monitoring, governance &amp; CoE setup</div>
+        <div class="feature-item">ERP &amp; CRM automation (SAP, Salesforce)</div>
+      </div>
+    </div>
+
+    <!-- 5. Contact Center -->
+    <div class="service-full-card reveal">
+      <div class="sfc-left">
+        <div class="card-icon card-icon-red">🎙️</div>
+        <h2>Contact Center Modernization</h2>
+        <p>Transform customer service with AI-powered virtual agents, real-time agent assist, and voice AI that delivers personalized, empathetic experiences at scale — while dramatically reducing handle time and operational costs.</p>
+        <p>We design end-to-end contact center intelligence: from conversational IVR replacement to post-call analytics, QA automation, and agent coaching tools that improve CSAT while cutting costs by 30–50%.</p>
+        <div class="tech-stack">
+          <h5>Technologies</h5>
+          <div class="card-tags">
+            <span class="tag">Genesys</span>
+            <span class="tag">NICE CX</span>
+            <span class="tag">Amazon Connect</span>
+            <span class="tag">Google CCAI</span>
+          </div>
+        </div>
+      </div>
+      <div class="sfc-right">
+        <h4>Capabilities</h4>
+        <div class="feature-item">Voice AI &amp; conversational IVR replacement</div>
+        <div class="feature-item">Real-time agent assist &amp; next-best-action</div>
+        <div class="feature-item">Sentiment analysis &amp; QA automation</div>
+        <div class="feature-item">AI-powered workforce management</div>
+        <div class="feature-item">Omnichannel bot (chat, email, SMS, voice)</div>
+        <div class="feature-item">Post-call analytics &amp; coaching dashboards</div>
+        <div class="feature-item">CRM integration (Salesforce, ServiceNow)</div>
+      </div>
+    </div>
+
+    <!-- Process band -->
+    <div class="process-band reveal">
+      <h2>Our Delivery <em>Methodology</em></h2>
+      <p>A battle-tested approach that accelerates time-to-value without sacrificing quality or governance.</p>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="num">01</div>
+          <h4>Discover &amp; Diagnose</h4>
+          <p>Deep-dive into your data, workflows, and strategic goals to identify the highest-value AI opportunities.</p>
+        </div>
+        <div class="process-card">
+          <div class="num">02</div>
+          <h4>Design &amp; Architect</h4>
+          <p>Build the technical blueprint — models, pipelines, infrastructure, integration points, and governance framework.</p>
+        </div>
+        <div class="process-card">
+          <div class="num">03</div>
+          <h4>Build &amp; Iterate</h4>
+          <p>Agile delivery with weekly milestones, continuous testing, and stakeholder feedback loops built in.</p>
+        </div>
+        <div class="process-card">
+          <div class="num">04</div>
+          <h4>Deploy &amp; Scale</h4>
+          <p>Production launch with MLOps monitoring, model drift detection, and 24/7 hypercare support.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="page-cta">
+      <h2>Ready to Build Your <span class="gradient-text">AI Advantage?</span></h2>
+      <p>Book a free 30-minute discovery call. No commitment required.</p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn-primary">Book a Free Consultation →</a>
+        <a href="sectors.html" class="btn btn-outline">View Industry Expertise</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo" style="margin-bottom:0.5rem; display:inline-flex">
+          <div class="nav-logo-icon">⬡</div>
+          Nayu<span>Tech</span>
+        </a>
+        <p>Nayu Technologies Inc. is an AI &amp; automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/nayutech" class="social-btn" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+          <a href="mailto:info@nayutechnologies.com" class="social-btn" title="Email" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Generative AI</a></li>
+          <li><a href="services.html">Intelligent Automation</a></li>
+          <li><a href="services.html">Digital Transformation</a></li>
+          <li><a href="services.html">Cloud &amp; Security</a></li>
+          <li><a href="services.html">Contact Center AI</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="training.html">AI Training</a></li>
+          <li><a href="sectors.html">Sectors</a></li>
+          <li><a href="clients.html">Clients</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Office</h5>
+        <p style="font-size:0.82rem; color:var(--text-secondary); line-height:1.8; margin-top:0.5rem">
+          Toronto, Ontario, Canada<br>
+          <a href="mailto:info@nayutechnologies.com" style="color:var(--accent)">info@nayutechnologies.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nayu Technologies Inc. All rights reserved.</span>
+      <div style="display:flex; gap:1.5rem;">
+        <a href="contact.html">Privacy Policy</a>
+        <a href="contact.html">Terms of Service</a>
+      </div>
+      <div class="footer-badge">⬡ AI-Powered Company</div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

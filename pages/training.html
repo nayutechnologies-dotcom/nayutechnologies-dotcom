@@ -4,18 +4,240 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Training Programs — Nayu Technologies Inc.</title>
-  <meta name="description" content="Practical AI training programs for enterprises — from AI literacy workshops to advanced LLM engineering bootcamps." />
+  <meta name="description" content="Practical, industry-focused AI training for every level — from executive AI literacy workshops to advanced LLM engineering bootcamps." />
+  <meta property="og:title" content="AI Training Programs — Nayu Technologies Inc." />
+  <meta property="og:description" content="Build an AI-fluent organization with Nayu AI Academy. 500+ professionals trained, 4.9★ average rating." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&amp;display=optional" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=optional" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300d4ff'/><text y='.9em' font-size='70' x='10'>N</text></svg>" />
   <style>
-    @media (max-width: 768px) {
-      .training-stats-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
+    .page-hero {
+      padding: 10rem 0 5rem;
+      position: relative;
+      overflow: hidden;
     }
-    @media (max-width: 480px) {
-      .training-stats-grid { grid-template-columns: 1fr !important; }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(123,97,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      background: rgba(123,97,255,0.08);
+      border: 1px solid rgba(123,97,255,0.2);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+    .page-hero p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      line-height: 1.75;
+    }
+    /* Stats bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-item .val {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent-2);
+    }
+    .stat-item .lbl {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.25rem;
+    }
+    /* Learning path filter */
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      border-radius: 100px;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.83rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(0,212,255,0.08);
+      border-color: rgba(0,212,255,0.3);
+      color: var(--accent);
+    }
+    /* Program cards */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .program-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .program-card:hover {
+      border-color: rgba(0,212,255,0.25);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .program-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+    .program-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0;
+      flex: 1;
+    }
+    .program-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .program-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+    .program-meta-row span:first-child {
+      width: 14px;
+      text-align: center;
+    }
+    .level-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 6px;
+      padding: 0.25rem 0.6rem;
+    }
+    .level-beginner { background: rgba(0,255,180,0.1); color: #00ffb4; border: 1px solid rgba(0,255,180,0.2); }
+    .level-intermediate { background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid rgba(0,212,255,0.2); }
+    .level-advanced { background: rgba(255,190,0,0.1); color: #ffbe00; border: 1px solid rgba(255,190,0,0.2); }
+    .level-all { background: rgba(123,97,255,0.1); color: var(--accent-2); border: 1px solid rgba(123,97,255,0.2); }
+    /* Custom section */
+    .custom-band {
+      margin: 4rem 0 2rem;
+      background: linear-gradient(135deg, rgba(123,97,255,0.08), rgba(0,212,255,0.05));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 2rem;
+    }
+    .custom-band h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+    }
+    .custom-band p {
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0;
+    }
+    .custom-band .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+    /* What's included */
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 3rem 0;
+    }
+    .included-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .included-item .icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .included-item h4 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .included-item p {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .programs-grid { grid-template-columns: 1fr 1fr; }
+      .included-grid { grid-template-columns: 1fr 1fr; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .custom-band { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 580px) {
+      .programs-grid { grid-template-columns: 1fr; }
+      .included-grid { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -27,237 +249,295 @@
     Nayu<span>Tech</span>
   </a>
   <ul class="nav-links">
-    <li><a href="../index.html#services">Services</a></li>
-    <li><a href="../index.html#training">AI Training</a></li>
-    <li><a href="../index.html#sectors">Sectors</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="training.html" class="active">AI Training</a></li>
+    <li><a href="sectors.html">Sectors</a></li>
+    <li><a href="clients.html">Clients</a></li>
     <li><a href="contact.html" class="nav-cta btn">Get Started →</a></li>
   </ul>
-  <div class="nav-hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span><span></span><span></span></div>
+  <div class="nav-hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
-
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
   <span class="mobile-close" id="mobile-close" role="button" tabindex="0" aria-label="Close menu">✕</span>
-  <a href="../index.html">Home</a>
-  <a href="../index.html#services">Services</a>
-  <a href="contact.html" style="color:var(--accent)">Get Started →</a>
+  <a href="services.html">Services</a>
+  <a href="training.html">AI Training</a>
+  <a href="sectors.html">Sectors</a>
+  <a href="clients.html">Clients</a>
+  <a href="contact.html" style="color: var(--accent)">Get Started →</a>
 </div>
 
-<!-- Hero -->
-<section style="padding: 10rem 0 5rem; position:relative; overflow:hidden;">
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="container" style="position:relative;z-index:2;">
-    <div class="hero-badge">
-      <span class="hero-badge-dot"></span>
-      Nayu AI Academy
-    </div>
-    <h1 class="hero-title" style="font-size:clamp(2.5rem,5vw,4rem);">
-      <span class="line">AI Training for the</span>
-      <span class="line gradient-text">Modern Enterprise</span>
-    </h1>
-    <p class="hero-subtitle" style="max-width:620px;">
-      Practical, industry-focused AI training programs designed by practitioners. From C-suite to engineers — we build AI fluency across your entire organization.
-    </p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem;">
-      <a href="contact.html" class="btn btn-primary">Enroll Your Team →</a>
-      <a href="#programs" class="btn btn-outline">Browse Programs</a>
-    </div>
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-label">🎓 Nayu AI Academy</div>
+    <h1>Build an <span class="gradient-text">AI-Fluent</span><br>Organization</h1>
+    <p>Practical, industry-focused AI training designed by practitioners — not academics. Every course includes real case studies, hands-on labs, and direct application to your business challenges.</p>
   </div>
 </section>
 
-<!-- Stats bar -->
-<div style="border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:2rem 0; background:rgba(0,212,255,0.03);">
+<section class="section-pad" style="padding-top: 1rem;">
   <div class="container">
-    <div class="training-stats-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; text-align:center;">
-      <div>
-        <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--accent);">500+</div>
-        <div style="font-size:0.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem">Professionals Trained</div>
+
+    <!-- Stats -->
+    <div class="stats-bar reveal">
+      <div class="stat-item">
+        <div class="val">500+</div>
+        <div class="lbl">Professionals Trained</div>
       </div>
-      <div>
-        <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--accent-2);">12+</div>
-        <div style="font-size:0.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem">Training Programs</div>
+      <div class="stat-item">
+        <div class="val">12+</div>
+        <div class="lbl">Training Programs</div>
       </div>
-      <div>
-        <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:#00ffc8;">4.9★</div>
-        <div style="font-size:0.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem">Average Rating</div>
+      <div class="stat-item">
+        <div class="val">4.9★</div>
+        <div class="lbl">Average Rating</div>
       </div>
-      <div>
-        <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:#ffbe00;">100%</div>
-        <div style="font-size:0.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem">Practical &amp; Applied</div>
+      <div class="stat-item">
+        <div class="val">100%</div>
+        <div class="lbl">Practical &amp; Applied</div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Programs -->
-<section class="section-pad" id="programs">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 3.5rem;">
-      <div class="section-label">Training Programs</div>
+    <!-- What's included -->
+    <div class="reveal">
+      <div class="section-label">Every Program Includes</div>
+    </div>
+    <div class="included-grid">
+      <div class="included-item reveal reveal-delay-1">
+        <div class="icon">📋</div>
+        <h4>Real Case Studies</h4>
+        <p>Learn from actual AI implementations in financial services, insurance, and enterprise environments.</p>
+      </div>
+      <div class="included-item reveal reveal-delay-2">
+        <div class="icon">🧪</div>
+        <h4>Hands-On Labs</h4>
+        <p>Build and experiment with real tools and platforms during every session — no theory without practice.</p>
+      </div>
+      <div class="included-item reveal reveal-delay-3">
+        <div class="icon">🎯</div>
+        <h4>Industry Application</h4>
+        <p>Every concept is mapped to your industry's specific challenges, regulations, and use cases.</p>
+      </div>
+      <div class="included-item reveal reveal-delay-1">
+        <div class="icon">📜</div>
+        <h4>Certificate of Completion</h4>
+        <p>Industry-recognized credentials your team can add to their professional profiles.</p>
+      </div>
+      <div class="included-item reveal reveal-delay-2">
+        <div class="icon">💬</div>
+        <h4>Expert Instructors</h4>
+        <p>All trainers are active practitioners with real enterprise AI delivery experience.</p>
+      </div>
+      <div class="included-item reveal reveal-delay-3">
+        <div class="icon">🔄</div>
+        <h4>Post-Training Support</h4>
+        <p>30-day follow-up access to instructors and resources to embed learning in your workflows.</p>
+      </div>
+    </div>
+
+    <!-- Programs -->
+    <div class="reveal" style="margin-top: 3rem;">
+      <div class="section-label" id="programs">Training Programs</div>
       <h2 class="section-title">Choose Your <em>Learning Path</em></h2>
-      <p class="section-sub" style="margin:0 auto">From introductory workshops to advanced technical bootcamps — there's a program for every role and level.</p>
+      <p class="section-sub">From introductory workshops to advanced bootcamps — a program for every role and level.</p>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.5rem;">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Programs</button>
+      <button class="filter-btn" data-filter="beginner">Beginner</button>
+      <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+      <button class="filter-btn" data-filter="advanced">Advanced</button>
+      <button class="filter-btn" data-filter="leadership">Leadership</button>
+    </div>
 
-      <div class="card reveal reveal-delay-1">
-        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;">
-          <div class="card-icon card-icon-teal">🌱</div>
-          <div>
-            <div class="training-level level-beginner" style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#00ffc8">Beginner</div>
-            <h3 style="margin:0.3rem 0 0;">AI Literacy &amp; Foundations</h3>
-          </div>
-        </div>
-        <p>Demystify AI for your entire organization. Covers core AI concepts, real business applications, ethics, bias, and how to spot automation opportunities in daily work.</p>
-        <div style="margin:1.2rem 0; padding:1rem; background:rgba(0,255,200,0.04); border:1px solid rgba(0,255,200,0.1); border-radius:10px;">
-          <div style="font-size:0.78rem; color:var(--text-secondary); line-height:1.8;">
-            <strong style="color:var(--text-primary);">Format:</strong> 1-Day Live Workshop or Self-Paced Online<br>
-            <strong style="color:var(--text-primary);">Audience:</strong> All employees — executive to operations<br>
-            <strong style="color:var(--text-primary);">Prerequisites:</strong> None
-          </div>
+    <div class="programs-grid">
+
+      <div class="program-card reveal reveal-delay-1" data-level="beginner">
+        <div class="card-icon card-icon-teal">🌱</div>
+        <div><span class="level-badge level-beginner">Beginner</span></div>
+        <h3>AI Literacy &amp; Foundations</h3>
+        <p>Demystify AI for non-technical stakeholders. Covers AI concepts, real business applications, ethics, bias, and how to identify automation opportunities in daily work.</p>
+        <div class="program-meta">
+          <div class="program-meta-row"><span>⏱</span> 1-Day Workshop · Live or Virtual</div>
+          <div class="program-meta-row"><span>👥</span> Executive, Operations, HR, Finance</div>
+          <div class="program-meta-row"><span>📋</span> No prerequisites</div>
         </div>
         <div class="card-tags">
-          <span class="tag">Executive</span><span class="tag">Operations</span><span class="tag">HR</span><span class="tag">Finance</span>
+          <span class="tag">Executive</span><span class="tag">Operations</span><span class="tag">HR</span>
         </div>
-        <a href="contact.html" class="btn btn-outline" style="width:100%;margin-top:1.2rem;justify-content:center;">Enquire →</a>
+        <a href="contact.html" class="btn btn-outline" style="text-align:center">Enquire →</a>
       </div>
 
-      <div class="card reveal reveal-delay-2">
-        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;">
-          <div class="card-icon card-icon-blue">🤖</div>
-          <div>
-            <div class="training-level level-intermediate" style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent)">Intermediate</div>
-            <h3 style="margin:0.3rem 0 0;">Generative AI for Business</h3>
-          </div>
-        </div>
-        <p>Master the practical use of ChatGPT, Claude, Microsoft Copilot, and prompt engineering to dramatically improve productivity, analysis, and communication.</p>
-        <div style="margin:1.2rem 0; padding:1rem; background:rgba(0,212,255,0.04); border:1px solid var(--border); border-radius:10px;">
-          <div style="font-size:0.78rem; color:var(--text-secondary); line-height:1.8;">
-            <strong style="color:var(--text-primary);">Format:</strong> 3-Day Bootcamp · Cohort-Based<br>
-            <strong style="color:var(--text-primary);">Audience:</strong> Business analysts, managers, knowledge workers<br>
-            <strong style="color:var(--text-primary);">Prerequisites:</strong> Basic computer literacy
-          </div>
+      <div class="program-card reveal reveal-delay-2" data-level="intermediate">
+        <div class="card-icon card-icon-blue">🤖</div>
+        <div><span class="level-badge level-intermediate">Intermediate</span></div>
+        <h3>Generative AI for Business</h3>
+        <p>Master ChatGPT, Claude, Microsoft Copilot, and prompt engineering to dramatically improve productivity, analysis, reporting, and daily communication workflows.</p>
+        <div class="program-meta">
+          <div class="program-meta-row"><span>⏱</span> 3-Day Bootcamp · Cohort-Based</div>
+          <div class="program-meta-row"><span>👥</span> Business Analysts, Managers</div>
+          <div class="program-meta-row"><span>📋</span> Basic computer literacy</div>
         </div>
         <div class="card-tags">
-          <span class="tag">Prompt Eng.</span><span class="tag">Copilot</span><span class="tag">ChatGPT</span>
+          <span class="tag">Prompt Engineering</span><span class="tag">Copilot</span>
         </div>
-        <a href="contact.html" class="btn btn-outline" style="width:100%;margin-top:1.2rem;justify-content:center;">Enquire →</a>
+        <a href="contact.html" class="btn btn-outline" style="text-align:center">Enquire →</a>
       </div>
 
-      <div class="card reveal reveal-delay-3">
-        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;">
-          <div class="card-icon card-icon-purple">⚙️</div>
-          <div>
-            <div class="training-level level-intermediate" style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent)">Intermediate</div>
-            <h3 style="margin:0.3rem 0 0;">AI Automation &amp; RPA</h3>
-          </div>
-        </div>
-        <p>Build intelligent automation bots that handle document processing, data extraction, and end-to-end process automation using modern AI + RPA platforms.</p>
-        <div style="margin:1.2rem 0; padding:1rem; background:rgba(123,97,255,0.04); border:1px solid rgba(123,97,255,0.15); border-radius:10px;">
-          <div style="font-size:0.78rem; color:var(--text-secondary); line-height:1.8;">
-            <strong style="color:var(--text-primary);">Format:</strong> 5-Day Intensive · Hands-On Labs<br>
-            <strong style="color:var(--text-primary);">Audience:</strong> Business analysts, IT professionals<br>
-            <strong style="color:var(--text-primary);">Prerequisites:</strong> Basic process knowledge
-          </div>
+      <div class="program-card reveal reveal-delay-3" data-level="intermediate">
+        <div class="card-icon card-icon-purple">⚙️</div>
+        <div><span class="level-badge level-intermediate">Intermediate</span></div>
+        <h3>AI Automation &amp; RPA</h3>
+        <p>Build intelligent bots that handle document processing, data extraction, and workflow automation using modern AI + RPA stacks. Includes live lab environments.</p>
+        <div class="program-meta">
+          <div class="program-meta-row"><span>⏱</span> 5-Day Intensive · Hands-On Labs</div>
+          <div class="program-meta-row"><span>👥</span> Business Analysts, IT Professionals</div>
+          <div class="program-meta-row"><span>📋</span> Basic process knowledge</div>
         </div>
         <div class="card-tags">
           <span class="tag tag-purple">UiPath</span><span class="tag tag-purple">Power Automate</span>
         </div>
-        <a href="contact.html" class="btn btn-outline" style="width:100%;margin-top:1.2rem;justify-content:center;">Enquire →</a>
+        <a href="contact.html" class="btn btn-outline" style="text-align:center">Enquire →</a>
       </div>
 
-      <div class="card reveal reveal-delay-1">
-        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;">
-          <div class="card-icon card-icon-gold">🔬</div>
-          <div>
-            <div class="training-level level-advanced" style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-2)">Advanced</div>
-            <h3 style="margin:0.3rem 0 0;">LLM Engineering &amp; RAG Systems</h3>
-          </div>
-        </div>
-        <p>Architect and build production-ready RAG systems and LLM applications. Covers embeddings, vector databases, chunking strategies, and evaluation frameworks.</p>
-        <div style="margin:1.2rem 0; padding:1rem; background:rgba(255,190,0,0.03); border:1px solid rgba(255,190,0,0.1); border-radius:10px;">
-          <div style="font-size:0.78rem; color:var(--text-secondary); line-height:1.8;">
-            <strong style="color:var(--text-primary);">Format:</strong> 2-Week Program · Project-Based<br>
-            <strong style="color:var(--text-primary);">Audience:</strong> Data scientists, ML engineers<br>
-            <strong style="color:var(--text-primary);">Prerequisites:</strong> Python, ML fundamentals
-          </div>
+      <div class="program-card reveal reveal-delay-1" data-level="advanced">
+        <div class="card-icon card-icon-gold">🔬</div>
+        <div><span class="level-badge level-advanced">Advanced</span></div>
+        <h3>LLM Engineering &amp; RAG Systems</h3>
+        <p>Architect and build production-ready RAG systems. Covers embeddings, vector databases, chunking strategies, evaluation frameworks, and deployment on enterprise cloud.</p>
+        <div class="program-meta">
+          <div class="program-meta-row"><span>⏱</span> 2-Week Program · Project-Based</div>
+          <div class="program-meta-row"><span>👥</span> Data Scientists, ML Engineers</div>
+          <div class="program-meta-row"><span>📋</span> Python, ML fundamentals</div>
         </div>
         <div class="card-tags">
-          <span class="tag">LangChain</span><span class="tag">Pinecone</span><span class="tag">OpenAI API</span>
+          <span class="tag">LangChain</span><span class="tag">Pinecone</span><span class="tag">OpenAI</span>
         </div>
-        <a href="contact.html" class="btn btn-outline" style="width:100%;margin-top:1.2rem;justify-content:center;">Enquire →</a>
+        <a href="contact.html" class="btn btn-outline" style="text-align:center">Enquire →</a>
       </div>
 
-      <div class="card reveal reveal-delay-2">
-        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;">
-          <div class="card-icon card-icon-blue">🎯</div>
-          <div>
-            <div class="training-level level-advanced" style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent-2)">Advanced</div>
-            <h3 style="margin:0.3rem 0 0;">Agentic AI Systems Design</h3>
-          </div>
-        </div>
-        <p>Design and orchestrate multi-agent AI systems with tool use, memory, and planning. Build autonomous pipelines using CrewAI, LangGraph, and AutoGen.</p>
-        <div style="margin:1.2rem 0; padding:1rem; background:rgba(0,212,255,0.04); border:1px solid var(--border); border-radius:10px;">
-          <div style="font-size:0.78rem; color:var(--text-secondary); line-height:1.8;">
-            <strong style="color:var(--text-primary);">Format:</strong> 2-Week Intensive · Live Labs<br>
-            <strong style="color:var(--text-primary);">Audience:</strong> Senior engineers, AI leads<br>
-            <strong style="color:var(--text-primary);">Prerequisites:</strong> LLM fundamentals, Python
-          </div>
+      <div class="program-card reveal reveal-delay-2" data-level="advanced">
+        <div class="card-icon card-icon-blue">🎯</div>
+        <div><span class="level-badge level-advanced">Advanced</span></div>
+        <h3>Agentic AI Systems Design</h3>
+        <p>Design and orchestrate multi-agent AI systems with tool use, memory, and planning. Build fully autonomous pipelines using CrewAI, LangGraph, and AutoGen.</p>
+        <div class="program-meta">
+          <div class="program-meta-row"><span>⏱</span> 2-Week Intensive · Live Labs</div>
+          <div class="program-meta-row"><span>👥</span> Senior Engineers, AI Leads</div>
+          <div class="program-meta-row"><span>📋</span> LLM fundamentals, Python</div>
         </div>
         <div class="card-tags">
           <span class="tag">AutoGen</span><span class="tag">CrewAI</span><span class="tag">LangGraph</span>
         </div>
-        <a href="contact.html" class="btn btn-outline" style="width:100%;margin-top:1.2rem;justify-content:center;">Enquire →</a>
+        <a href="contact.html" class="btn btn-outline" style="text-align:center">Enquire →</a>
       </div>
 
-      <div class="card reveal reveal-delay-3">
-        <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;">
-          <div class="card-icon card-icon-red">🏛️</div>
-          <div>
-            <div class="training-level level-beginner" style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#00ffc8">All Levels</div>
-            <h3 style="margin:0.3rem 0 0;">AI Strategy for Executives</h3>
-          </div>
-        </div>
-        <p>Equip leaders to define AI roadmaps, build governance frameworks, manage AI risk, and cultivate data-driven cultures that deliver measurable ROI.</p>
-        <div style="margin:1.2rem 0; padding:1rem; background:rgba(255,80,100,0.03); border:1px solid rgba(255,80,100,0.1); border-radius:10px;">
-          <div style="font-size:0.78rem; color:var(--text-secondary); line-height:1.8;">
-            <strong style="color:var(--text-primary);">Format:</strong> 2-Day Executive Retreat<br>
-            <strong style="color:var(--text-primary);">Audience:</strong> CXO, VP, Director, Board<br>
-            <strong style="color:var(--text-primary);">Prerequisites:</strong> None — designed for leaders
-          </div>
+      <div class="program-card reveal reveal-delay-3" data-level="leadership">
+        <div class="card-icon card-icon-red">🏛️</div>
+        <div><span class="level-badge level-all">All Levels · Leadership</span></div>
+        <h3>AI Strategy for Executives</h3>
+        <p>Equip C-suite and VPs to define AI roadmaps, build governance frameworks, manage AI risk, and cultivate data-driven cultures that deliver measurable ROI.</p>
+        <div class="program-meta">
+          <div class="program-meta-row"><span>⏱</span> 2-Day Executive Retreat</div>
+          <div class="program-meta-row"><span>👥</span> CXO, VP, Director, Board</div>
+          <div class="program-meta-row"><span>📋</span> No prerequisites</div>
         </div>
         <div class="card-tags">
           <span class="tag">Strategy</span><span class="tag">Governance</span><span class="tag">ROI</span>
         </div>
-        <a href="contact.html" class="btn btn-outline" style="width:100%;margin-top:1.2rem;justify-content:center;">Enquire →</a>
+        <a href="contact.html" class="btn btn-outline" style="text-align:center">Enquire →</a>
       </div>
 
     </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta-band section-pad">
-  <div class="container">
-    <div class="cta-band-inner reveal">
+    <!-- Custom band -->
+    <div class="custom-band reveal">
       <div>
-        <h2 class="cta-band-title">Custom Training for<br><em>Your Industry</em></h2>
-        <p style="color:var(--text-secondary);margin-top:0.5rem;max-width:450px;">We tailor every program to your industry, tech stack, and team's skill level. Let's design your AI curriculum.</p>
+        <div class="section-label">Custom Programs</div>
+        <h2>Tailored Training for <em>Your Industry</em></h2>
+        <p>We design every program around your industry, tech stack, team's skill level, and business goals. Whether you need a 1-day awareness session for 500 employees or a 3-month AI Engineering bootcamp for your data team — we build it.</p>
       </div>
-      <a href="contact.html" class="btn btn-primary">Design Your Program →</a>
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn-primary">Design Your Program →</a>
+        <a href="contact.html" class="btn btn-outline">Talk to an Expert</a>
+      </div>
     </div>
+
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:2rem;">
-      <span>© 2025 Nayu Technologies Inc.</span>
-      <a href="../index.html" style="color:var(--accent)">← Back to Home</a>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo" style="margin-bottom:0.5rem; display:inline-flex">
+          <div class="nav-logo-icon">⬡</div>
+          Nayu<span>Tech</span>
+        </a>
+        <p>Nayu Technologies Inc. is an AI &amp; automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/nayutech" class="social-btn" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+          <a href="mailto:info@nayutechnologies.com" class="social-btn" title="Email" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Training Programs</h5>
+        <ul>
+          <li><a href="training.html">AI Literacy</a></li>
+          <li><a href="training.html">GenAI for Business</a></li>
+          <li><a href="training.html">LLM Engineering</a></li>
+          <li><a href="training.html">Agentic AI</a></li>
+          <li><a href="training.html">Executive Strategy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="sectors.html">Sectors</a></li>
+          <li><a href="clients.html">Clients</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Office</h5>
+        <p style="font-size:0.82rem; color:var(--text-secondary); line-height:1.8; margin-top:0.5rem">
+          Toronto, Ontario, Canada<br>
+          <a href="mailto:info@nayutechnologies.com" style="color:var(--accent)">info@nayutechnologies.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nayu Technologies Inc. All rights reserved.</span>
+      <div style="display:flex; gap:1.5rem;">
+        <a href="contact.html">Privacy Policy</a>
+        <a href="contact.html">Terms of Service</a>
+      </div>
+      <div class="footer-badge">⬡ AI-Powered Company</div>
     </div>
   </div>
 </footer>
 
 <script src="../js/main.js"></script>
+<script>
+  // Filter functionality
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.program-card').forEach(card => {
+        if (filter === 'all' || card.dataset.level === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
