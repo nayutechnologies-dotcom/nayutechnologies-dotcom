@@ -44,7 +44,7 @@
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "url": "https://www.nayutechnologies.com/pages/contact.html"
+      "url": "https://www.nayutechnologies.com/contact-us"
     },
     "sameAs": [
       "https://www.linkedin.com/company/nayutech"
@@ -53,7 +53,7 @@
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     /* ═══════════════════════════════════════════
@@ -65,21 +65,21 @@
       --bg:       #020510;
       --bg2:      #091528;
       --bg3:      #0e1c34;
-      --card:     #13131c;
-      --border:   rgba(255,255,255,0.16);
-      --border-h: rgba(255,255,255,0.35);
-      --accent:   #ffb500;
-      --accent2:  #7b61ff;
-      --cyan:     #22d3ee;
+      --card:     #091528;
+      --border:   rgba(255,255,255,0.1);
+      --border-h: rgba(255,255,255,0.2);
+      --accent:   #007bff;
+      --accent2:  #6c757d;
+      --cyan:     #17a2b8;
       --text:     #eef2ff;
-      --muted:    #cbd6ff;
-      --muted2:   #7a8fb8;
-      --tag-bg:   rgba(255,181,0,0.12);
-      --tag-text: #ffb500;
-      --font-head: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
-      --radius: 14px;
-      --section-gap: 120px;
+      --muted:    #6c757d;
+      --muted2:   #495057;
+      --tag-bg:   rgba(0,123,255,0.1);
+      --tag-text: #007bff;
+      --font-head: 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius: 8px;
+      --section-gap: 80px;
     }
 
     html { scroll-behavior: smooth; }
@@ -89,7 +89,7 @@
       color: var(--text);
       font-family: var(--font-body);
       font-size: 16px;
-      line-height: 1.85;
+      line-height: 1.6;
     }
 
     body::before {
@@ -582,9 +582,9 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#training">AI Training</a></li>
       <li><a href="#sectors">Sectors</a></li>
-      <li><a href="pages/about.html">About</a></li>
-      <li><a href="pages/blog.html">Blog</a></li>
-      <li><a href="pages/contact.html" class="nav-cta">Get Started →</a></li>
+      <li><a href="./about.html" class="active">About</a></li>
+      <li><a href="#blogs">Blog</a></li>
+      <li><a href="./contact-us.html" class="nav-cta">Get Started →</a></li>
     </ul>
     <button class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
   </div>
@@ -595,9 +595,9 @@
   <a href="#services"       onclick="closeMobileMenu()">Services</a>
   <a href="#training"       onclick="closeMobileMenu()">AI Training</a>
   <a href="#sectors"        onclick="closeMobileMenu()">Sectors</a>
-  <a href="pages/about.html"          onclick="closeMobileMenu()">About</a>
-  <a href="pages/blog.html" onclick="closeMobileMenu()">Blog</a>
-  <a href="pages/contact.html" onclick="closeMobileMenu()" style="color:var(--accent2)">Get Started →</a>
+  <a href="./about.html"          onclick="closeMobileMenu()">About</a>
+  <a href="#blogs"          onclick="closeMobileMenu()">Blog</a>
+  <a href="./contact-us.html"       onclick="closeMobileMenu()" style="color:var(--accent2)">Get Started →</a>
 </div>
 
 <!-- ═══════════════════════════════════════════
@@ -609,7 +609,7 @@
     <h1>Enterprise AI, innovative IT services,<br>and strategic consulting <em>for modern business.</em></h1>
     <p class="hero-sub">Nayu Technologies empowers enterprises with innovative AI, intelligent automation, and enterprise IT services — delivering measurable digital transformation from pilot to production.</p>
     <div class="hero-ctas">
-      <a href="pages/contact.html" class="btn-primary">Start Your AI Journey →</a>
+      <a href="./contact-us.html" class="btn-primary">Start Your AI Journey →</a>
       <a href="#services" class="btn-ghost">Explore Services</a>
     </div>
 
@@ -797,8 +797,8 @@
       </div>
     </div>
     <div style="display:flex;gap:14px;margin-bottom:32px;flex-wrap:wrap;">
-      <a href="pages/contact.html" class="btn-primary">Enroll Your Team →</a>
-      <a href="pages/training.html" class="btn-ghost">View Curriculum</a>
+      <a href="./contact-us.html" class="btn-primary">Enroll Your Team →</a>
+      <a href="#training" class="btn-ghost">View Curriculum</a>
     </div>
     <div class="training-grid">
       <div class="training-card">
@@ -935,60 +935,11 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     TESTIMONIALS  ← NEW SECTION
-═══════════════════════════════════════════ -->
-<section id="testimonials">
-  <div class="container">
-    <div class="section-eyebrow">Client Voices</div>
-    <h2 class="section-title">What Our <em>Clients Say</em></h2>
-    <p class="section-sub">From Big 5 Banks to leading insurers — real outcomes, real impact.</p>
-    <div class="testimonials-grid">
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"Nayu delivered a production-grade RAG system in 10 weeks that replaced a $2M vendor contract. Their team understood our compliance requirements from day one — no hand-holding needed."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">VP</div>
-          <div class="author-info">
-            <div class="name">VP of Digital Innovation</div>
-            <div class="role">Big 5 Canadian Bank</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"The AI underwriting model Nayu built cut our decisioning time from 3 days to 4 hours, with a measurable reduction in loss ratio in the first quarter. Exceptional technical depth."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">CTO</div>
-          <div class="author-info">
-            <div class="name">Chief Technology Officer</div>
-            <div class="role">Leading Canadian Insurer</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"We enrolled 200 employees in Nayu's GenAI for Business bootcamp. The practical, no-fluff approach meant teams were shipping AI-assisted workflows by week two. Remarkable ROI."</p>
-        <div class="testimonial-author">
-          <div class="author-avatar">HR</div>
-          <div class="author-info">
-            <div class="name">Chief People Officer</div>
-            <div class="role">Fortune 500 Financial Services</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════════════════════════════════════
      BLOG PREVIEW  ← NEW SECTION
 ═══════════════════════════════════════════ -->
-<section id="blog-preview">
+<section id="blogs">
   <div class="container">
     <div class="blog-preview-header">
       <div>
@@ -996,11 +947,11 @@
         <h2 class="section-title">Latest from the <em>Blog</em></h2>
         <p class="section-sub">Technical depth on AI, automation, and enterprise transformation.</p>
       </div>
-      <a href="pages/blog.html" class="btn-ghost">All Articles →</a>
+      <a href="#blogs" class="btn-ghost">All Articles →</a>
     </div>
     <div class="blog-preview-grid">
 
-      <a href="pages/blog.html" class="blog-preview-card">
+      <a href="blogs.html" class="blog-preview-card">
         <div class="blog-preview-visual" style="background:linear-gradient(135deg,rgba(124,92,252,0.15),rgba(34,211,238,0.08));">
           <svg width="64" height="64" viewBox="0 0 32 32" fill="none">
             <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#7c5cfc" stroke-width="1.5"/>
@@ -1018,7 +969,7 @@
         </div>
       </a>
 
-      <a href="pages/blog.html" class="blog-preview-card">
+      <a href="blogs.html" class="blog-preview-card">
         <div class="blog-preview-visual" style="background:linear-gradient(135deg,rgba(15,110,86,0.2),rgba(34,211,238,0.08));">
           <svg width="64" height="64" viewBox="0 0 32 32" fill="none">
             <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#0f6e56" stroke-width="1.5"/>
@@ -1036,7 +987,7 @@
         </div>
       </a>
 
-      <a href="pages/blog.html" class="blog-preview-card">
+      <a href="blogs.html" class="blog-preview-card">
         <div class="blog-preview-visual" style="background:linear-gradient(135deg,rgba(124,92,252,0.1),rgba(167,139,250,0.08));">
           <svg width="64" height="64" viewBox="0 0 32 32" fill="none">
             <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#a78bfa" stroke-width="1.5"/>
@@ -1069,8 +1020,8 @@
       <h2>Let's Build Your <em>AI Advantage</em> Together</h2>
       <p>Book a free 30-minute consultation with our team. No sales pitch — just an honest assessment of where AI can move the needle for your organization.</p>
       <div class="cta-buttons">
-        <a href="pages/contact.html" class="btn-primary">Book a Free Consultation →</a>
-        <a href="pages/training.html" class="btn-ghost">View Training Programs</a>
+        <a href="./contact-us.html" class="btn-primary">Book a Free Consultation →</a>
+        <a href="#training" class="btn-ghost">View Training Programs</a>
       </div>
     </div>
   </div>
@@ -1095,7 +1046,7 @@
         <p>Nayu Technologies Inc. is an AI & automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
         <div class="footer-socials">
           <a href="https://www.linkedin.com/company/nayutech" class="social-btn" target="_blank" rel="noopener">in</a>
-          <a href="pages/contact.html" class="social-btn" title="Contact us">@</a>
+          <a href="#contact-us" class="social-btn" title="Contact us">@</a>
         </div>
       </div>
       <div class="footer-col">
@@ -1111,29 +1062,29 @@
       <div class="footer-col">
         <h4>AI Training</h4>
         <ul>
-          <li><a href="pages/training.html">AI Literacy</a></li>
-          <li><a href="pages/training.html">GenAI for Business</a></li>
-          <li><a href="pages/training.html">LLM Engineering</a></li>
-          <li><a href="pages/training.html">Agentic AI</a></li>
-          <li><a href="pages/training.html">Executive Strategy</a></li>
+          <li><a href="#training">AI Literacy</a></li>
+          <li><a href="#training">GenAI for Business</a></li>
+          <li><a href="#training">LLM Engineering</a></li>
+          <li><a href="#training">Agentic AI</a></li>
+          <li><a href="#training">Executive Strategy</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="pages/about.html">About Us</a></li>
-          <li><a href="pages/blog.html">Blog</a></li><!-- FIXED: was pointing to training.html -->
-          <li><a href="pages/contact.html">Careers</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#blogs">Blog</a></li><!-- FIXED: was pointing to training.html -->
+          <li><a href="./contact-us.html">Careers</a></li>
+          <li><a href="./contact-us.html">Contact</a></li>
           <li><p style="color:var(--muted2);font-size:13px;margin-top:4px;">Toronto, Ontario, Canada</p></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Nayu Technologies Inc. All rights reserved.</p>
+      <p>© 2026 Nayu Technologies Inc. All rights reserved.</p>
       <div class="footer-bottom-links">
-        <a href="pages/contact.html">Privacy Policy</a>
-        <a href="pages/contact.html">Terms of Service</a>
+        <a href="./contact-us.html">Privacy Policy</a>
+        <a href="./contact-us.html">Terms of Service</a>
       </div>
       <div class="footer-ai-badge">
         <svg width="12" height="12" viewBox="0 0 32 32" fill="none">

@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Nayu Technologies Inc.</title>
   <meta name="description" content="Contact Nayu Technologies for AI consulting, enterprise IT services, and digital transformation strategy. Book a discovery call with your trusted AI partner." />
-  <link rel="canonical" href="https://www.nayutechnologies.com/pages/contact.html" />
+  <link rel="canonical" href="https://www.nayutechnologies.com/contact-us" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.nayutechnologies.com/pages/contact.html" />
+  <meta property="og:url" content="https://www.nayutechnologies.com/contact-us" />
   <meta property="og:title" content="Contact — Nayu Technologies Inc." />
   <meta property="og:description" content="Contact Nayu Technologies for AI consulting, enterprise IT services, and digital transformation strategy." />
   <meta property="og:image" content="https://www.nayutechnologies.com/assets/og-image.png" />
@@ -17,8 +17,8 @@
   <meta name="twitter:image" content="https://www.nayutechnologies.com/assets/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&amp;display=optional" />
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300d4ff'/><text y='.9em' font-size='70' x='10'>N</text></svg>" />
   <style>
     .contact-grid {
@@ -87,29 +87,36 @@
 <body>
 
 <nav class="navbar" id="navbar">
-  <a href="../index.html" class="nav-logo">
-    <div class="nav-logo-icon">⬡</div>
-    Nayu<span>Tech</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="../index.html#services">Services</a></li>
-    <li><a href="training.html">AI Training</a></li>
-    <li><a href="../index.html#sectors">Sectors</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html" class="nav-cta btn">Get Started →</a></li>
-  </ul>
-  <div class="nav-hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span><span></span><span></span></div>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="hex-icon">
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+          <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" fill="rgba(124,92,252,0.15)" stroke="#7c5cfc" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#7c5cfc" font-size="13" font-weight="700" font-family="sans-serif">N</text>
+        </svg>
+      </div>
+      NayuTech
+    </a>
+     <ul class="nav-links">
+      <li><a href="./index.html#services">Services</a></li>
+      <li><a href="./index.html#training">AI Training</a></li>
+      <li><a href="./index.html#sectors">Sectors</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./index.html#blog">Blog</a></li>
+      <li><a href="./contact-us.html" class="nav-cta">Get Started →</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
+  </div>
 </nav>
 
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
   <span class="mobile-close" id="mobile-close" role="button" tabindex="0" aria-label="Close menu">✕</span>
-  <a href="../index.html">Home</a>
-  <a href="../index.html#services">Services</a>
-  <a href="training.html">AI Training</a>
-  <a href="../index.html#sectors">Sectors</a>
-  <a href="about.html">About</a>
-  <a href="blog.html">Blog</a>
+      <li><a href="./index.html#services">Services</a></li>
+      <li><a href="./index.html#training">AI Training</a></li>
+      <li><a href="./index.html#sectors">Sectors</a></li>
+      <li><a href="./about.html" class="active">About</a></li>
+      <li><a href="./index.html#blog">Blog</a></li>
+      <li><a href="./contact-us.html" class="nav-cta">Get Started →</a></li>
 </div>
 
 <section style="padding: 10rem 0 6rem; position:relative; overflow:hidden;">
@@ -223,16 +230,76 @@
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:2rem;">
-      <span>© 2025 Nayu Technologies Inc.</span>
-      <a href="../index.html" style="color:var(--accent)">← Back to Home</a>
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="display:inline-flex;">
+          <div class="hex-icon">
+            <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+              <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" fill="rgba(124,92,252,0.15)" stroke="#7c5cfc" stroke-width="1.5"/>
+              <text x="16" y="21" text-anchor="middle" fill="#7c5cfc" font-size="13" font-weight="700" font-family="sans-serif">N</text>
+            </svg>
+          </div>
+          NayuTech
+        </a>
+        <p>Nayu Technologies Inc. is an AI & automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/nayutech" class="social-btn" target="_blank" rel="noopener">in</a>
+          <a href="#contact-us" class="social-btn" title="Contact us">@</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Generative AI</a></li>
+          <li><a href="#services">Intelligent Automation</a></li>
+          <li><a href="#services">Digital Transformation</a></li>
+          <li><a href="#services">Cloud & Security</a></li>
+          <li><a href="#services">Contact Center AI</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>AI Training</h4>
+        <ul>
+          <li><a href="#training">AI Literacy</a></li>
+          <li><a href="#training">GenAI for Business</a></li>
+          <li><a href="#training">LLM Engineering</a></li>
+          <li><a href="#training">Agentic AI</a></li>
+          <li><a href="#training">Executive Strategy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#blogs">Blog</a></li><!-- FIXED: was pointing to training.html -->
+          <li><a href="./contact-us.html">Careers</a></li>
+          <li><a href="./contact-us.html">Contact</a></li>
+          <li><p style="color:var(--muted2);font-size:13px;margin-top:4px;">Toronto, Ontario, Canada</p></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Nayu Technologies Inc. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="./contact-us.html">Privacy Policy</a>
+        <a href="./contact-us.html">Terms of Service</a>
+      </div>
+      <div class="footer-ai-badge">
+        <svg width="12" height="12" viewBox="0 0 32 32" fill="none">
+          <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#7c5cfc" stroke-width="1.5"/>
+        </svg>
+        AI-Powered Company
+      </div>
     </div>
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
+<script src="js/main.js"></script>
 <script>
   const form = document.getElementById('contact-form');
   form?.addEventListener('submit', async (e) => {

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — Nayu Technologies Inc.</title>
-  <meta name="description" content="AI-first services for the modern enterprise — Generative AI, Intelligent Automation, Digital Transformation, Cloud & Cybersecurity, and Contact Center Modernization." />
-  <meta property="og:title" content="Services — Nayu Technologies Inc." />
-  <meta property="og:description" content="From strategy to deployment — we build intelligent systems that create lasting competitive advantage through AI consulting and enterprise IT services." />
-  <link rel="canonical" href="https://www.nayutechnologies.com/pages/services.html" />
-  <meta property="og:url" content="https://www.nayutechnologies.com/pages/services.html" />
+  <title>About — Nayu Technologies Inc.</title>
+  <meta name="description" content="Learn about Nayu Technologies Inc. — an AI-first technology partner founded by former AWS innovators, delivering enterprise AI, automation, and cloud solutions." />
+  <meta property="og:title" content="About — Nayu Technologies Inc." />
+  <meta property="og:description" content="Former AWS innovators building the future of AI and cloud for enterprises. Discover our mission, team, and commitment to AI-first transformation." />
+  <link rel="canonical" href="https://www.nayutechnologies.com/about" />
+  <meta property="og:url" content="https://www.nayutechnologies.com/about" />
   <meta property="og:image" content="https://www.nayutechnologies.com/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Services — Nayu Technologies Inc." />
@@ -17,8 +17,8 @@
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=optional" />
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2300d4ff'/><text y='.9em' font-size='70' x='10'>N</text></svg>" />
   <style>
     /* ═══════════════════════════════════════════
@@ -26,25 +26,26 @@
     ═══════════════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+
     :root {
       --bg:       #020510;
       --bg2:      #091528;
       --bg3:      #0e1c34;
-      --card:     #13131c;
-      --border:   rgba(255,255,255,0.16);
-      --border-h: rgba(255,255,255,0.35);
-      --accent:   #ffb500;
-      --accent2:  #7b61ff;
-      --cyan:     #22d3ee;
+      --card:     #091528;
+      --border:   rgba(255,255,255,0.1);
+      --border-h: rgba(255,255,255,0.2);
+      --accent:   #007bff;
+      --accent2:  #6c757d;
+      --cyan:     #17a2b8;
       --text:     #eef2ff;
-      --muted:    #cbd6ff;
-      --muted2:   #7a8fb8;
-      --tag-bg:   rgba(255,181,0,0.12);
-      --tag-text: #ffb500;
-      --font-head: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
-      --radius: 14px;
-      --section-gap: 120px;
+      --muted:    #6c757d;
+      --muted2:   #495057;
+      --tag-bg:   rgba(0,123,255,0.1);
+      --tag-text: #007bff;
+      --font-head: 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius: 8px;
+      --section-gap: 80px;
     }
 
     html { scroll-behavior: smooth; }
@@ -54,7 +55,7 @@
       color: var(--text);
       font-family: var(--font-body);
       font-size: 16px;
-      line-height: 1.85;
+      line-height: 1.6;
     }
 
     body::before {
@@ -79,7 +80,7 @@
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     section { position: relative; z-index: 1; }
 
-    /* ═══════════════════════════════════════════
+   /* ═══════════════════════════════════════════
        NAV
     ═══════════════════════════════════════════ */
     nav {
@@ -140,6 +141,7 @@
     /* ═══════════════════════════════════════════
        HERO
     ═══════════════════════════════════════════ */
+
     .hero {
       padding: 60px 24px 80px;
       text-align: center;
@@ -248,45 +250,6 @@
     .section-title em { font-style: normal; background: linear-gradient(135deg,var(--accent2),var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
     .section-sub { color: var(--muted); font-size: 16px; max-width: 520px; }
 
-    /* ═══════════════════════════════════════════
-       SERVICES
-    ═══════════════════════════════════════════ */
-    #services { padding: var(--section-gap) 0; }
-    .services-header { text-align: center; margin-bottom: 60px; }
-    .services-header .section-sub { margin: 0 auto; }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 20px;
-    }
-    .service-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 32px;
-      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
-      display: flex; flex-direction: column; gap: 16px;
-    }
-    .service-card:hover {
-      border-color: rgba(124,92,252,0.35);
-      transform: translateY(-2px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
-    }
-    .service-icon { font-size: 28px; }
-    .service-card h3 {
-      font-family: var(--font-head); font-size: 18px; font-weight: 700;
-      letter-spacing: -0.02em; line-height: 1.25;
-    }
-    .service-card p { color: var(--muted); font-size: 14px; line-height: 1.65; }
-    .service-bullets { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
-    .service-bullet {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 13px; color: var(--muted);
-    }
-    .service-bullet::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--accent); flex-shrink:0; }
-    .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); }
-    .stag {
-      background: var(--bg3); border: 1px solid var(--border);
-      border-radius: 6px; padding: 3px 10px;
-      font-size: 11px; color: var(--muted2); font-weight: 500;
-    }
 
     /* ═══════════════════════════════════════════
        APPROACH  (timeline)
@@ -305,144 +268,7 @@
     }
     .approach-card h4 { font-family: var(--font-head); font-size: 16px; font-weight: 700; margin-bottom: 10px; }
     .approach-card p { color: var(--muted); font-size: 14px; line-height: 1.6; }
-
-    /* ═══════════════════════════════════════════
-       TRAINING
-    ═══════════════════════════════════════════ */
-    #training { padding: var(--section-gap) 0; }
-    .training-header { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; margin-bottom: 48px; }
-    .training-stats { display: flex; gap: 32px; flex-shrink: 0; }
-    .tstat { text-align: center; }
-    .tstat-num { font-family: var(--font-head); font-size: 28px; font-weight: 800; color: var(--accent2); display: block; }
-    .tstat-label { font-size: 12px; color: var(--muted); }
-    .training-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-    .training-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 28px;
-      display: flex; flex-direction: column; gap: 12px;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .training-card:hover { border-color: rgba(124,92,252,0.35); transform: translateY(-2px); }
-    .training-level {
-      font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--muted2);
-    }
-    .training-icon { font-size: 24px; }
-    .training-card h3 { font-family: var(--font-head); font-size: 16px; font-weight: 700; line-height: 1.3; }
-    .training-card p { color: var(--muted); font-size: 13px; line-height: 1.6; flex: 1; }
-    .training-meta {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 12px; color: var(--muted2);
-      padding-top: 12px; border-top: 1px solid var(--border);
-    }
-
-    /* ═══════════════════════════════════════════
-       SECTORS
-    ═══════════════════════════════════════════ */
-    #sectors { padding: var(--section-gap) 0; background: var(--bg2); }
-    .sector-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 40px 0 32px; }
-    .sector-tab {
-      background: var(--bg3); border: 1px solid var(--border);
-      border-radius: 100px; padding: 8px 18px;
-      font-size: 14px; color: var(--muted); cursor: pointer;
-      transition: all 0.18s; font-family: var(--font-body);
-    }
-    .sector-tab:hover, .sector-tab.active {
-      background: var(--tag-bg); border-color: rgba(124,92,252,0.4); color: var(--accent2);
-    }
-    .sector-panel { display: none; }
-    .sector-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
-    .sector-list { display: flex; flex-direction: column; gap: 10px; }
-    .sector-item {
-      display: flex; align-items: center; gap: 10px;
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 10px; padding: 14px 16px; font-size: 14px; color: var(--muted);
-    }
-    .sector-item::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--accent); flex-shrink:0; }
-    .sector-info { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
-    .sector-info h3 { font-family: var(--font-head); font-size: 22px; font-weight: 700; margin-bottom: 12px; }
-    .sector-info p { color: var(--muted); font-size: 14px; line-height: 1.7; }
-
-    /* ═══════════════════════════════════════════
-       TESTIMONIALS  ← NEW
-    ═══════════════════════════════════════════ */
-    #testimonials { padding: var(--section-gap) 0; }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 56px; }
-    .testimonial-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 32px;
-      display: flex; flex-direction: column; gap: 20px;
-      transition: border-color 0.2s;
-    }
-    .testimonial-card:hover { border-color: rgba(124,92,252,0.3); }
-    .testimonial-stars { color: #f59e0b; font-size: 14px; letter-spacing: 2px; }
-    .testimonial-quote { color: var(--muted); font-size: 15px; line-height: 1.7; font-style: italic; flex: 1; }
-    .testimonial-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--border); }
-    .author-avatar {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--cyan));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0;
-    }
-    .author-info .name { font-size: 14px; font-weight: 500; color: var(--text); }
-    .author-info .role { font-size: 12px; color: var(--muted2); }
-
-    /* ═══════════════════════════════════════════
-       BLOG PREVIEW  ← NEW
-    ═══════════════════════════════════════════ */
-    #blog-preview { padding: var(--section-gap) 0; background: var(--bg2); }
-    .blog-preview-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 16px; }
-    .blog-preview-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-    .blog-preview-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      text-decoration: none; color: inherit;
-      transition: border-color 0.25s, transform 0.25s;
-      display: flex; flex-direction: column;
-    }
-    .blog-preview-card:hover { border-color: rgba(124,92,252,0.4); transform: translateY(-3px); }
-    .blog-preview-visual {
-      height: 160px; position: relative; overflow: hidden;
-      background: var(--bg3);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .blog-preview-visual svg { opacity: 0.15; }
-    .blog-preview-content { padding: 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-    .blog-preview-tag {
-      display: inline-block;
-      background: var(--tag-bg); border: 1px solid rgba(124,92,252,0.2);
-      border-radius: 100px; padding: 3px 12px;
-      font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase;
-      color: var(--accent2);
-    }
-    .blog-preview-title { font-family: var(--font-head); font-size: 17px; font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; }
-    .blog-preview-excerpt { color: var(--muted); font-size: 13px; line-height: 1.65; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .blog-preview-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted2); }
-    .blog-read-link { color: var(--accent2); font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 4px; }
-
-    /* ═══════════════════════════════════════════
-       FINAL CTA
-    ═══════════════════════════════════════════ */
-    #cta { padding: var(--section-gap) 0; background: var(--bg2); }
-    .cta-box {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 24px; padding: 72px 48px; text-align: center;
-      position: relative; overflow: hidden;
-    }
-    .cta-box::before {
-      content: '';
-      position: absolute; top: -120px; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 350px;
-      background: radial-gradient(ellipse, rgba(124,92,252,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cta-box h2 {
-      font-family: var(--font-head); font-size: clamp(28px,3.5vw,48px);
-      font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px;
-    }
-    .cta-box p { color: var(--muted); font-size: 16px; max-width: 480px; margin: 0 auto 36px; }
-    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-
+   
     /* ═══════════════════════════════════════════
        FOOTER
     ═══════════════════════════════════════════ */
@@ -528,9 +354,9 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
-  <a href="../index.html" class="nav-logo">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
       <div class="hex-icon">
         <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
           <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" fill="rgba(124,92,252,0.15)" stroke="#7c5cfc" stroke-width="1.5"/>
@@ -539,34 +365,58 @@
       </div>
       NayuTech
     </a>
-  <ul class="nav-links">
-    <li><a href="services.html">Services</a></li>
-    <li><a href="training.html">AI Training</a></li>
-    <li><a href="sectors.html">Sectors</a></li>
-    <li><a href="about.html" class="active">About</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="contact.html" class="nav-cta btn">Get Started →</a></li>
-  </ul>
-  <div class="nav-hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-    <span></span><span></span><span></span>
+     <ul class="nav-links">
+      <li><a href="./index.html#services">Services</a></li>
+      <li><a href="./index.html#training">AI Training</a></li>
+      <li><a href="./index.html#sectors">Sectors</a></li>
+      <li><a href="./about.html" class="active">About</a></li>
+      <li><a href="./index.html#blog">Blog</a></li>
+      <li><a href="./contact-us.html" class="nav-cta">Get Started →</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
   <span class="mobile-close" id="mobile-close" role="button" tabindex="0" aria-label="Close menu">✕</span>
-  <a href="services.html">Services</a>
-  <a href="training.html">AI Training</a>
-  <a href="sectors.html">Sectors</a>
-  <a href="about.html"  class="active">About</a>
-  <a href="blog.html">Blog</a>
-  <a href="contact.html" style="color: var(--accent)">Get Started →</a>
+      <li><a href="./index.html#services">Services</a></li>
+      <li><a href="./index.html#training">AI Training</a></li>
+      <li><a href="./index.html#sectors">Sectors</a></li>
+      <li><a href="./about.html" class="active">About</a></li>
+      <li><a href="./index.html#blog">Blog</a></li>
+      <li><a href="./contact-us.html" class="nav-cta">Get Started →</a></li>
 </div>
 
-<section class="page-hero">
+
+<section class="hero">
   <div class="container">
     <div class="page-hero-label">About Us</div>
     <h1>We build AI systems that actually work in production.</h1>
     <p>Founded by engineers with enterprise experience, Nayu Technologies delivers practical AI, automation, and data systems that scale safely across regulated organizations.</p>
+    <div class="hero-ctas">
+      <a href="./contact-us.html" class="btn-primary">Start Your AI Journey →</a>
+      <a href="./index.html#services" class="btn-ghost">Explore Services</a>
+    </div>
+
+    <!-- Stats with hard-coded fallbacks, animated on scroll -->
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-num" data-target="10" data-suffix="+">10+</span>
+        <div class="stat-label">AI Projects Delivered</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="98" data-suffix="%">98%</span>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="50" data-suffix="+">10+</span>
+        <div class="stat-label">Enterprise Clients</div>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="6" data-suffix="+">10+</span>
+        <div class="stat-label">Years of Expertise</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -574,7 +424,7 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-text">
-        <p>We work with Canadian banks, insurers, and global enterprises to move beyond pilots and into real outcomes. Our teams combine AI engineering, operational rigor, and compliance-first design so every solution can be trusted in production.</p>
+        <p>We work with North American banks, insurers, and global enterprises to move beyond pilots and into real outcomes. Our teams combine AI engineering, operational rigor, and compliance-first design so every solution can be trusted in production.</p>
         <div class="about-values">
           <div class="about-value">
             <div class="about-value-icon">⚡</div>
@@ -628,54 +478,71 @@
     </div>
   </div>
 </section>
-!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
       <div class="footer-brand">
-        <a href="../index.html" class="nav-logo" style="margin-bottom:0.5rem; display:inline-flex">
-          <div class="nav-logo-icon">⬡</div>
-          Nayu<span>Tech</span>
+        <a href="/" class="nav-logo" style="display:inline-flex;">
+          <div class="hex-icon">
+            <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+              <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" fill="rgba(124,92,252,0.15)" stroke="#7c5cfc" stroke-width="1.5"/>
+              <text x="16" y="21" text-anchor="middle" fill="#7c5cfc" font-size="13" font-weight="700" font-family="sans-serif">N</text>
+            </svg>
+          </div>
+          NayuTech
         </a>
-        <p>Nayu Technologies Inc. is an AI &amp; automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/company/nayutech" class="social-btn" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
-          <a href="mailto:info@nayutechnologies.com" class="social-btn" title="Email" aria-label="Email">@</a>
+        <p>Nayu Technologies Inc. is an AI & automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/nayutech" class="social-btn" target="_blank" rel="noopener">in</a>
+          <a href="#contact-us" class="social-btn" title="Contact us">@</a>
         </div>
       </div>
       <div class="footer-col">
-        <h5>Services</h5>
+        <h4>Services</h4>
         <ul>
-          <li><a href="services.html">Generative AI</a></li>
-          <li><a href="services.html">Intelligent Automation</a></li>
-          <li><a href="services.html">Digital Transformation</a></li>
-          <li><a href="services.html">Cloud &amp; Security</a></li>
-          <li><a href="services.html">Contact Center AI</a></li>
+          <li><a href="#services">Generative AI</a></li>
+          <li><a href="#services">Intelligent Automation</a></li>
+          <li><a href="#services">Digital Transformation</a></li>
+          <li><a href="#services">Cloud & Security</a></li>
+          <li><a href="#services">Contact Center AI</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Company</h5>
+        <h4>AI Training</h4>
         <ul>
-          <li><a href="training.html">AI Training</a></li>
-          <li><a href="sectors.html">Sectors</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#training">AI Literacy</a></li>
+          <li><a href="#training">GenAI for Business</a></li>
+          <li><a href="#training">LLM Engineering</a></li>
+          <li><a href="#training">Agentic AI</a></li>
+          <li><a href="#training">Executive Strategy</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h5>Office</h5>
-        <p style="font-size:0.82rem; color:var(--text-secondary); line-height:1.8; margin-top:0.5rem">
-          Toronto, Ontario, Canada<br>
-          <a href="mailto:info@nayutechnologies.com" style="color:var(--accent)">info@nayutechnologies.com</a>
-        </p>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#blogs">Blog</a></li><!-- FIXED: was pointing to training.html -->
+          <li><a href="./contact-us.html">Careers</a></li>
+          <li><a href="./contact-us.html">Contact</a></li>
+          <li><p style="color:var(--muted2);font-size:13px;margin-top:4px;">Toronto, Ontario, Canada</p></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Nayu Technologies Inc. All rights reserved.</span>
-      <div style="display:flex; gap:1.5rem;">
-        <a href="contact.html">Privacy Policy</a>
-        <a href="contact.html">Terms of Service</a>
+      <p>© 2026 Nayu Technologies Inc. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="./contact-us.html>Privacy Policy</a>
+        <a href="./contact-us.html">Terms of Service</a>
       </div>
-      <div class="footer-badge">⬡ AI-Powered Company</div>
+      <div class="footer-ai-badge">
+        <svg width="12" height="12" viewBox="0 0 32 32" fill="none">
+          <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#7c5cfc" stroke-width="1.5"/>
+        </svg>
+        AI-Powered Company
+      </div>
     </div>
   </div>
 </footer>

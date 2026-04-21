@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogs | Nayu Technologies Inc.</title>
+  <meta name="description" content="Insights on AI, automation, and digital transformation from Nayu Technologies." />
+  <link rel="canonical" href="https://www.nayutechnologies.com/blogs" />
+  <meta property="og:url" content="https://www.nayutechnologies.com/blogs" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #020510;
+      --bg2:       #091528;
+      --bg3:       #0e1c34;
+      --card:      #091528;
+      --border:    rgba(255,255,255,0.1);
+      --border-h:  rgba(255,255,255,0.2);
+      --accent:    #007bff;
+      --accent2:   #6c757d;
+      --cyan:      #17a2b8;
+      --text:      #eef2ff;
+      --muted:     #6c757d;
+      --muted2:    #495057;
+      --tag-bg:    rgba(0,123,255,0.1);
+      --tag-text:  #007bff;
+      --hex:       #007bff;
+      --font-head: 'Inter', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius:    8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Noise texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── NAV (matches existing site) ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    /* Hex icon matching the ⬡ from site */
+    .hex-icon {
+      width: 32px;
+      height: 32px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hex-icon svg { width: 32px; height: 32px; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 500 !important;
+      transition: background 0.2s, opacity 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent2) !important; color: #fff !important; }
+
+    /* ── PAGE HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 96px 24px 72px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(124,92,252,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--tag-bg);
+      border: 1px solid rgba(124,92,252,0.25);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    .hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      color: var(--text);
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent2) 0%, var(--cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 520px;
+      margin: 0 auto 40px;
+      font-weight: 300;
+    }
+
+    /* ── SEARCH + FILTER BAR ── */
+    .filter-bar {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto 64px;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .search-wrap {
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+    }
+    .search-wrap svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted2);
+    }
+    .search-input {
+      width: 100%;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 16px 11px 42px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-input::placeholder { color: var(--muted2); }
+    .search-input:focus { border-color: rgba(124,92,252,0.5); }
+
+    .tag-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .tag-btn {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.18s;
+      font-family: var(--font-body);
+    }
+    .tag-btn:hover,
+    .tag-btn.active {
+      background: var(--tag-bg);
+      border-color: rgba(124,92,252,0.4);
+      color: var(--accent2);
+    }
+
+    /* ── BLOG GRID ── */
+    .blog-section {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 120px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 28px;
+    }
+
+    /* Featured post spans full width */
+    .blog-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 360px;
+    }
+
+    .blog-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .blog-card:hover {
+      border-color: rgba(124,92,252,0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(124,92,252,0.1);
+    }
+
+    /* Card visual banner */
+    .card-visual {
+      background: var(--bg3);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .blog-card:not(.featured) .card-visual {
+      height: 200px;
+    }
+
+    .blog-card.featured .card-visual {
+      height: 100%;
+      min-height: 300px;
+    }
+
+    /* Abstract pattern fills */
+    .card-visual canvas { width: 100%; height: 100%; display: block; }
+
+    .card-visual .visual-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Pattern A — circuit / neural net */
+    .pattern-a {
+      background: var(--bg2);
+    }
+    .pattern-b {
+      background: #0a0f1a;
+    }
+
+    /* Card content */
+    .card-content {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 14px;
+    }
+
+    .blog-card.featured .card-content {
+      padding: 40px;
+      justify-content: center;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .card-tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid rgba(124,92,252,0.2);
+      border-radius: 100px;
+      padding: 3px 12px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .card-date {
+      color: var(--muted2);
+      font-size: 12px;
+    }
+
+    .card-read-time {
+      color: var(--muted2);
+      font-size: 12px;
+      margin-left: auto;
+    }
+
+    .card-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    .blog-card:not(.featured) .card-title { font-size: 20px; }
+    .blog-card.featured .card-title { font-size: 30px; }
+
+    .card-excerpt {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-card.featured .card-excerpt {
+      font-size: 15px;
+      -webkit-line-clamp: 4;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .author-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .author-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .card-link-arrow {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent2);
+      transition: gap 0.2s;
+    }
+    .blog-card:hover .card-link-arrow { gap: 10px; }
+
+    /* ── PDF Badge ── */
+    .pdf-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34,211,238,0.1);
+      border: 1px solid rgba(34,211,238,0.2);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--cyan);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ── Newsletter CTA ── */
+    .newsletter {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+
+    .newsletter-inner {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 56px 48px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .newsletter-inner::before {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(ellipse, rgba(124,92,252,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .newsletter h2 {
+      font-family: var(--font-head);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 8px;
+    }
+    .newsletter h2 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent2), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .newsletter p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .newsletter-input {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      width: 240px;
+      transition: border-color 0.2s;
+    }
+    .newsletter-input::placeholder { color: var(--muted2); }
+    .newsletter-input:focus { border-color: rgba(124,92,252,0.5); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 22px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+
+    /* ── FOOTER (matches site) ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+      padding: 56px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 12px 0 20px;
+      max-width: 280px;
+      line-height: 1.6;
+    }
+    .footer-socials { display: flex; gap: 12px; }
+    .social-btn {
+      width: 36px; height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    .social-btn:hover { border-color: var(--accent); color: var(--accent2); }
+    .footer-col h4 {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--text); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { color: var(--muted2); font-size: 13px; }
+    .footer-ai-badge {
+      color: var(--muted2);
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── BLOG POST MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(6,6,12,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 500;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 20px;
+      overflow-y: auto;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      max-width: 780px;
+      width: 100%;
+      position: relative;
+      animation: slideUp 0.3s cubic-bezier(0.16,1,0.3,1);
+      margin: auto;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      width: 36px; height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg3);
+      color: var(--muted);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      transition: all 0.2s;
+      z-index: 10;
+    }
+    .modal-close:hover { border-color: var(--border-h); color: var(--text); }
+
+    .modal-visual {
+      height: 240px;
+      border-radius: 18px 18px 0 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .modal-body {
+      padding: 36px 40px 40px;
+    }
+
+    .modal-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+
+    .modal-title {
+      font-family: var(--font-head);
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .modal-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted2);
+      font-size: 13px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+
+    .modal-content {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .modal-content h2 {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 28px 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .modal-content p { margin-bottom: 16px; }
+    .modal-content ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    .modal-content li { margin-bottom: 8px; }
+    .modal-content code {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 2px 7px;
+      font-size: 13px;
+      color: var(--cyan);
+      font-family: 'DM Mono', monospace;
+    }
+    .modal-content pre {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+    .modal-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 13px;
+    }
+    .modal-content strong { color: var(--text); font-weight: 500; }
+
+    .modal-pdf-bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--bg2);
+      border: 1px solid rgba(34,211,238,0.2);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 28px 0;
+    }
+    .modal-pdf-bar svg { color: var(--cyan); flex-shrink: 0; }
+    .modal-pdf-bar p { font-size: 14px; color: var(--muted); flex: 1; margin: 0; }
+    .modal-pdf-bar p strong { color: var(--text); }
+    .pdf-download-btn {
+      background: rgba(34,211,238,0.1);
+      border: 1px solid rgba(34,211,238,0.25);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--cyan);
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .pdf-download-btn:hover {
+      background: rgba(34,211,238,0.18);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .blog-card.featured {
+        grid-template-columns: 1fr;
+      }
+      .blog-card.featured .card-visual {
+        height: 220px;
+      }
+      .newsletter-inner {
+        grid-template-columns: 1fr;
+        padding: 36px 24px;
+      }
+      .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+      }
+      .newsletter-input { width: 100%; }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+      .nav-links { display: none; }
+      .modal-body { padding: 24px; }
+    }
+
+    /* ── Subtle grid dot bg ── */
+    .page-bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-bg-grid"></div>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION  (matches nayutechnologies.com)
+═══════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <div class="hex-icon">
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+          <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" fill="rgba(124,92,252,0.15)" stroke="#7c5cfc" stroke-width="1.5"/>
+          <text x="16" y="21" text-anchor="middle" fill="#7c5cfc" font-size="13" font-weight="700" font-family="sans-serif">N</text>
+        </svg>
+      </div>
+      NayuTech
+    </a>
+     <ul class="nav-links">
+      <li><a href="./index.html#services">Services</a></li>
+      <li><a href="./index.html#training">AI Training</a></li>
+      <li><a href="./index.html#sectors">Sectors</a></li>
+      <li><a href="./index.html#about">About</a></li>
+      <li><a href="./index.html#blog" class="active">Blog</a></li>
+      <li><a href="./contact-us.html" class="nav-cta">Get Started →</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-eyebrow">Nayu Insights</div>
+  <h1>AI & Automation<br><em>Intelligence</em></h1>
+  <p class="hero-sub">Deep technical thinking on AI systems, enterprise automation, and the future of intelligent software — from the Nayu Technologies team.</p>
+</section>
+
+<!-- ══════════════════════════════════════
+     FILTER BAR
+═══════════════════════════════════════ -->
+<div class="filter-bar">
+  <div class="search-wrap">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input class="search-input" type="text" placeholder="Search articles…" id="searchInput" oninput="filterCards()" />
+  </div>
+  <div class="tag-filters" id="tagFilters">
+    <button class="tag-btn active" data-tag="all" onclick="setTag(this)">All Posts</button>
+    <button class="tag-btn" data-tag="Generative AI" onclick="setTag(this)">Generative AI</button>
+    <button class="tag-btn" data-tag="Automation" onclick="setTag(this)">Automation</button>
+    <button class="tag-btn" data-tag="Architecture" onclick="setTag(this)">Architecture</button>
+    <button class="tag-btn" data-tag="FinTech" onclick="setTag(this)">FinTech</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     BLOG CARDS
+═══════════════════════════════════════ -->
+<section class="blog-section">
+  <div class="blog-grid" id="blogGrid">
+
+    <!-- ─── CARD 1 (Featured) ─── -->
+    <article class="blog-card featured"
+      data-tags="Generative AI,Architecture"
+      onclick="openPost(0)">
+      <!-- Visual: animated neural net -->
+      <div class="card-visual pattern-a">
+        <canvas id="canvas1" style="width:100%;height:100%;display:block;"></canvas>
+      </div>
+      <!-- Content -->
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-tag">Generative AI</span>
+          <span class="card-tag">Architecture</span>
+          <span class="card-date">June 12, 2025</span>
+          <span class="card-read-time">12 min read</span>
+        </div>
+        <h2 class="card-title">Building Production-Grade RAG Systems: From Prototype to Enterprise Scale</h2>
+        <p class="card-excerpt">Most RAG demos work beautifully in notebooks. Most RAG systems fail in production. This deep-dive covers the architectural decisions, retrieval strategies, and evaluation frameworks that separate toy prototypes from enterprise-grade knowledge systems handling millions of queries.</p>
+        <div class="card-footer">
+          <div class="card-author">
+            <div class="author-avatar">NT</div>
+            <span class="author-name">Nayu Technologies</span>
+          </div>
+          <div class="card-link-arrow">
+            Read article <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ─── CARD 2 ─── -->
+    <article class="blog-card"
+      data-tags="Automation,FinTech"
+      onclick="openPost(1)">
+      <div class="card-visual pattern-b">
+        <canvas id="canvas2" style="width:100%;height:100%;display:block;"></canvas>
+      </div>
+      <div class="card-content">
+        <div class="card-meta">
+          <span class="card-tag">Automation</span>
+          <span class="card-tag">FinTech</span>
+          <span class="pdf-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            PDF
+          </span>
+        </div>
+        <div class="card-date" style="color:var(--muted2);font-size:12px;">May 28, 2025 · 9 min read</div>
+        <h2 class="card-title">Agentic AI in Financial Services: Compliance-Safe Autonomous Workflows</h2>
+        <p class="card-excerpt">How leading Canadian banks are deploying multi-agent AI systems that operate within regulatory guardrails — with real architecture patterns for AML monitoring, credit decisioning, and claims automation.</p>
+        <div class="card-footer">
+          <div class="card-author">
+            <div class="author-avatar">NT</div>
+            <span class="author-name">Nayu Technologies</span>
+          </div>
+          <div class="card-link-arrow">
+            Read + PDF <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- /blog-grid -->
+</section>
+
+<!-- ══════════════════════════════════════
+     NEWSLETTER CTA
+═══════════════════════════════════════ -->
+<section class="newsletter">
+  <div class="newsletter-inner">
+    <div>
+      <h2>Stay ahead of the <em>AI curve</em></h2>
+      <p>New articles every week on AI engineering, automation patterns, and enterprise transformation. No fluff — just technical depth.</p>
+    </div>
+    <div class="newsletter-form">
+      <input class="newsletter-input" type="email" placeholder="your@email.com" />
+      <button class="btn-primary">Subscribe →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="display:inline-flex;">
+          <div class="hex-icon">
+            <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+              <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" fill="rgba(124,92,252,0.15)" stroke="#7c5cfc" stroke-width="1.5"/>
+              <text x="16" y="21" text-anchor="middle" fill="#7c5cfc" font-size="13" font-weight="700" font-family="sans-serif">N</text>
+            </svg>
+          </div>
+          NayuTech
+        </a>
+        <p>Nayu Technologies Inc. is an AI & automation consulting firm helping enterprises in financial services and beyond harness the power of intelligent technology.</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/nayutech" class="social-btn" target="_blank" rel="noopener">in</a>
+          <a href="#contact-us" class="social-btn" title="Contact us">@</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Generative AI</a></li>
+          <li><a href="#services">Intelligent Automation</a></li>
+          <li><a href="#services">Digital Transformation</a></li>
+          <li><a href="#services">Cloud & Security</a></li>
+          <li><a href="#services">Contact Center AI</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>AI Training</h4>
+        <ul>
+          <li><a href="#training">AI Literacy</a></li>
+          <li><a href="#training">GenAI for Business</a></li>
+          <li><a href="#training">LLM Engineering</a></li>
+          <li><a href="#training">Agentic AI</a></li>
+          <li><a href="#training">Executive Strategy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#blogs">Blog</a></li><!-- FIXED: was pointing to training.html -->
+          <li><a href="./contact-us.html">Careers</a></li>
+          <li><a href="./contact-us.html">Contact</a></li>
+          <li><p style="color:var(--muted2);font-size:13px;margin-top:4px;">Toronto, Ontario, Canada</p></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Nayu Technologies Inc. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="./contact-us.html>Privacy Policy</a>
+        <a href="./contact-us.html">Terms of Service</a>
+      </div>
+      <div class="footer-ai-badge">
+        <svg width="12" height="12" viewBox="0 0 32 32" fill="none">
+          <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="#7c5cfc" stroke-width="1.5"/>
+        </svg>
+        AI-Powered Company
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     BLOG POST MODALS
+═══════════════════════════════════════ -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" onclick="closePost()">✕</button>
+    <div class="modal-visual" id="modalVisual"></div>
+    <div class="modal-body">
+      <div class="modal-tags" id="modalTags"></div>
+      <h1 class="modal-title" id="modalTitle"></h1>
+      <div class="modal-meta" id="modalMeta"></div>
+      <div id="modalPdf"></div>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════ -->
+<script>
+/* ── Post Data ─────────────────────────────── */
+const posts = [
+  {
+    title: "Building Production-Grade RAG Systems: From Prototype to Enterprise Scale",
+    tags: ["Generative AI", "Architecture"],
+    date: "June 12, 2025",
+    readTime: "12 min read",
+    author: "Nayu Technologies",
+    hasPdf: false,
+    gradientA: "#7c5cfc", gradientB: "#22d3ee",
+    content: `
+      <p>Most RAG demos work beautifully in notebooks. Most RAG systems fail in production. After deploying knowledge retrieval systems for financial institutions, insurers, and enterprise clients, we've distilled the critical patterns that determine whether your RAG system becomes a competitive advantage — or an expensive liability.</p>
+
+      <h2>Why RAG Fails at Scale</h2>
+      <p>The naive RAG pattern — <code>embed → store → retrieve → generate</code> — breaks down in four predictable ways:</p>
+      <ul>
+        <li><strong>Retrieval precision collapse:</strong> As document corpora grow past ~100K chunks, cosine similarity alone degrades. Without re-ranking, irrelevant context floods the LLM window.</li>
+        <li><strong>Chunking mismatch:</strong> Fixed-size chunking destroys semantic coherence. A 512-token chunk mid-paragraph loses both the question context it answers and the claim's supporting evidence.</li>
+        <li><strong>Stale embeddings:</strong> Enterprise data changes. Without incremental indexing pipelines, your vector store drifts from ground truth within weeks.</li>
+        <li><strong>No evaluation loop:</strong> Without RAGAS-style automated eval, regressions go undetected until a user notices a hallucinated policy number.</li>
+      </ul>
+
+      <h2>The Architecture That Works</h2>
+      <p>Production RAG at Nayu follows a <strong>layered retrieval</strong> approach. We combine sparse retrieval (BM25) with dense retrieval (embeddings) through a Reciprocal Rank Fusion step, then apply a cross-encoder re-ranker before context assembly. This alone lifts answer accuracy by 18–30% over naive cosine retrieval on our enterprise benchmarks.</p>
+
+      <pre><code># Hybrid retrieval pseudocode
+sparse_hits  = bm25_index.retrieve(query, top_k=50)
+dense_hits   = vector_store.retrieve(embed(query), top_k=50)
+fused        = reciprocal_rank_fusion(sparse_hits, dense_hits)
+reranked     = cross_encoder.rerank(query, fused, top_k=8)
+context      = assemble_context(reranked)</code></pre>
+
+      <h2>Chunking Strategy</h2>
+      <p>We use <strong>semantic chunking</strong> with embedding-similarity boundary detection rather than fixed token counts. Documents are split at natural semantic breaks — measured by the cosine distance between adjacent sentence embeddings. A threshold of 0.3 delta reliably identifies paragraph and section boundaries without manual tuning.</p>
+
+      <h2>Evaluation Framework</h2>
+      <p>Every RAG pipeline at Nayu is evaluated against four metrics: <strong>context relevance</strong>, <strong>answer faithfulness</strong>, <strong>answer relevance</strong>, and <strong>citation accuracy</strong>. We run RAGAS evaluations on a golden dataset of 200+ question-answer pairs after every pipeline change — gating deployment on faithfulness scores above 0.85.</p>
+
+      <h2>Infrastructure Considerations</h2>
+      <p>For enterprise scale, we recommend: <strong>Qdrant or Weaviate</strong> for vector storage (both support multi-tenancy and RBAC), <strong>Cohere Rerank</strong> for the cross-encoder step, and <strong>LangChain LCEL</strong> or <strong>LlamaIndex</strong> for pipeline orchestration. Avoid managed vector databases that lack filtering — you will need metadata filters for document-level security isolation.</p>
+
+      <p>The teams that succeed with RAG treat it as a software engineering problem, not an AI magic problem. Invest in your evaluation pipeline first. Everything else follows.</p>
+    `
+  },
+  {
+    title: "Agentic AI in Financial Services: Compliance-Safe Autonomous Workflows",
+    tags: ["Automation", "FinTech"],
+    date: "May 28, 2025",
+    readTime: "9 min read",
+    author: "Nayu Technologies",
+    hasPdf: true,
+    pdfName: "Nayu_Agentic_AI_FinServ_Whitepaper.pdf",
+    pdfDesc: "Download the full whitepaper with architecture diagrams and implementation checklist.",
+    gradientA: "#0f6e56", gradientB: "#22d3ee",
+    content: `
+      <p>Financial institutions are under dual pressure: deliver AI-powered automation at speed while operating within some of the world's most demanding regulatory environments. Multi-agent AI systems offer a path — but only when designed with compliance as a first-class architectural concern, not an afterthought.</p>
+
+      <h2>The Compliance Paradox</h2>
+      <p>Autonomous agents that can take actions — submitting transactions, flagging accounts, approving claims — create audit trail challenges that regulators are only beginning to address. OSFI in Canada, FCA in the UK, and OCC in the US all expect firms to demonstrate <strong>explainability</strong>, <strong>human oversight</strong>, and <strong>model governance</strong> for any automated decision touching a customer.</p>
+
+      <h2>Architecture Pattern: The Guardrail Mesh</h2>
+      <p>The pattern we deploy at Nayu wraps every agent action with three layers of guardrails:</p>
+      <ul>
+        <li><strong>Pre-action validation:</strong> A policy agent checks proposed actions against a regulatory rulebook before execution. For AML, this includes transaction velocity checks, sanctions list lookups, and PEP screening.</li>
+        <li><strong>Human-in-the-loop escalation:</strong> Actions above a configurable risk threshold are routed to a human review queue rather than executed autonomously. Thresholds are tuned by compliance teams, not engineers.</li>
+        <li><strong>Immutable audit log:</strong> Every agent decision — including the chain-of-thought reasoning — is written to an append-only log with a cryptographic hash chain. This satisfies OSFI's model risk management expectations.</li>
+      </ul>
+
+      <h2>Real Deployment: AML Transaction Monitoring</h2>
+      <p>One Big 5 Canadian bank deployed a multi-agent AML system using this pattern. A <strong>detection agent</strong> processes transaction streams in real time, a <strong>context agent</strong> retrieves customer history and peer benchmarks, and an <strong>action agent</strong> generates a Suspicious Transaction Report draft — which a human compliance officer reviews before filing. The result: 70% reduction in false positive review time, with full regulatory auditability.</p>
+
+      <pre><code># Simplified agent orchestration (LangGraph pattern)
+graph = StateGraph(ComplianceState)
+graph.add_node("detect",   detection_agent)
+graph.add_node("enrich",   context_agent)
+graph.add_node("draft",    action_agent)
+graph.add_node("escalate", human_review_node)
+
+graph.add_conditional_edges(
+    "draft",
+    risk_threshold_router,      # Routes high-risk to human
+    {"auto": END, "human": "escalate"}
+)</code></pre>
+
+      <h2>Key Implementation Checklist</h2>
+      <p>Before deploying agentic workflows in regulated environments, validate:</p>
+      <ul>
+        <li>Every agent action is logged with timestamp, model version, input context, and output</li>
+        <li>Human escalation paths are defined for all action types above risk threshold</li>
+        <li>Model cards are maintained for each agent and reviewed quarterly</li>
+        <li>Rollback procedures exist for autonomous decisions made in error</li>
+        <li>Third-party model providers have signed DPAs covering your jurisdiction's data residency requirements</li>
+      </ul>
+
+      <p>Download the full whitepaper below for architecture diagrams, vendor comparison, and a 40-point implementation checklist vetted by our financial services compliance practice.</p>
+    `
+  }
+];
+
+/* ── Active tag filter ─────────────────────── */
+let activeTag = 'all';
+
+function setTag(btn) {
+  document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeTag = btn.dataset.tag;
+  filterCards();
+}
+
+function filterCards() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.blog-card').forEach(card => {
+    const tags   = card.dataset.tags || '';
+    const title  = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+    const excerpt= card.querySelector('.card-excerpt')?.textContent.toLowerCase() || '';
+    const tagMatch  = activeTag === 'all' || tags.includes(activeTag);
+    const textMatch = !query || title.includes(query) || excerpt.includes(query);
+    card.style.display = (tagMatch && textMatch) ? '' : 'none';
+  });
+}
+
+/* ── Modal open/close ──────────────────────── */
+function openPost(idx) {
+  const p = posts[idx];
+  // Tags
+  document.getElementById('modalTags').innerHTML =
+    p.tags.map(t => `<span class="card-tag">${t}</span>`).join('') +
+    (p.hasPdf ? `<span class="pdf-badge"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8" fill="none" stroke="currentColor" stroke-width="2"/></svg>PDF Available</span>` : '');
+
+  document.getElementById('modalTitle').textContent = p.title;
+  document.getElementById('modalMeta').innerHTML =
+    `<span>${p.date}</span><span>·</span><span>${p.readTime}</span><span>·</span><span>${p.author}</span>`;
+  document.getElementById('modalContent').innerHTML = p.content;
+
+  // PDF bar
+  const pdfEl = document.getElementById('modalPdf');
+  if (p.hasPdf) {
+    pdfEl.innerHTML = `
+      <div class="modal-pdf-bar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        <p><strong>${p.pdfName}</strong> — ${p.pdfDesc}</p>
+        <a class="pdf-download-btn" href="./pdfs/${p.pdfName}" download>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+      </div>`;
+  } else {
+    pdfEl.innerHTML = '';
+  }
+
+  // Visual header
+  const vis = document.getElementById('modalVisual');
+  vis.style.background = `linear-gradient(135deg, ${p.gradientA}33 0%, ${p.gradientB}22 100%)`;
+  vis.innerHTML = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
+    <svg width="80" height="80" viewBox="0 0 32 32" fill="none" style="opacity:0.25">
+      <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" stroke="${p.gradientA}" stroke-width="1.5" fill="${p.gradientA}22"/>
+      <polygon points="16,7 23,11 23,19 16,23 9,19 9,11" stroke="${p.gradientB}" stroke-width="1" fill="none"/>
+    </svg>
+  </div>`;
+
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePost() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modalOverlay')) closePost();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePost(); });
+
+/* ── Canvas animations ─────────────────────── */
+function drawNeuralNet(canvas, colorA, colorB) {
+  const dpr = window.devicePixelRatio || 1;
+  const w = canvas.offsetWidth  || 600;
+  const h = canvas.offsetHeight || 300;
+  canvas.width  = w * dpr;
+  canvas.height = h * dpr;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  // Generate nodes
+  const nodes = [];
+  const cols = 6, rows = 4;
+  for (let c = 0; c < cols; c++) {
+    for (let r = 0; r < rows; r++) {
+      nodes.push({
+        x: (w / (cols + 1)) * (c + 1) + (Math.random() - 0.5) * 30,
+        y: (h / (rows + 1)) * (r + 1) + (Math.random() - 0.5) * 20,
+        r: Math.random() * 3 + 2,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.4
+      });
+    }
+  }
+
+  let t = 0;
+  function frame() {
+    ctx.clearRect(0, 0, w, h);
+    t += 0.012;
+
+    // Connections
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < w * 0.28) {
+          const alpha = (1 - dist / (w * 0.28)) * 0.25;
+          ctx.strokeStyle = `rgba(124,92,252,${alpha})`;
+          ctx.lineWidth = 0.6;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Nodes
+    nodes.forEach(n => {
+      const pulse = Math.sin(t * n.speed + n.phase) * 0.5 + 0.5;
+      const r = n.r + pulse * 1.5;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(124,92,252,${0.3 + pulse * 0.4})`;
+      ctx.fill();
+    });
+
+    requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+function drawCircuitBoard(canvas) {
+  const dpr = window.devicePixelRatio || 1;
+  const w = canvas.offsetWidth  || 400;
+  const h = canvas.offsetHeight || 200;
+  canvas.width  = w * dpr;
+  canvas.height = h * dpr;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  // Draw grid lines
+  const step = 30;
+  ctx.strokeStyle = 'rgba(34,211,238,0.08)';
+  ctx.lineWidth = 0.5;
+  for (let x = 0; x < w; x += step) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+  }
+  for (let y = 0; y < h; y += step) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+  }
+
+  // Draw traces
+  const traces = [];
+  for (let i = 0; i < 12; i++) {
+    const x1 = Math.round(Math.random() * (w / step)) * step;
+    const y1 = Math.round(Math.random() * (h / step)) * step;
+    const len = (Math.floor(Math.random() * 4) + 2) * step;
+    const horiz = Math.random() > 0.5;
+    traces.push({ x1, y1, x2: horiz ? x1 + len : x1, y2: horiz ? y1 : y1 + len, progress: 0, speed: 0.008 + Math.random() * 0.012 });
+  }
+
+  let t = 0;
+  function frame() {
+    ctx.clearRect(0, 0, w, h);
+    t += 1;
+
+    // Static grid
+    ctx.strokeStyle = 'rgba(34,211,238,0.06)';
+    ctx.lineWidth = 0.5;
+    for (let x = 0; x < w; x += step) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
+    }
+    for (let y = 0; y < h; y += step) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+    }
+
+    // Animated traces
+    traces.forEach(tr => {
+      tr.progress = (tr.progress + tr.speed) % 1.4;
+      const p = Math.min(tr.progress, 1);
+      const cx = tr.x1 + (tr.x2 - tr.x1) * p;
+      const cy = tr.y1 + (tr.y2 - tr.y1) * p;
+
+      ctx.strokeStyle = 'rgba(34,211,238,0.35)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(tr.x1, tr.y1);
+      ctx.lineTo(cx, cy);
+      ctx.stroke();
+
+      // Traveling dot
+      if (p < 1) {
+        ctx.beginPath();
+        ctx.arc(cx, cy, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(34,211,238,0.9)';
+        ctx.fill();
+      }
+
+      // End cap dot
+      ctx.beginPath();
+      ctx.arc(tr.x1, tr.y1, 3, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(34,211,238,0.4)';
+      ctx.fill();
+    });
+
+    requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+/* ── Init canvases after layout ── */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const c1 = document.getElementById('canvas1');
+    const c2 = document.getElementById('canvas2');
+    if (c1) drawNeuralNet(c1, '#7c5cfc', '#22d3ee');
+    if (c2) drawCircuitBoard(c2);
+  }, 100);
+});
+</script>
+</body>
+</html>
